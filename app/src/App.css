@@ -1,0 +1,19 @@
+.app {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}
+
+.startMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+}

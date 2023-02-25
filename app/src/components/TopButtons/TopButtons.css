@@ -1,0 +1,25 @@
+.topButtons{
+  display: flex;
+  justify-content: space-between;  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  z-index:99;
+  padding: 5%;
+}
+
+#roundBtn {
+  display: flex;
+  background-color: rgb(57, 109, 160);
+  border: none;
+  color: white;
+  padding: 15px;
+  font-size: 30px;
+  border-radius: 50%;
+  height: 100%;
+}
+
+.svg-inline--fa {
+  width: 1em;
+}
