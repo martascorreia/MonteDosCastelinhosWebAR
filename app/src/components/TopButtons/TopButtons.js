@@ -3,13 +3,11 @@ import BackButton from './BackButton';
 import FullScreenButton from './FullScreenButton'
 import "./TopButtons.css"
 
-function TopButtons() {
-  var isStartMenu = document.getElementById("app") !== null;
-
+function TopButtons({isHome, backUrl}) {
   return (
     <div className="topButtons">
-      {!isStartMenu &&
-      <BackButton/>}
+      {!isHome &&
+      <BackButton backUrl={backUrl}/>}
       <FullScreenButton/>
     </div>
   );
