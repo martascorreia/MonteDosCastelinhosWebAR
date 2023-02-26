@@ -4,8 +4,7 @@ import FullScreenButton from './FullScreenButton'
 import "./TopButtons.css"
 
 function TopButtons() {
-  var isStartMenu = document.getElementById("app") != null;
-  console.log(document.getElementById("app"))
+  var isStartMenu = document.getElementById("app") !== null;
 
   return (
     <div className="topButtons">

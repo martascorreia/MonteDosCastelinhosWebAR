@@ -7,13 +7,23 @@
   align-items: center;
 }
 
-.startMenu {
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
-  gap: 10px;
+  gap: 50px;
   height: 100%;
+  width: 100%;
+}
+
+.startMenu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 15px;
   width: 100%;
 }
