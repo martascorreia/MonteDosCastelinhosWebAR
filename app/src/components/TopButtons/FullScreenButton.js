@@ -9,7 +9,7 @@ const FullScreenButton = () => {
 
   function changeScreen() {
     //small -> full
-    if(screenType == faUpRightAndDownLeftFromCenter){
+    if(screenType === faUpRightAndDownLeftFromCenter){
       setScreenType(faDownLeftAndUpRightToCenter);
       document.body.requestFullscreen();
 
@@ -22,7 +22,7 @@ const FullScreenButton = () => {
   }
 
   return (
-    <button className="btn" id="roundBtn">
+    <button className="fullScreenBtn" id="roundBtn">
       <FontAwesomeIcon onClick={changeScreen} icon={screenType} />
     </button>      
   );
