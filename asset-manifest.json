@@ -1,7 +1,7 @@
 {
   "main.css": "/MonteDosCastelinhosWebAR/static/css/main.3b16022e.chunk.css",
-  "main.js": "/MonteDosCastelinhosWebAR/static/js/main.b0a50d87.chunk.js",
-  "main.js.map": "/MonteDosCastelinhosWebAR/static/js/main.b0a50d87.chunk.js.map",
+  "main.js": "/MonteDosCastelinhosWebAR/static/js/main.0c3a5c42.chunk.js",
+  "main.js.map": "/MonteDosCastelinhosWebAR/static/js/main.0c3a5c42.chunk.js.map",
   "static/js/1.adb2852f.chunk.js": "/MonteDosCastelinhosWebAR/static/js/1.adb2852f.chunk.js",
   "static/js/1.adb2852f.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/1.adb2852f.chunk.js.map",
   "static/js/2.5be22b23.chunk.js": "/MonteDosCastelinhosWebAR/static/js/2.5be22b23.chunk.js",
@@ -11,6 +11,6 @@
   "static/media/logo.PNG": "/MonteDosCastelinhosWebAR/static/media/logo.bd18e6bf.PNG",
   "static/css/main.3b16022e.chunk.css.map": "/MonteDosCastelinhosWebAR/static/css/main.3b16022e.chunk.css.map",
   "index.html": "/MonteDosCastelinhosWebAR/index.html",
-  "precache-manifest.7c2d0fc6a414650e869d76f5079cc6d9.js": "/MonteDosCastelinhosWebAR/precache-manifest.7c2d0fc6a414650e869d76f5079cc6d9.js",
+  "precache-manifest.3db91846ef0bd480cf3ef621a07d6f15.js": "/MonteDosCastelinhosWebAR/precache-manifest.3db91846ef0bd480cf3ef621a07d6f15.js",
   "service-worker.js": "/MonteDosCastelinhosWebAR/service-worker.js"
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b0a50d8768bf5a8e1385",
+    "revision": "0c3a5c42c31835d3e001",
     "url": "/MonteDosCastelinhosWebAR/static/css/main.3b16022e.chunk.css"
   },
   {
-    "revision": "b0a50d8768bf5a8e1385",
-    "url": "/MonteDosCastelinhosWebAR/static/js/main.b0a50d87.chunk.js"
+    "revision": "0c3a5c42c31835d3e001",
+    "url": "/MonteDosCastelinhosWebAR/static/js/main.0c3a5c42.chunk.js"
   },
   {
     "revision": "adb2852fae2b928deb4c",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/MonteDosCastelinhosWebAR/static/media/logo.bd18e6bf.PNG"
   },
   {
-    "revision": "a75d8478660345a7852c0fa185992418",
+    "revision": "d08f2c180f4fac9bf329d52a4b1ab9c7",
     "url": "/MonteDosCastelinhosWebAR/index.html"
   }
 ];
