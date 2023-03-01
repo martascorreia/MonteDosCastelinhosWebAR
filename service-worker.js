@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/MonteDosCastelinhosWebAR/precache-manifest.3db91846ef0bd480cf3ef621a07d6f15.js"
+  "/MonteDosCastelinhosWebAR/precache-manifest.1977e68c03172a6138a7e5added99263.js"
 );
 
 workbox.clientsClaim();
