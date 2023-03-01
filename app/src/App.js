@@ -3,9 +3,9 @@ import './App.css';
 //import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home/Home"
-import Map from "./pages/Map"
+import Map from "./pages/Map/Map"
 import About from "./pages/About/About"
-import Catalogue from "./pages/Catalogue"
+import Catalogue from "./pages/Catalogue/Catalogue"
 
 function App() {
     return ( 
@@ -17,8 +17,8 @@ function App() {
               <Route path='/sobre' element={<About/>} />
               <Route path='/catalogo' element={<Catalogue/>} />
           </Routes>
-      </BrowserRouter>
-        </div > 
+        </BrowserRouter>
+      </div > 
     );
 }
 export default App;

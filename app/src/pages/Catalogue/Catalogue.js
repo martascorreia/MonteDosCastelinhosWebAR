@@ -1,15 +1,15 @@
 import React from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
-import "./About.css"
+import "./Catalogue.css"
 
-function App() {
+function Catalogue() {
     return ( 
-      <div className="About">
+      <div className="Map">
         <TopButtons isHome={false} backUrl={"/MonteDosCastelinhosWebAR"}/>    
         <div className="content">
         </div > 
       </div>
     );
 }
-export default App;
+export default Catalogue;
