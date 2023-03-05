@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from '../../resources/logo.PNG';
+import logo from '../../resources/logo2.PNG';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import TextButton from "../../components/TextButton.js"
 import { Link } from 'react-router-dom';
 import "./Home.css"
 import "../../index.css"
+import "@fontsource/lexend-deca"; 
 
 function Home() {
     return ( 

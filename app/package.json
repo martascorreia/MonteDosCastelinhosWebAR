@@ -4,6 +4,7 @@
   "homepage": "https://martacorreia29.github.io/MonteDosCastelinhosWebAR/",
   "private": true,
   "dependencies": {
+    "@fontsource/lexend-deca": "^4.5.14",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
@@ -16,7 +17,7 @@
     "react-dom": "^18.2.0",
     "react-full-screen": "^1.1.1",
     "react-router-dom": "^6.8.1",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
