@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/MonteDosCastelinhosWebAR/static/css/main.5bc70407.css",
-    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.62330d85.js",
+    "main.css": "/MonteDosCastelinhosWebAR/static/css/main.6c88e141.css",
+    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.267751ee.js",
     "static/js/787.c1112931.chunk.js": "/MonteDosCastelinhosWebAR/static/js/787.c1112931.chunk.js",
-    "static/media/logo2.PNG": "/MonteDosCastelinhosWebAR/static/media/logo2.79954f60ef0545578059.PNG",
+    "static/media/logo2.png": "/MonteDosCastelinhosWebAR/static/media/logo2.4ee3a224412282f6d83f.png",
     "static/media/lexend-deca-all-400-normal.woff": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-all-400-normal.144b2a63e56dcddd9ca7.woff",
     "static/media/lexend-deca-latin-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-latin-400-normal.c95c30470184160a8a7d.woff2",
     "static/media/lexend-deca-latin-ext-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-latin-ext-400-normal.671c8b05e9f8680aa8f2.woff2",
     "static/media/lexend-deca-vietnamese-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-vietnamese-400-normal.7aec3fedb83e5c27bb72.woff2",
     "index.html": "/MonteDosCastelinhosWebAR/index.html",
-    "main.5bc70407.css.map": "/MonteDosCastelinhosWebAR/static/css/main.5bc70407.css.map",
-    "main.62330d85.js.map": "/MonteDosCastelinhosWebAR/static/js/main.62330d85.js.map",
+    "main.6c88e141.css.map": "/MonteDosCastelinhosWebAR/static/css/main.6c88e141.css.map",
+    "main.267751ee.js.map": "/MonteDosCastelinhosWebAR/static/js/main.267751ee.js.map",
     "787.c1112931.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bc70407.css",
-    "static/js/main.62330d85.js"
+    "static/css/main.6c88e141.css",
+    "static/js/main.267751ee.js"
   ]
 }
