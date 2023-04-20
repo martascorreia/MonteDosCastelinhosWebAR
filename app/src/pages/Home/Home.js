@@ -15,6 +15,7 @@ function Home() {
           <img src={logo} className="logo" alt="logo"/>
           <div className="menu">
             <Link to={'/mapa'} className="nav-link"><TextButton text="Mapa"/></Link>
+            <Link to={'/sondagem4'} className="nav-link"><TextButton text="Sondagem 4"/></Link>
             <Link to={'/catalogo'} className="nav-link"><TextButton text="Catálogo"/></Link>
             <Link to={'/sobre'} className="nav-link"><TextButton text="Sobre"/></Link>
           </div>
