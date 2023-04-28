@@ -4,6 +4,7 @@
   "homepage": "https://martacorreia29.github.io/MonteDosCastelinhosWebAR/",
   "private": true,
   "dependencies": {
+    "@belivvr/aframe-react": "^0.4.2",
     "@fontsource/lexend-deca": "^4.5.14",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
@@ -14,7 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
-    "aframe": "^1.4.1",
+    "aframe": "github:aframevr/aframe#480a303b3c1932170552a3e4f9287298c1039c27",
     "react": "^18.2.0",
     "react-aframe-ar": "^1.18.0",
     "react-device-detect": "^2.2.3",
