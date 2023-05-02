@@ -10,7 +10,7 @@ function RealidadeVirtual() {
       <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
       <div className="content">
         <a-scene renderer="logarithmicDepthBuffer: true">
-          <a-entity gltf-model={sondagem4Model} position="1000 -5000 -15000" rotation="180 60 180" />
+          <a-entity gltf-model={sondagem4Model} position="1000 -5000 -15000" rotation="170 60 180" />
           <a-camera wasd-controls near="1" far="300000" position="0 1.65 0" />
         </a-scene>
       </div >
