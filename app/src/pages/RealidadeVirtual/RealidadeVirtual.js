@@ -2,7 +2,7 @@ import React from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./RealidadeVirtual.css"
-import sondagem4Model from '../../resources/sondagem4 - smaller.glb';
+import sondagem4Model from '../../resources/sondagem4 - smaller w sub roof.glb';
 
 function RealidadeVirtual() {
   return (
@@ -10,8 +10,8 @@ function RealidadeVirtual() {
       <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
       <div className="content">
         <a-scene renderer="logarithmicDepthBuffer: true">
-          <a-entity gltf-model={sondagem4Model} position="1000 -5000 -15000" rotation="170 60 180" />
-          <a-camera wasd-controls near="1" far="300000" position="0 1.65 0" />
+          <a-entity gltf-model={sondagem4Model} position="0 1.5 -10" rotation="0 180 -6" scale="0.5 0.5 0.5"/>
+          <a-entity camera look-controls position="0 1.6 0"></a-entity>
         </a-scene>
       </div >
     </div>
