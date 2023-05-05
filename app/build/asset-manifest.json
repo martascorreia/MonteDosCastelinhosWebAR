@@ -1,7 +1,7 @@
 {
-  "main.css": "/MonteDosCastelinhosWebAR/static/css/main.780ade11.chunk.css",
-  "main.js": "/MonteDosCastelinhosWebAR/static/js/main.7b4f70f2.chunk.js",
-  "main.js.map": "/MonteDosCastelinhosWebAR/static/js/main.7b4f70f2.chunk.js.map",
+  "main.css": "/MonteDosCastelinhosWebAR/static/css/main.793db04d.chunk.css",
+  "main.js": "/MonteDosCastelinhosWebAR/static/js/main.10e8a0ac.chunk.js",
+  "main.js.map": "/MonteDosCastelinhosWebAR/static/js/main.10e8a0ac.chunk.js.map",
   "runtime~main.js": "/MonteDosCastelinhosWebAR/static/js/runtime~main.d4341a5e.js",
   "runtime~main.js.map": "/MonteDosCastelinhosWebAR/static/js/runtime~main.d4341a5e.js.map",
   "static/css/2.6cce60bd.chunk.css": "/MonteDosCastelinhosWebAR/static/css/2.6cce60bd.chunk.css",
@@ -10,10 +10,10 @@
   "static/js/3.a712f853.chunk.js": "/MonteDosCastelinhosWebAR/static/js/3.a712f853.chunk.js",
   "static/js/3.a712f853.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/3.a712f853.chunk.js.map",
   "index.html": "/MonteDosCastelinhosWebAR/index.html",
-  "precache-manifest.9530cff4fd8765146dff76aad5c8eb50.js": "/MonteDosCastelinhosWebAR/precache-manifest.9530cff4fd8765146dff76aad5c8eb50.js",
+  "precache-manifest.efad1650c108c9aded92a3ed5fc3ceb9.js": "/MonteDosCastelinhosWebAR/precache-manifest.efad1650c108c9aded92a3ed5fc3ceb9.js",
   "service-worker.js": "/MonteDosCastelinhosWebAR/service-worker.js",
   "static/css/2.6cce60bd.chunk.css.map": "/MonteDosCastelinhosWebAR/static/css/2.6cce60bd.chunk.css.map",
-  "static/css/main.780ade11.chunk.css.map": "/MonteDosCastelinhosWebAR/static/css/main.780ade11.chunk.css.map",
+  "static/css/main.793db04d.chunk.css.map": "/MonteDosCastelinhosWebAR/static/css/main.793db04d.chunk.css.map",
   "static/media/index.css": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-vietnamese-400-normal.5e2689c5.woff2",
   "static/media/logo2.PNG": "/MonteDosCastelinhosWebAR/static/media/logo2.17ec77e9.PNG",
   "static/media/sondagem4 - smaller.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4 - smaller.fe7dd009.glb"
