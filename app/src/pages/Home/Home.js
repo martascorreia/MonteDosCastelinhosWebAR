@@ -8,6 +8,8 @@ import "../../index.css"
 import "@fontsource/lexend-deca";
 
 function Home() {
+  screen.orientation.unlock();
+
   return (
     <div className="Home" id="home">
       <TopButtons isHome={true} />
