@@ -1,22 +1,21 @@
 {
-  "files": {
-    "main.css": "/MonteDosCastelinhosWebAR/static/css/main.80c232fb.css",
-    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.1406657e.js",
-    "static/js/787.c1112931.chunk.js": "/MonteDosCastelinhosWebAR/static/js/787.c1112931.chunk.js",
-    "static/media/sondagem4 - smaller.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4 - smaller.a8bf601c1dbffc6b9c8b.glb",
-    "static/media/sondagem4.png": "/MonteDosCastelinhosWebAR/static/media/sondagem4.510e1d55ad23016cfdbf.png",
-    "static/media/logo2.PNG": "/MonteDosCastelinhosWebAR/static/media/logo2.79954f60ef0545578059.PNG",
-    "static/media/lexend-deca-all-400-normal.woff": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-all-400-normal.144b2a63e56dcddd9ca7.woff",
-    "static/media/lexend-deca-latin-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-latin-400-normal.c95c30470184160a8a7d.woff2",
-    "static/media/lexend-deca-latin-ext-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-latin-ext-400-normal.671c8b05e9f8680aa8f2.woff2",
-    "static/media/lexend-deca-vietnamese-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-vietnamese-400-normal.7aec3fedb83e5c27bb72.woff2",
-    "index.html": "/MonteDosCastelinhosWebAR/index.html",
-    "main.80c232fb.css.map": "/MonteDosCastelinhosWebAR/static/css/main.80c232fb.css.map",
-    "main.1406657e.js.map": "/MonteDosCastelinhosWebAR/static/js/main.1406657e.js.map",
-    "787.c1112931.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/787.c1112931.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.80c232fb.css",
-    "static/js/main.1406657e.js"
-  ]
+  "main.css": "/MonteDosCastelinhosWebAR/static/css/main.761bd757.chunk.css",
+  "main.js": "/MonteDosCastelinhosWebAR/static/js/main.a12878ca.chunk.js",
+  "main.js.map": "/MonteDosCastelinhosWebAR/static/js/main.a12878ca.chunk.js.map",
+  "runtime~main.js": "/MonteDosCastelinhosWebAR/static/js/runtime~main.96961a79.js",
+  "runtime~main.js.map": "/MonteDosCastelinhosWebAR/static/js/runtime~main.96961a79.js.map",
+  "static/css/2.33667305.chunk.css": "/MonteDosCastelinhosWebAR/static/css/2.33667305.chunk.css",
+  "static/js/2.48adad33.chunk.js": "/MonteDosCastelinhosWebAR/static/js/2.48adad33.chunk.js",
+  "static/js/2.48adad33.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/2.48adad33.chunk.js.map",
+  "static/js/3.b700955a.chunk.js": "/MonteDosCastelinhosWebAR/static/js/3.b700955a.chunk.js",
+  "static/js/3.b700955a.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/3.b700955a.chunk.js.map",
+  "index.html": "/MonteDosCastelinhosWebAR/index.html",
+  "precache-manifest.5ac87ed4d72eae711d2d27c10ed80349.js": "/MonteDosCastelinhosWebAR/precache-manifest.5ac87ed4d72eae711d2d27c10ed80349.js",
+  "service-worker.js": "/MonteDosCastelinhosWebAR/service-worker.js",
+  "static/css/2.33667305.chunk.css.map": "/MonteDosCastelinhosWebAR/static/css/2.33667305.chunk.css.map",
+  "static/css/main.761bd757.chunk.css.map": "/MonteDosCastelinhosWebAR/static/css/main.761bd757.chunk.css.map",
+  "static/media/index.css": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-vietnamese-400-normal.5e2689c5.woff2",
+  "static/media/logo2.PNG": "/MonteDosCastelinhosWebAR/static/media/logo2.17ec77e9.PNG",
+  "static/media/sondagem4 - smaller.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4 - smaller.917f1ef6.glb",
+  "static/media/sondagem4.png": "/MonteDosCastelinhosWebAR/static/media/sondagem4.b95b3712.png"
 }
