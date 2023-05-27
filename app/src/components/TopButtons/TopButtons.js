@@ -8,7 +8,7 @@ function TopButtons({isHome, backUrl}) {
     <div className="topButtons">
       {!isHome &&
       <BackButton backUrl={backUrl}/>}
-      <FullScreenButton/>
+      <FullScreenButton isFullScreen={document.fullscreenElement != null} />
     </div>
   );
 }
