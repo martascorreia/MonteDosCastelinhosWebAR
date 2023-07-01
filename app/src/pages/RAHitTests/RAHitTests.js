@@ -3,22 +3,14 @@ import { useState } from "react";
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../index.css"
-import "./RealidadeAumentada.css"
+import "./RAHitTests.css"
 import sondagem4Img from '../../resources/sondagem4.png';
 import sondagem4Model from '../../resources/sondagem4 - smaller.glb';
 
-function RealidadeAumentada() {
+function RAHitTests() {
   const [modelAligned, setModelAligned] = useState(false);
  
-  /**
-   *  {modelAligned && 
-                <a-light type="directional" id="light" target="totalModel" position="-2 4 2"
-                  light="castShadow: true; shadowMapHeight: 1024; shadowMapWidth: 1024; shadowCameraLeft: -7; shadowCameraRight: 5; shadowCameraBottom: -5; shadowCameraTop: 5;"/>}
-  */
-
-   // position="-200 -80 -190" rotation="0 -15 0"
-
-  return (
+return (
     <div className="RealidadeAumentada">
       <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
       <div className="content">
@@ -32,15 +24,10 @@ function RealidadeAumentada() {
                 </button>  
               </div>}
             {modelAligned && 
-              <a-entity 
-                  gltf-model={sondagem4Model}
-                  position="0 -350 -790" 
-                  rotation="0 0 0"
-                  scale="6 6 6"
-              />}
+              <a-entity id="totalModel" gltf-model={sondagem4Model} position="-200 -80 -190" rotation="0 -15 0" scale="1 1 1"/>}
         </a-scene> 
       </div >
     </div>
   );
 }
-export default RealidadeAumentada;
+export default RAHitTests;

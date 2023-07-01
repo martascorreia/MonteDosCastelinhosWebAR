@@ -17,6 +17,8 @@ function Home() {
         <img src={logo} className="logo" alt="logo" />
         <div className="menu">
           <Link to={'/ra'} className="nav-link"><TextButton text="Realidade Aumentada" /></Link>
+          <Link to={'/ragps'} className="nav-link"><TextButton text="RA GPS" /></Link>
+          <Link to={'/raht'} className="nav-link"><TextButton text="RA Hit Tests" /></Link>
           <Link to={'/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>
         </div>
       </div >
