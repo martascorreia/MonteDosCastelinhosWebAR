@@ -15,7 +15,7 @@ function RAGPS() {
           vr-mode-ui='enabled: false' 
           embedded 
           arjs='sourceType: webcam;'>
-          <a-camera gps-new-camera positionMinAccuracy="10" rotation-reader> </a-camera>
+          <a-camera gps-new-camera positionMinAccuracy="10" rotation-reader/>
 
           <a-box color="white" //sondagem 1
           look-at="[gps-new-camera]"
@@ -65,7 +65,7 @@ function RAGPS() {
           gps-new-entity-place="latitude: 39.011980; longitude: -8.974258;"
           />    
 
-          <a-box color="Crimson" //house
+          <a-box color="crimson" //house
           look-at="[gps-new-camera]"
           scale="1 1 1"
           gps-new-entity-place="latitude: 38.999069; longitude: -9.007022;"
