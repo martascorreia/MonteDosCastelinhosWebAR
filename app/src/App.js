@@ -7,6 +7,7 @@ import RealidadeVirtual from "./pages/RealidadeVirtual/RealidadeVirtual"
 import RealidadeAumentada from "./pages/RealidadeAumentada/RealidadeAumentada"
 import RAGPS from "./pages/RAGPS/RAGPS"
 import RAHitTests from "./pages/RAHitTests/RAHitTests"
+import RealidadeAumentadaCut from './pages/RealidadeAumentadaCut/RealidadeAumentadaCut';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/MonteDosCastelinhosWebAR' element={<Home />} />
           <Route path='/rv' element={<RealidadeVirtual />} />
           <Route path='/ra' element={<RealidadeAumentada />} />
+          <Route path='/racut' element={<RealidadeAumentadaCut />} />
           <Route path='/ragps' element={<RAGPS />} />
           <Route path='/raht' element={<RAHitTests />} />
         </Routes>
