@@ -5,7 +5,6 @@ import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icon
 import { faDownLeftAndUpRightToCenter } from "@fortawesome/free-solid-svg-icons"; //normal
 
 const FullScreenButton = (isFullScreen) => {
-  console.log(isFullScreen.isFullScreen)
   const [screenType, setScreenType] = useState(isFullScreen.isFullScreen ? faDownLeftAndUpRightToCenter : faUpRightAndDownLeftFromCenter);
 
   function changeScreen() {
