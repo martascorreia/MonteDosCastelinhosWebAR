@@ -2,7 +2,6 @@ import React from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./RAGPS.css"
-import sondagem4Model from '../../resources/sondagem4 - smaller.glb';
 
 function RAGPS() {
   
@@ -11,11 +10,11 @@ function RAGPS() {
       <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
       <div className="content">
         <a-scene 
-          renderer="logarithmicDepthBuffer: true;" 
+          renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true" 
           vr-mode-ui='enabled: false' 
           embedded 
-          arjs='sourceType: webcam;'>
-          <a-camera gps-new-camera positionMinAccuracy="10" rotation-reader/>
+          arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false'>
+          <a-camera gps-new-camera='gpsMinDistance: 10' positionMinAccuracy="10" rotation-reader/>
 
           <a-box color="white" //sondagem 1
           look-at="[gps-new-camera]"

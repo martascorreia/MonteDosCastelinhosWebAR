@@ -2,7 +2,7 @@ import React from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./RealidadeVirtual.css"
-import sondagem4Model from '../../resources/sondagem4 - smaller.glb';
+import sondagem4Model from '../../resources/sondagem4.smaller.glb';
 
 function RealidadeVirtual() {
   return (
