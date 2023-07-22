@@ -4,10 +4,10 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home/Home"
 import RealidadeVirtual from "./pages/RealidadeVirtual/RealidadeVirtual"
-import RealidadeAumentada from "./pages/RealidadeAumentada/RealidadeAumentada"
+import RealidadeAumentada41 from "./pages/RealidadeAumentada41/RealidadeAumentada41"
 import RAGPS from "./pages/RAGPS/RAGPS"
 import RAHitTests from "./pages/RAHitTests/RAHitTests"
-import RealidadeAumentadaCut from './pages/RealidadeAumentadaCut/RealidadeAumentadaCut';
+import RealidadeAumentada43 from './pages/RealidadeAumentada43/RealidadeAumentada43';
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/MonteDosCastelinhosWebAR' element={<Home />} />
           <Route path='/rv' element={<RealidadeVirtual />} />
-          <Route path='/ra' element={<RealidadeAumentada />} />
-          <Route path='/racut' element={<RealidadeAumentadaCut />} />
+          <Route path='/ra41' element={<RealidadeAumentada41 />} />
+          <Route path='/ra43' element={<RealidadeAumentada43 />} />
           <Route path='/ragps' element={<RAGPS />} />
           <Route path='/raht' element={<RAHitTests />} />
         </Routes>

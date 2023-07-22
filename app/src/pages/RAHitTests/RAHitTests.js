@@ -4,8 +4,6 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../index.css"
 import "./RAHitTests.css"
-import sondagem4Img from '../../resources/sondagem4.png';
-import sondagem4Model from '../../resources/sondagem4 - smaller.glb';
 
 function RAHitTests() {
   async function activateXR() {

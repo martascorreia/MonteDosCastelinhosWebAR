@@ -15,12 +15,14 @@
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "aframe": "github:aframevr/aframe#480a303b3c1932170552a3e4f9287298c1039c27",
+    "aframe-react": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
     "save": "^2.9.0",
     "styled-components": "^5.3.6",
+    "types-aframe-react": "^1.0.2",
     "web-vitals": "^3.3.2"
   },
   "scripts": {
@@ -44,6 +46,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
