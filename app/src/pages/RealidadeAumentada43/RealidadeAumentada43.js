@@ -31,8 +31,9 @@ function RealidadeAumentada43() {
             {modelAligned && 
               <a-entity 
                 gltf-model="#sondagem4"
-                position="0 -350 -790" 
+                position="-350 -450 -790" 
                 scale="6 6 6"
+                rotation="0 35 0"
               />}
         </a-scene> 
       </div >

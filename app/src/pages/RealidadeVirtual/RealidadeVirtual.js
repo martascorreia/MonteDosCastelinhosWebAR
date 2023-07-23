@@ -11,7 +11,6 @@ function RealidadeVirtual() {
       <div className="content">
         <a-scene renderer="logarithmicDepthBuffer: true">
           <a-entity gltf-model={sondagem4Model} position="5 -15 -45" rotation="0 250 0" scale="0.5 0.5 0.5"/>
-          <a-entity camera look-controls/>
         </a-scene>
       </div >
     </div>

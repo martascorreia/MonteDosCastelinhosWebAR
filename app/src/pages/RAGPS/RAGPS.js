@@ -64,11 +64,41 @@ function RAGPS() {
           gps-new-entity-place="latitude: 39.011980; longitude: -8.974258;"
           />    
 
-          <a-box color="crimson" //house
+          <a-box color="crimson" //house 1
           look-at="[gps-new-camera]"
           scale="1 1 1"
           gps-new-entity-place="latitude: 38.999069; longitude: -9.007022;"
-          />               
+          />      
+
+          <a-box color="crimson" //house 2
+          look-at="[gps-new-camera]"
+          scale="1 1 1"
+          gps-new-entity-place="latitude: 38.999042; longitude: -9.006931;"
+          />  
+          
+          <a-box color="crimson" //house 3
+          look-at="[gps-new-camera]"
+          scale="1 1 1"
+          gps-new-entity-place="latitude: 38.999343; longitude: -9.007251;"
+          />      
+
+          <a-box color="crimson" //house 4
+          look-at="[gps-new-camera]"
+          scale="1 1 1"
+          gps-new-entity-place="latitude: 38.998731; longitude: -9.007122;"
+          />      
+
+          <a-box color="crimson" //house 5
+          look-at="[gps-new-camera]"
+          scale="1 1 1"
+          gps-new-entity-place="latitude: 38.998735; longitude: -9.006805;"
+          />  
+          
+          <a-box color="crimson" //house 6
+          look-at="[gps-new-camera]"
+          scale="1 1 1"
+          gps-new-entity-place="latitude: 38.999343; longitude: -9.007251;"
+          />                
         </a-scene> 
       </div >
     </div>
