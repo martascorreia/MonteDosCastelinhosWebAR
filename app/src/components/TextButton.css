@@ -9,10 +9,11 @@
 #textBtn {
   border: none;
   color: #121212;
-  padding: 15px;
+  padding: 1.5vh;
   font-size: 22px;
   border-radius: 35px;
   width: 80%;
+  height: 10%;
   background-color: #E2E2E2;
   font-family: "Lexend Deca";
 }
