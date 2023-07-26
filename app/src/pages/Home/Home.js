@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../resources/logo.PNG';
+import logo from '../../resources/images/logo.png';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import TextButton from "../../components/TextButton.js"
 import { Link } from 'react-router-dom';
