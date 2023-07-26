@@ -6,7 +6,6 @@ import Home from "./pages/Home/Home"
 import RealidadeVirtual from "./pages/RealidadeVirtual/RealidadeVirtual"
 import RealidadeAumentada41 from "./pages/RealidadeAumentada41/RealidadeAumentada41"
 import RAGPS from "./pages/RAGPS/RAGPS"
-import RAHitTests from "./pages/RAHitTests/RAHitTests"
 import RealidadeAumentada43 from './pages/RealidadeAumentada43/RealidadeAumentada43';
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
           <Route path='/ra41' element={<RealidadeAumentada41 />} />
           <Route path='/ra43' element={<RealidadeAumentada43 />} />
           <Route path='/ragps' element={<RAGPS />} />
-          <Route path='/raht' element={<RAHitTests />} />
         </Routes>
       </BrowserRouter>
     </div >

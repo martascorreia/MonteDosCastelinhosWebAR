@@ -3,14 +3,14 @@ import { useState } from "react";
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./RealidadeAumentada41.css"
-import sondagem4Img from '../../resources/sondagem4.1.png';
-import sondagem4Model from '../../resources/sondagem4.1.smaller.glb';
+import sondagem4Img from '../../resources/images/sondagem4.1.png';
+import sondagem4Model from '../../resources/models/sondagem4.smaller.glb';
 import packageJson from "../../../package.json";
 
 function RealidadeAumentada() {
   const [modelAligned, setModelAligned] = useState(false);
 
-  function componentWillUnmount() {
+  /*function componentWillUnmount() {
     let version = localStorage.getItem('version');
     if (version != packageJson.version) {
       if ('caches' in window) {
@@ -28,19 +28,20 @@ function RealidadeAumentada() {
       localStorage.clear();
       localStorage.setItem('version', packageJson.version);
     }
-  };
+  };*/
+
+
+  //colorManagement: true;
 
   return (
     <div className="RealidadeAumentada">
       <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
       <div className="content">
-        <a-scene renderer="logarithmicDepthBuffer: true;" vr-mode-ui='enabled: false'>
+        <a-scene renderer="antialias: true; logarithmicDepthBuffer: true; sortObjects: true;" vr-mode-ui='enabled: false'>
           <a-assets>
             <a-asset-item id="sondagem4" src={sondagem4Model} />
           </a-assets>
-          <a-camera rotation-reader>
-            <a-entity id="marker" position="0 0 -5" />
-          </a-camera>
+          <a-camera rotation-reader look-controls="touchEnalbed: false; mouseEnabled: false;"/>
           {!modelAligned &&
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
@@ -51,13 +52,18 @@ function RealidadeAumentada() {
           {modelAligned &&
             <a-entity
               gltf-model="#sondagem4"
-              position="0 -350 -790"
-              scale="6 6 6"
+              position="-45 -90 -500"
+              scale="1.3 1.3 1.3"
+              rotation="0 -50 0"
             />}
+          {modelAligned &&
+            <div className="alignElements">
+              <img className="backgroundImage" src={sondagem4Img} />
+            </div>}
+
         </a-scene>
       </div >
     </div>
   );
 }
 export default RealidadeAumentada;
-
