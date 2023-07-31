@@ -13,9 +13,9 @@
 
 #roundBtn {
   display: flex;
-  background-color: #6FAFC9;
+  background-color: var(--main-blue);
   border: none;
-  color: white;
+  color: var(--white);
   padding: 15px;
   font-size: 20px;
   border-radius: 50%;

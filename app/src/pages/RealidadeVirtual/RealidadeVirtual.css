@@ -1,5 +1,5 @@
 .RealidadeVirtual {
-  background-color: white;
+  background-color: var(--white);
   height: 100%;
   width: 100%;
   justify-content: center;

@@ -25,9 +25,9 @@
     position: absolute;
     bottom: 10px;
     display: flex;
-    background-color: #12121298;
+    background-color: var(--darker-grey);
     border: none;
-    color: white;
+    color: var(--white);
     padding: 15px;
     font-size: 20px;
     border-radius: 10%;
