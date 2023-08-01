@@ -15,7 +15,7 @@ function Mapa() {
   const [map, setMap] = React.useState(null)
 
 
-  const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
+  const center = useMemo(() => ({ lat: 39.012693, lng: -8.974526 }), []);
 
   return (
     <div className="Mapa" id="mapa">
@@ -27,8 +27,8 @@ function Mapa() {
           <GoogleMap
             mapContainerClassName="map-container"
             center={center}
-            zoom={16} >
-            <Marker position={{ lat: 18.52043, lng: 73.856743 }} />
+            zoom={20} >
+            <Marker position={{ lat: 39.012693, lng: -8.974526 }} />
           </GoogleMap>
         )}
       </div >

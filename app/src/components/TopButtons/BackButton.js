@@ -7,7 +7,7 @@ import "../../index.css"
 function BackButton({backUrl}) {
   return (
     <Link to={backUrl} className="nav-link">
-      <button className="backBtn" id="roundBtn">
+      <button className="backBtn roundBtn">
         <FontAwesomeIcon icon={faArrowLeft}/>
       </button>      
     </Link>

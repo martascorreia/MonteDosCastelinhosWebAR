@@ -15,7 +15,12 @@
     z-index: 2; 
 }
 
-.title{
+.sondagemImage{
+    width: 100vw;
+    position: absolute;
+}
+
+.sondagemTitle{
     padding: 1.5vh;
     font-size: 22px;
     border-radius: 35px;
@@ -26,6 +31,7 @@
     align-items: center;
     display: flex;
     margin-bottom: 5%;
+    z-index: 3;
 }
 
 .tabs{
@@ -35,7 +41,6 @@
     width: 100%;
     top: 20vh;
     position: absolute;       
-    box-shadow: 0 5px 20px 0 var(--dark-grey);
     z-index: 1; 
 }
 
@@ -46,11 +51,13 @@
     justify-content: center;
     align-items: center;
     background-color: var(--white);
+    border-bottom: 1px solid var(--light-grey);
 }
 
 .tabSelected{
     background-color: var(--main-blue);
     color: var(--white);
+    border-bottom: 1px solid var(--main-blue);
 }
 
 .tabContent{
@@ -84,26 +91,22 @@
     flex-direction: column;
     width: 100%;
     gap: 20px;
+    padding: 20px;
 }
 
 .description{
     display: flex;
-    width: 100%;
-    padding-top: 15px;
-    padding-right: 20px;
-    padding-left: 20px;
     text-align: justify;
     word-wrap: break-word;
 }
 
 .experiencesMenu{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    gap: 10px;
-    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: normal;
   }
 
 .infoTitles{
