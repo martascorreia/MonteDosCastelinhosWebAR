@@ -1,14 +1,13 @@
-.topButtons{
+.waspButtons{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;  
   position: absolute;
-  width: 90%;
   z-index: 99;
-  padding: 5%;
-}
-
-.fullScreenBtn{
-  margin-left: auto;
+  padding: 2%;
+  gap: 5px;
+  bottom:0;
+  right: 0;
 }
 
 .roundBtn {
@@ -24,4 +23,17 @@
 
 .svg-inline--fa {
   width: 1em;
+}
+
+.upBtns, .middleBtns, .downBtns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.middleBtns{
+  display: flex;
+  flex-direction: row;
 }

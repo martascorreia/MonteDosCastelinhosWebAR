@@ -4,18 +4,21 @@ import "../../index.css"
 import "./Sondagem4.css"
 import sondagem4Img from '../../resources/images/sondagem4.1.png';
 import Accordion from '../../components/Accordion/Accordion'
-import TextButton from "../../components/TextButton/TextButton.js"
-import { Link } from 'react-router-dom';
+import SquareButton from '../../components/SquareButton/SquareButton';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVrCardboard } from "@fortawesome/free-solid-svg-icons";
+import { AugmentedReality } from 'tabler-icons-react';
 
 function Sondagem4() {
-    const [tabSelected, setTabSelected] = useState(1);
+    const [tabSelected, setTabSelected] = useState(2);
 
     return (
         <div className="Sondagem4" id="sondagem4">
             <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
             <div className="content sondagemContent">
                 <div className='infoTitle'>
-                    <div className='title'>Sondagem 4</div>
+                    <img className='sondagemImage' src={sondagem4Img} />
+                    <div className='sondagemTitle'>Sondagem 4</div>
                 </div>
                 <div className='tabs'>
                     <div className={`tabType ${tabSelected == 1 ? "tabSelected" : ""}`} onClick={() => setTabSelected(1)}>
@@ -64,20 +67,19 @@ function Sondagem4() {
                 }
                 {tabSelected == 2 &&
                     <div className='tabContent'>
-                        <div className='experiences'>
-                            <div className='description'>
-                                Peuqena edescr9ufeiwf sobre RA oeifpwoeijfpwoeijfpwoiejfpoiwnada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas
-                                concentrações:
-                            </div>
+                        <div className='experiences'>                            
                             <div className='experiencesMenu'>
-                                <Link to={'/MonteDosCastelinhosWebAR/ra41'} className="nav-link"><TextButton text="RA - Sondagem 4.1" /></Link>
-                                <Link to={'/MonteDosCastelinhosWebAR/ra43'} className="nav-link"><TextButton text="RA - Sondagem 4.3" /></Link>
-                                <Link to={'/MonteDosCastelinhosWebAR/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>
+                                <SquareButton text="Realidade Aumentada" link="/MonteDosCastelinhosWebAR/ra41" icon={<AugmentedReality size={60} strokeWidth={1.5} />} id="1" />
+                                <SquareButton text="Realidade Virtual" link="/MonteDosCastelinhosWebAR/rv" icon={<FontAwesomeIcon icon={faVrCardboard} />} id="2" />
+                            </div>
+                            <div className='description'>
+                                Esta sondagem tem experiências de Realidade Aumentada e Realidade Virtual que visam auxiliar 
+                                a visualização do que teriam sido estas ruínas.
                             </div>
                         </div>
                     </div>
                 }
-        </div >
+            </div >
         </div >
     );
 }

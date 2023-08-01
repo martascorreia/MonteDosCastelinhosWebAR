@@ -17,8 +17,8 @@ function Home() {
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4'} className="nav-link"><TextButton text="Sondagem 4" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/ra41'} className="nav-link"><TextButton text="RA - Sondagem 4.1" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/ra43'} className="nav-link"><TextButton text="RA - Sondagem 4.3" /></Link>
-          <Link to={'/MonteDosCastelinhosWebAR/ragps'} className="nav-link"><TextButton text="RA GPS" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/mapa'} className="nav-link"><TextButton text="Mapa" /></Link>
         </div>
       </div >
     </div>
