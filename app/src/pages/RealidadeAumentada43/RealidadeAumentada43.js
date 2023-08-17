@@ -3,7 +3,7 @@ import { useState } from "react";
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./RealidadeAumentada43.css"
-import sondagem4Img from '../../resources/images/sondagem4.3.png';
+import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
 import sondagem4Model from '../../resources/models/sondagem4.3.smaller.glb';
 
 function RealidadeAumentada43() {
@@ -17,7 +17,7 @@ function RealidadeAumentada43() {
           <a-assets>
             <a-asset-item id="sondagem4" src={sondagem4Model}/>
           </a-assets>
-          <a-camera rotation-reader /*look-controls="touchEnalbed: false; mouseEnabled: false;"*//>
+          <a-camera rotation-reader /*look-controls="touchEnabled: false; mouseEnabled: false;"*//>
   
           {!modelAligned && 
               <div className="alignElements">
