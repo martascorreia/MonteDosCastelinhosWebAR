@@ -1,0 +1,39 @@
+.waspButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  position: absolute;
+  z-index: 99;
+  padding: 2%;
+  gap: 5px;
+  bottom:0;
+  right: 0;
+}
+
+.roundBtn {
+  display: flex;
+  background-color: var(--main-blue);
+  border: none;
+  color: var(--white);
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 50%;
+  height: 100%;
+}
+
+.svg-inline--fa {
+  width: 1em;
+}
+
+.upBtns, .middleBtns, .downBtns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.middleBtns{
+  display: flex;
+  flex-direction: row;
+}

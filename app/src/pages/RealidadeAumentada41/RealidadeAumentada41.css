@@ -1,0 +1,43 @@
+.RealidadeAumentada {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.alignElements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.alignImage{
+    display: block;
+    align-self: center;
+    opacity: 0.7;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.alignedBtn{
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    background-color: var(--darker-grey);
+    border: none;
+    color: var(--white);
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 10%;
+    z-index: 99;
+    font-family: "Lucida Sans";
+}
+
+.backgroundImage{
+    display: block;
+    align-self: center;
+    max-width: 100%;
+    max-height: 100%;
+}

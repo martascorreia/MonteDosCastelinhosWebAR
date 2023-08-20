@@ -4,10 +4,10 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
 import "../../index.css"
 
-function BackButton({backUrl}) {
+function BackButton({backUrl, cleanUp}) {
   return (
     <Link to={backUrl} className="nav-link">
-      <button className="backBtn" id="roundBtn">
+      <button className="backBtn roundBtn" onClick={cleanUp}>
         <FontAwesomeIcon icon={faArrowLeft}/>
       </button>      
     </Link>

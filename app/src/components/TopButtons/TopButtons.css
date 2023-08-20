@@ -5,18 +5,17 @@
   width: 90%;
   z-index: 99;
   padding: 5%;
-  top: 15px;
 }
 
 .fullScreenBtn{
   margin-left: auto;
 }
 
-#roundBtn {
+.roundBtn {
   display: flex;
-  background-color: #6FAFC9;
+  background-color: var(--main-blue);
   border: none;
-  color: white;
+  color: var(--white);
   padding: 15px;
   font-size: 20px;
   border-radius: 50%;
