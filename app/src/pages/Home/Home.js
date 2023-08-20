@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../../resources/logo2.PNG';
+import logo from '../../resources/images/logo.png';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
-import TextButton from "../../components/TextButton.js"
+import TextButton from "../../components/TextButton/TextButton.js"
 import { Link } from 'react-router-dom';
 import "./Home.css"
 import "../../index.css"
@@ -14,11 +14,10 @@ function Home() {
       <div className="content">
         <img src={logo} className="logo" alt="logo" />
         <div className="menu">
-          <Link to={'/ra'} className="nav-link"><TextButton text="Realidade Aumentada" /></Link>
-          <Link to={'/racut'} className="nav-link"><TextButton text="Realidade Aumentada Cut" /></Link>
-          <Link to={'/ragps'} className="nav-link"><TextButton text="RA GPS" /></Link>
-          <Link to={'/raht'} className="nav-link"><TextButton text="RA Hit Tests" /></Link>
-          <Link to={'/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/sondagem4'} className="nav-link"><TextButton text="Sondagem 4" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/ra41'} className="nav-link"><TextButton text="RA - Sondagem 4.1" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/ra43'} className="nav-link"><TextButton text="RA - Sondagem 4.3" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>
         </div>
       </div >
     </div>

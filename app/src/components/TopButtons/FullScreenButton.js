@@ -21,7 +21,7 @@ const FullScreenButton = (isFullScreen) => {
   }
 
   return (
-    <button className="fullScreenBtn" id="roundBtn">
+    <button className="fullScreenBtn roundBtn">
       <FontAwesomeIcon onClick={changeScreen} icon={screenType} />
     </button>      
   );

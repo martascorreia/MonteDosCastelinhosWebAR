@@ -1,12 +1,23 @@
+:root {
+  --main-blue: #6FAFC9;
+  --white: #ffffff;
+  --very-light-grey: #eeeeee;
+  --light-grey: #E2E2E2;
+  --medium-grey: #bbbbbb;
+  --darker-grey: #121212;
+  --dark-grey: #3A3A3B;
+  --light-brown: #CBB48A;
+  --light-blue: #E1E8ED;
+}
+
 body {
   margin: 0 !important;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif, "Lexend Deca";
+  font-family:"Lexend Deca";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  width: 100%
+  width: 100%;
+  color: var(--darker-grey);
 }
 
 code {
@@ -24,9 +35,8 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
   gap: 50px;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0px auto;
 }
