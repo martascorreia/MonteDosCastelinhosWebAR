@@ -5,8 +5,6 @@ import "./RealidadeAumentada41.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.1.png';
 import sondagem4Model from '../../resources/models/sondagem4.smaller.glb';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { BoxGeometry, MeshBasicMaterial, Mesh, PerspectiveCamera, Object3D, Group } from 'three';
-import { useAFrame } from 'aframe-react';
 
 function RealidadeAumentada() {
   const [modelAligned, setModelAligned] = useState(false);
@@ -14,7 +12,6 @@ function RealidadeAumentada() {
   const [model, setModel] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const entityRef = useRef();
-  //const cameraRef = useRef();
 
   const handleButtonClick = () => {
     setModelAligned(true);
@@ -45,12 +42,7 @@ function RealidadeAumentada() {
   }, [modelAligned]);
 
   const handleCleanup = () => {
-    console.log("UNMOUNT");
-    console.log("refs:");
-    console.log(entityRef);
-    //console.log(cameraRef);
-
-    //MODEL
+    //clean up model
     let entity = entityRef.current;
     if (entity) {
       const object3D = entityRef.current.object3D.children.find(child => child === model);
@@ -72,23 +64,17 @@ function RealidadeAumentada() {
     entity = null;
     entityRef.current = null;
 
-
     // clean up camera
-    /*if (cameraRef.current) {
-      console.log("clean camera");
-      cameraRef.current.pause();
-      cameraRef.current = null;
-    }*/
-
-
-    console.log("refs an the end:");
-    console.log(entityRef);
-
+    const elementType = 'video';
+    const elementsToRemove = document.querySelectorAll(elementType);
+    elementsToRemove.forEach(element => {
+      element.remove();
+    });
   };
 
   return (
     <div className="RealidadeAumentada">
-      <TopButtons cleanUp={handleCleanup} /*backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} */ />
+      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
       <div className="content">
         <a-scene renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
           {/*<a-assets>
