@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons"; //full
 import { faDownLeftAndUpRightToCenter } from "@fortawesome/free-solid-svg-icons"; //normal
 
-const FullScreenButton = (isFullScreen) => {
-  const [screenType, setScreenType] = useState(isFullScreen.isFullScreen ? faDownLeftAndUpRightToCenter : faUpRightAndDownLeftFromCenter);
+const FullScreenButton = ({isFullScreen}) => {
+  const [screenType, setScreenType] = useState(isFullScreen ? faDownLeftAndUpRightToCenter : faUpRightAndDownLeftFromCenter);
 
   function changeScreen() {
     //normal -> full
