@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
-import "./RealidadeVirtual.css"
+import "./VirtualReality.css"
 import sondagem4Model from '../../resources/models/sondagem4.smaller.glb';
 import WASPButtons from '../../components/WASPButtons/WASPButtons.js';
 import { setOrientation } from '../../utils.js';
 
-function RealidadeVirtual() {
+function VirtualReality() {
   setOrientation("landscape");
 
   return (
-    <div className="RealidadeVirtual">
+    <div className="VirtualReality">
       <TopButtons backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
       <WASPButtons />
       <div className="content">
@@ -22,4 +22,4 @@ function RealidadeVirtual() {
     </div>
   );
 }
-export default RealidadeVirtual;
+export default VirtualReality;

@@ -2,15 +2,15 @@ import React from 'react';
 import { useState } from "react";
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
-import "./RealidadeAumentada43.css"
+import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
 import sondagem4Model from '../../resources/models/sondagem4.3.smaller.glb';
 
-function RealidadeAumentada43() {
+function AugmentedReality43() {
   const [modelAligned, setModelAligned] = useState(false);
  
   return (
-    <div className="RealidadeAumentada">
+    <div className="AugmentedReality">
       <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
       <div className="content">
       <a-scene renderer="antialias: true; logarithmicDepthBuffer: true; sortObjects: true;" vr-mode-ui='enabled: false'>
@@ -42,4 +42,4 @@ function RealidadeAumentada43() {
     </div>
   );
 }
-export default RealidadeAumentada43;
+export default AugmentedReality43;
