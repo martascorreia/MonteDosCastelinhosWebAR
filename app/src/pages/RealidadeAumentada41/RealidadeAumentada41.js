@@ -18,86 +18,91 @@ function RealidadeAumentada() {
   };
 
   useEffect(() => {
-    if (!modelAligned || modelLoaded) return;
-
-    setIsLoading(true);
-    const loader = new GLTFLoader();
-
-    // load the custom 3D model
-    loader.load(process.env.PUBLIC_URL + "/models/sondagem4.smaller.glb", (glb) => {
-      const model = glb.scene;
-      setModel(model);
-
-      if (entityRef.current) {
-        entityRef.current.object3D.add(model);
-        entityRef.current.setAttribute('position', '-45 -90 -500');
-        entityRef.current.setAttribute('scale', '1.3 1.3 1.3');
-        entityRef.current.setAttribute('rotation', '0 -50 0');
-
-        setIsLoading(false);
-        setModelLoaded(true);
-      }
-    });
-
+    if (modelAligned && model == null) {
+      setIsLoading(true);
+      loadModel();
+    }
   }, [modelAligned]);
 
-  const handleCleanup = () => {
-    //clean up model
-    let entity = entityRef.current;
-    if (entity) {
-      const object3D = entityRef.current.object3D.children.find(child => child === model);
-      if (object3D) {
-        // dispose geometry and materials
-        object3D.traverse((node) => {
-          if (node.isMesh) {
-            node.geometry.dispose();
-            node.material.dispose();
-          }
-        });
+  // Load model
+  const loadModel = () => {
+    // Load the custom 3D model
+    const loader = new GLTFLoader();
+    loader.load(process.env.PUBLIC_URL + "/models/sondagem4.smaller.glb", (glb) => {
+      const newModel = glb.scene;
+      setModel(newModel);
 
-        // remove the model from the entity
-        entity.object3D.remove(object3D);
-        setModel(null);
+      if (entityRef.current) {
+        entityRef.current.object3D.add(newModel);
+        entityRef.current.object3D.position.set(-45, -90, -500);
+        entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
+        entityRef.current.setAttribute('rotation', '0 -50 0');
+        setIsLoading(false);
       }
-    }
-    // clear references
-    entity = null;
-    entityRef.current = null;
+    });
+  };
 
-    // clean up camera
-    const elementType = 'video';
-    const elementsToRemove = document.querySelectorAll(elementType);
+  // Cleanup resources
+  const handleCleanup = () => {
+    cleanupModel();
+    cleanupCamera();
+    entityRef.current = null;
+  };
+
+  const cleanupModel = () => {
+    console.log("CLEAN UP")
+    console.log(model)
+
+    if (model) {
+      model.traverse((node) => {
+        console.log(node);
+        if (node.isMesh) {
+          node.geometry.dispose();
+          node.material.dispose();
+        }
+      });
+
+      if (entityRef.current) {
+        entityRef.current.object3D.remove(model);
+      }
+
+      setModel(null);
+    }
+  };
+
+  const cleanupCamera = () => {
+    const elementsToRemove = document.querySelectorAll("video");
     elementsToRemove.forEach(element => {
+      if (!element.paused) {
+        element.pause();
+      }
       element.remove();
     });
   };
 
   return (
     <div className="RealidadeAumentada">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
+      <TopButtons cleanUp={cleanupModel} backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
       <div className="content">
-        <a-scene renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
-          {/*<a-assets>
-            <a-asset-item id="sondagem4" src={sondagem4Model} />
-          </a-assets>*/}
-          <a-camera rotation-reader look-controls="touchEnabled: false; mouseEnabled: false;" />
-          {!modelAligned &&
-            <div className="alignElements">
-              <img className="alignImage" src={sondagem4Img} />
-              <button className="alignedBtn" onClick={handleButtonClick}>
-                Alinhado
-              </button>
-            </div>}
-          {modelAligned &&
+        {modelAligned &&
+          <a-scene embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
+            <a-camera rotation-reader look-controls="touchEnabled: false; mouseEnabled: false;" />
             <a-entity
               ref={entityRef}
-            />}
-          {modelAligned &&
+              geometry-merger
+              material="shader: flat" />
             <div className="alignElements">
               <img className="backgroundImage" src={sondagem4Img} />
-            </div>}
-          {/*isLoading && <div>Loading model...</div>*/}
-        </a-scene>
+            </div>
+          </a-scene>
+        }
+        {!modelAligned &&
+          <div className="alignElements">
+            <img className="alignImage" src={sondagem4Img} />
+            <button className="alignedBtn" onClick={handleButtonClick}>
+              Alinhado
+            </button>
+          </div>}
       </div >
     </div>
   );

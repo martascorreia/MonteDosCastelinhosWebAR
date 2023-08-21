@@ -17,6 +17,7 @@
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "aframe": "github:aframevr/aframe#480a303b3c1932170552a3e4f9287298c1039c27",
+    "aframe-geometry-merger-component": "^2.0.1",
     "aframe-react": "^4.4.0",
     "expo-screen-orientation": "^6.0.5",
     "react": "^18.2.0",
