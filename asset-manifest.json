@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/MonteDosCastelinhosWebAR/static/css/main.ba60959b.css",
-    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.8bf0ea08.js",
+    "main.css": "/MonteDosCastelinhosWebAR/static/css/main.14b837b2.css",
+    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.a55ec212.js",
     "static/js/496.e96609a5.chunk.js": "/MonteDosCastelinhosWebAR/static/js/496.e96609a5.chunk.js",
     "static/media/sondagem4.smaller.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.smaller.25e6dca9a50d6422cabb.glb",
-    "static/media/sondagem4.3.smaller.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.3.smaller.a774b3d4a55341a92a5a.glb",
     "static/media/sondagem4.3.png": "/MonteDosCastelinhosWebAR/static/media/sondagem4.3.f1e9ea2c807ffc4842bd.png",
     "static/media/sondagem4.1.png": "/MonteDosCastelinhosWebAR/static/media/sondagem4.1.b3c07405547eba4573fa.png",
     "static/media/logo.png": "/MonteDosCastelinhosWebAR/static/media/logo.79954f60ef0545578059.png",
@@ -13,12 +12,12 @@
     "static/media/lexend-deca-latin-ext-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-latin-ext-400-normal.671c8b05e9f8680aa8f2.woff2",
     "static/media/lexend-deca-vietnamese-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-vietnamese-400-normal.7aec3fedb83e5c27bb72.woff2",
     "index.html": "/MonteDosCastelinhosWebAR/index.html",
-    "main.ba60959b.css.map": "/MonteDosCastelinhosWebAR/static/css/main.ba60959b.css.map",
-    "main.8bf0ea08.js.map": "/MonteDosCastelinhosWebAR/static/js/main.8bf0ea08.js.map",
+    "main.14b837b2.css.map": "/MonteDosCastelinhosWebAR/static/css/main.14b837b2.css.map",
+    "main.a55ec212.js.map": "/MonteDosCastelinhosWebAR/static/js/main.a55ec212.js.map",
     "496.e96609a5.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/496.e96609a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba60959b.css",
-    "static/js/main.8bf0ea08.js"
+    "static/css/main.14b837b2.css",
+    "static/js/main.a55ec212.js"
   ]
 }
