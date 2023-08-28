@@ -6,10 +6,7 @@ import Home from "./pages/Home/Home"
 import VirtualReality from "./pages/VirtualReality/VirtuaReality"
 import AugmentedReality41 from "./pages/AugmentedReality/AugmentedReality41"
 import AugmentedReality43 from "./pages/AugmentedReality/AugmentedReality43"
-import sondagem41Img from './resources/images/alignmentImages/sondagem4.1.png';
-
 import Sondagem4 from './pages/Sondagem4/Sondagem4';
-import Mapa from './pages/Mapa/Mapa';
 
 function App() {
   return (
@@ -18,7 +15,6 @@ function App() {
         <Routes>
           <Route path='/*' element={<Home />} />
           <Route path='/MonteDosCastelinhosWebAR' element={<Home />} />
-          <Route path='/MonteDosCastelinhosWebAR/mapa' element={<Mapa />} />
           <Route path='/MonteDosCastelinhosWebAR/rv' element={<VirtualReality />} />
           <Route path='/MonteDosCastelinhosWebAR/ra41' element={<AugmentedReality41 />} />
           <Route path='/MonteDosCastelinhosWebAR/ra43' element={<AugmentedReality43 />} />

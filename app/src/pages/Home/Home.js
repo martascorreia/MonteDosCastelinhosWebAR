@@ -6,15 +6,17 @@ import { Link } from 'react-router-dom';
 import "./Home.css"
 import "../../index.css"
 import "@fontsource/lexend-deca";
+import { setOrientation } from '../../utils.js';
 
 function Home() {
+  setOrientation("portrait");
   return (
     <div className="Home" id="home">
       <TopButtons isHome={true} />
       <div className="content">
         <img src={logo} className="logo" alt="logo" />
         <div className="menu">
-          <Link to={'/MonteDosCastelinhosWebAR/sondagem4'} className="nav-link"><TextButton text="Sondagem 4" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/sondagem4'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/sondagem4" text="Sondagem 4" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/ra41'} className="nav-link"><TextButton text="RA - Sondagem 4.1" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/ra43'} className="nav-link"><TextButton text="RA - Sondagem 4.3" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>
