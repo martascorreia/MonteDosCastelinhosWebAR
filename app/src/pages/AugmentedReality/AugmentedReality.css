@@ -5,7 +5,12 @@
     width: 100%;
 }
 
+.scene{
+    position: absolute !important;
+}
+
 .alignElements{
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +28,7 @@
 
 .alignedBtn{
     position: absolute;
-    bottom: 10px;
-    display: flex;
+    bottom: 50px;
     background-color: var(--darker-grey);
     border: none;
     color: var(--white);
@@ -33,11 +37,4 @@
     border-radius: 10%;
     z-index: 99;
     font-family: "Lucida Sans";
-}
-
-.backgroundImage{
-    display: block;
-    align-self: center;
-    max-width: 100%;
-    max-height: 100%;
 }

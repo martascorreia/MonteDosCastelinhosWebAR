@@ -1,43 +1,87 @@
-import React from 'react';
-import { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
-import sondagem4Model from '../../resources/models/sondagem4.3.smaller.glb';
+import { setOrientation } from '../../utils.js';
+import { loadModel } from '../../utils.js';
 
 function AugmentedReality43() {
+  setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
- 
+  const [modelLoaded, setModelLoaded] = useState(false);
+  const [model, setModel] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const entityRef = useRef();
+
+  const handleButtonClick = () => {
+    setModelAligned(true);
+  };
+
+  useEffect(() => {
+    if (modelAligned && model == null) {
+      setIsLoading(true);
+      load3DModel();
+    }
+  }, [modelAligned]);
+
+  // Load model
+  const load3DModel = () => {
+    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.3.smaller.glb', false)
+      .then((loadedModel) => {
+        if (entityRef.current) {
+          entityRef.current.object3D.add(loadedModel);
+          entityRef.current.object3D.position.set(90, -460, 220);
+          entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
+          entityRef.current.setAttribute('rotation', '25 35 18');
+          setIsLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error('Error loading model:', error);
+      });
+  };
+
+  // Cleanup resources
+  const handleCleanup = () => {
+    cleanCamera();
+    entityRef.current = null;
+  };
+
+  const cleanCamera = () => {
+    const elementsToRemove = document.querySelectorAll("video");
+    elementsToRemove.forEach(element => {
+      if (!element.paused) {
+        element.pause();
+      }
+      element.remove();
+    });
+  };
+
   return (
     <div className="AugmentedReality">
-      <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
+      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
       <div className="content">
-      <a-scene renderer="antialias: true; logarithmicDepthBuffer: true; sortObjects: true;" vr-mode-ui='enabled: false'>
-          <a-assets>
-            <a-asset-item id="sondagem4" src={sondagem4Model}/>
-          </a-assets>
-          <a-camera rotation-reader /*look-controls="touchEnabled: false; mouseEnabled: false;"*//>
-  
-          {!modelAligned && 
-              <div className="alignElements">
-                <img className="alignImage" src={sondagem4Img}/>
-                <button className="alignedBtn" onClick={() => setModelAligned(true)}>
-                  Alinhado
-                </button>  
-              </div>}
-            {modelAligned && 
-              <a-entity 
-                gltf-model="#sondagem4"
-                position="90 -460 220"
-                scale="1.3 1.3 1.3"
-                rotation="25 35 18"
-              />}
-             {modelAligned &&
+        <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
+          <a-camera rotation-reader look-controls="touchEnabled: false; mouseEnabled: false;" />
+          {modelAligned &&
+            <a-entity
+              className="model"
+              ref={entityRef}
+              geometry-merger
+              material="shader: flat" />}
+          {modelAligned &&
             <div className="alignElements">
-              <img className="backgroundImage" src={sondagem4Img} />
+              <img className="alignImage" src={sondagem4Img} />
             </div>}
-        </a-scene> 
+        </a-scene>
+        {!modelAligned &&
+          <div className="alignElements">
+            <img className="alignImage" src={sondagem4Img} />
+            <button className="alignedBtn" onClick={handleButtonClick}>
+              Alinhado
+            </button>
+          </div>}
       </div >
     </div>
   );
