@@ -8,8 +8,10 @@ import SquareButton from '../../components/SquareButton/SquareButton';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVrCardboard } from "@fortawesome/free-solid-svg-icons";
 import { AugmentedReality } from 'tabler-icons-react';
+import { setOrientation } from '../../utils.js';
 
 function Sondagem4() {
+    setOrientation("portrait");
     const [tabSelected, setTabSelected] = useState(2);
 
     return (
