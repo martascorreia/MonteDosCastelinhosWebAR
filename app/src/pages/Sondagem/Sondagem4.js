@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons"
 import "../../index.css"
 import "./Sondagem4.css"
+import "./Sondagem.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.1.png';
 import Accordion from '../../components/Accordion/Accordion'
 import SquareButton from '../../components/SquareButton/SquareButton';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVrCardboard } from "@fortawesome/free-solid-svg-icons";
 import { AugmentedReality } from 'tabler-icons-react';
-import { setOrientation } from '../../utils.js';
+import { setOrientation } from '../../utils/utils.js';
 
 function Sondagem4() {
     setOrientation("portrait");

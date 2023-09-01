@@ -83,4 +83,4 @@ function Sondagem4AR() {
         </div >
     );
 }
-export default Sondagem4;
+export default Sondagem4AR;
