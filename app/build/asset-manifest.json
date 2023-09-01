@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/MonteDosCastelinhosWebAR/static/css/main.5f3e2475.css",
-    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.9e3820b7.js",
+    "main.css": "/MonteDosCastelinhosWebAR/static/css/main.a4c47d6d.css",
+    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.d2f74cef.js",
     "static/js/496.e96609a5.chunk.js": "/MonteDosCastelinhosWebAR/static/js/496.e96609a5.chunk.js",
-    "static/media/sondagem4.smaller.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.smaller.25e6dca9a50d6422cabb.glb",
-    "static/media/sondagem4.3.smaller.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.3.smaller.a774b3d4a55341a92a5a.glb",
     "static/media/sondagem4.3.png": "/MonteDosCastelinhosWebAR/static/media/sondagem4.3.f1e9ea2c807ffc4842bd.png",
+    "static/media/image.png": "/MonteDosCastelinhosWebAR/static/media/image.2da953389caf704d09eb.png",
     "static/media/sondagem4.1.png": "/MonteDosCastelinhosWebAR/static/media/sondagem4.1.b3c07405547eba4573fa.png",
     "static/media/logo.png": "/MonteDosCastelinhosWebAR/static/media/logo.79954f60ef0545578059.png",
     "static/media/lexend-deca-all-400-normal.woff": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-all-400-normal.144b2a63e56dcddd9ca7.woff",
@@ -13,12 +12,12 @@
     "static/media/lexend-deca-latin-ext-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-latin-ext-400-normal.671c8b05e9f8680aa8f2.woff2",
     "static/media/lexend-deca-vietnamese-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-vietnamese-400-normal.7aec3fedb83e5c27bb72.woff2",
     "index.html": "/MonteDosCastelinhosWebAR/index.html",
-    "main.5f3e2475.css.map": "/MonteDosCastelinhosWebAR/static/css/main.5f3e2475.css.map",
-    "main.9e3820b7.js.map": "/MonteDosCastelinhosWebAR/static/js/main.9e3820b7.js.map",
+    "main.a4c47d6d.css.map": "/MonteDosCastelinhosWebAR/static/css/main.a4c47d6d.css.map",
+    "main.d2f74cef.js.map": "/MonteDosCastelinhosWebAR/static/js/main.d2f74cef.js.map",
     "496.e96609a5.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/496.e96609a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f3e2475.css",
-    "static/js/main.9e3820b7.js"
+    "static/css/main.a4c47d6d.css",
+    "static/js/main.d2f74cef.js"
   ]
 }
