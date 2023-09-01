@@ -4,8 +4,7 @@ import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
 import sondagem43 from '../../resources/images/sondagem4.3.png';
-import { setOrientation } from '../../utils.js';
-import { loadModel, cleanCamera } from '../../utils.js';
+import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 import { isBrowser, isMobile } from 'react-device-detect';
 
 function AugmentedReality43() {

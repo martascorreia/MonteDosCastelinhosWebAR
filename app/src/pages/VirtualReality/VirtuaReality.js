@@ -3,8 +3,8 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./VirtualReality.css"
 import WASPButtons from '../../components/WASPButtons/WASPButtons.js';
-import { setOrientation } from '../../utils.js';
-import { loadModel } from '../../utils.js';
+import { setOrientation } from '../../utils/utils.js';
+import { loadModel } from '../../utils/utils.js';
 
 function VirtualReality() {
   setOrientation("landscape");

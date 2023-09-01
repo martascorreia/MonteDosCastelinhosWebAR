@@ -3,8 +3,7 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.1.png';
-import { setOrientation } from '../../utils.js';
-import { loadModel, cleanCamera } from '../../utils.js';
+import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 import { isBrowser, isMobile } from 'react-device-detect';
 
 function AugmentedReality41() {

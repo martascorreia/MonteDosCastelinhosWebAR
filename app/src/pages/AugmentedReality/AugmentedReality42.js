@@ -3,13 +3,12 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.2.png';
-import { setOrientation } from '../../utils.js';
-import { loadModel, cleanCamera } from '../../utils.js';
+import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 import { isBrowser, isMobile } from 'react-device-detect';
 
 function AugmentedReality42() {
   setOrientation("landscape");
-  const [modelAligned, setModelAligned] = useState(true);
+  const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const entityRef = useRef();
@@ -60,9 +59,6 @@ function AugmentedReality42() {
               className="model"
               ref={entityRef}
               geometry-merger
-              position="680 -490 -300"
-              rotation="2 70 10"
-              scale="2 2 2"
               material="shader: flat" />}
           {isBrowser && modelAligned &&
             <div className="alignElements">
