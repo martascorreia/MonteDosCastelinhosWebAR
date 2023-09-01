@@ -2,14 +2,14 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./AugmentedReality.css"
-import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.1.png';
+import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.2.png';
 import { setOrientation } from '../../utils.js';
 import { loadModel, cleanCamera } from '../../utils.js';
 import { isBrowser, isMobile } from 'react-device-detect';
 
-function AugmentedReality41() {
+function AugmentedReality42() {
   setOrientation("landscape");
-  const [modelAligned, setModelAligned] = useState(false);
+  const [modelAligned, setModelAligned] = useState(true);
   const [model, setModel] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const entityRef = useRef();
@@ -31,9 +31,9 @@ function AugmentedReality41() {
       .then((loadedModel) => {
         if (entityRef.current) {
           entityRef.current.object3D.add(loadedModel);
-          entityRef.current.object3D.position.set(-480, -300, -500);
-          entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
-          entityRef.current.setAttribute('rotation', '0 -50 0');
+          entityRef.current.object3D.position.set(680, -490, -300);
+          entityRef.current.object3D.scale.set(2, 2, 2);
+          entityRef.current.setAttribute('rotation', '2 70 10');
           setIsLoading(false);
           setModel(loadedModel);
         }
@@ -42,7 +42,7 @@ function AugmentedReality41() {
         console.error('Error loading model:', error);
       });
   };
-
+  
   // Cleanup resources
   const handleCleanup = () => {
     cleanCamera();
@@ -54,12 +54,15 @@ function AugmentedReality41() {
       <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
       <div className="content">
         <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
-          {isMobile && <a-camera rotation-reader look-controls="touchEnabled: false; mouseEnabled: false;" />}
+          {isMobile && <a-camera rotation-reader look-controls="touchEnabled: true; mouseEnabled: true;" />}
           {modelAligned &&
             <a-entity
               className="model"
               ref={entityRef}
               geometry-merger
+              position="680 -490 -300"
+              rotation="2 70 10"
+              scale="2 2 2"
               material="shader: flat" />}
           {isBrowser && modelAligned &&
             <div className="alignElements">
@@ -77,4 +80,4 @@ function AugmentedReality41() {
     </div>
   );
 }
-export default AugmentedReality41;
+export default AugmentedReality42;

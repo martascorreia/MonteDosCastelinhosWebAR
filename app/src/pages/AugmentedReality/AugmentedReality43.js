@@ -3,13 +3,14 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
+import sondagem43 from '../../resources/images/sondagem4.3.png';
 import { setOrientation } from '../../utils.js';
-import { loadModel } from '../../utils.js';
+import { loadModel, cleanCamera } from '../../utils.js';
+import { isBrowser, isMobile } from 'react-device-detect';
 
 function AugmentedReality43() {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
-  const [modelLoaded, setModelLoaded] = useState(false);
   const [model, setModel] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const entityRef = useRef();
@@ -19,7 +20,7 @@ function AugmentedReality43() {
   };
 
   useEffect(() => {
-    if (modelAligned && model == null) {
+    if (modelAligned && model == null && isBrowser) {
       setIsLoading(true);
       load3DModel();
     }
@@ -48,32 +49,29 @@ function AugmentedReality43() {
     entityRef.current = null;
   };
 
-  const cleanCamera = () => {
-    const elementsToRemove = document.querySelectorAll("video");
-    elementsToRemove.forEach(element => {
-      if (!element.paused) {
-        element.pause();
-      }
-      element.remove();
-    });
-  };
-
   return (
     <div className="AugmentedReality">
       <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
       <div className="content">
         <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
-          <a-camera rotation-reader look-controls="touchEnabled: false; mouseEnabled: false;" />
-          {modelAligned &&
+          {isMobile && <a-camera rotation-reader look-controls="touchEnabled: false; mouseEnabled: false;" />}
+          {isBrowser && modelAligned &&
+            <div className="alignElements">
+              <img className="alignImage" src={sondagem4Img} />
+            </div>}
+          {isBrowser && modelAligned &&
             <a-entity
               className="model"
               ref={entityRef}
               geometry-merger
               material="shader: flat" />}
-          {modelAligned &&
-            <div className="alignElements">
-              <img className="alignImage" src={sondagem4Img} />
-            </div>}
+          {isMobile && modelAligned &&
+            <a-image
+              src={sondagem43}
+              position="0 1 -7.7"
+              scale="21 5.5 0"
+              material="transparent: true; blending: normal"
+            ></a-image>}
         </a-scene>
         {!modelAligned &&
           <div className="alignElements">

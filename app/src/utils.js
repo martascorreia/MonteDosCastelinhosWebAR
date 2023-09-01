@@ -55,8 +55,42 @@ export const cleanModel = (model) => {
         model.traverse((node) => {
             if (node.isMesh) {
                 node.geometry.dispose();
-                node.material.dispose();
+                if (Array.isArray(node.material)) {
+                    node.material.forEach(material => {
+                        disposeMaterial(material);
+                    });
+                } else {
+                    disposeMaterial(node.material);
+                }
             }
         });
+        console.log(model)
+    }
+
+    // Manually trigger garbage collection
+    if (typeof window.gc === 'function') {
+        window.gc();
     }
 };
+
+function disposeMaterial(material) {
+    if (material.map) {
+        material.map.dispose();
+    }
+    
+    if (material.alphaMap) {
+        material.alphaMap.dispose();
+    }
+    
+    material.dispose();
+}
+
+export const cleanCamera = () => {
+    const elementsToRemove = document.querySelectorAll("video");
+    elementsToRemove.forEach(element => {
+      if (!element.paused) {
+        element.pause();
+      }
+      element.remove();
+    });
+  };

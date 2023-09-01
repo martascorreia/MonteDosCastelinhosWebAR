@@ -18,6 +18,7 @@ function Home() {
         <div className="menu">
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/sondagem4" text="Sondagem 4" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/ra41'} className="nav-link"><TextButton text="RA - Sondagem 4.1" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/ra42'} className="nav-link"><TextButton text="RA - Sondagem 4.2" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/ra43'} className="nav-link"><TextButton text="RA - Sondagem 4.3" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>
         </div>
