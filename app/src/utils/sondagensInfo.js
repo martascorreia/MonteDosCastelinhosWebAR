@@ -3,10 +3,25 @@ import Sondagem from './../pages/Sondagem/Sondagem';
 export const getSondagemInfo = (sondagemID) => {
     if (sondagemID == 4) {
         return (
-            <Sondagem title="Sondagem 4"
-                tabs={['Informação', 'Experiências']}
+            <Sondagem
+                sondagemID={4}
+                title="Sondagem 4"
+                tabs={[
+                    {
+                        title: "Informação",
+                        icon: ""
+                    },
+                    {
+                        title: "Realidade Aumentada",
+                        icon: `<AugmentedReality size={60}
+                        strokeWidth={1.5} />`
+                    },
+                    {
+                        title: "Realidade Virtual",
+                        icon: ""
+                    }]}
                 VRurl="/MonteDosCastelinhosWebAR/sondagem4/rv"
-                ARurl="/MonteDosCastelinhosWebAR/sondagem4/ra41" //TODO switch to sondagem 4
+                ARurl="/MonteDosCastelinhosWebAR/sondagem4/ra" //TODO switch to sondagem 4
                 accordions={
                     [{
                         isOpen: true,
@@ -42,11 +57,11 @@ export const getSondagemInfo = (sondagemID) => {
                         title: 'Objectos encontrados',
                         content: "Elargada ao longo das campanhas subsequentes, para uma"
                     }
-                ]}
+                    ]}
             />)
     }
 
     if (sondagemID == 5) {
-        <Sondagem title="Sondagem 5" />
+        return (<Sondagem sondagemID={5} title="Sondagem 5" />)
     }
 }

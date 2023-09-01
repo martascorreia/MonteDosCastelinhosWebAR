@@ -17,7 +17,6 @@ function Home() {
         <img src={logo} className="logo" alt="logo" />
         <div className="menu">
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/sondagem4" text="Sondagem 4" /></Link>
-          <Link to={'/MonteDosCastelinhosWebAR/sondagem5'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/sondagem5" text="Sondagem 5" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra41'} className="nav-link"><TextButton text="RA - Sondagem 4.1" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra42'} className="nav-link"><TextButton text="RA - Sondagem 4.2" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra43'} className="nav-link"><TextButton text="RA - Sondagem 4.3" /></Link>
