@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./VirtualReality.css"
 import WASPButtons from '../../components/WASPButtons/WASPButtons.js';
-import { setOrientation } from '../../utils/utils.js';
-import { loadModel } from '../../utils/utils.js';
+import { setOrientation, loadModel } from '../../utils/utils.js';
 
 function VirtualReality() {
   setOrientation("landscape");

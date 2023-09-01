@@ -6,7 +6,7 @@ import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.2.png
 import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 import { isBrowser, isMobile } from 'react-device-detect';
 
-function AugmentedReality42() {
+function Sondagem42() {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
@@ -76,4 +76,4 @@ function AugmentedReality42() {
     </div>
   );
 }
-export default AugmentedReality42;
+export default Sondagem42;
