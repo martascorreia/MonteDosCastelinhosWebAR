@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
 import { faVrCardboard, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
-function Sondagem({ sondagemID, title, headerImage, tabs, accordions }) {
+function Sondagem({ sondagemID, title, headerImage, tabs, info, ra }) {
     setOrientation("portrait");
     const [tabSelected, setTabSelected] = useState(1);
 
@@ -49,16 +49,16 @@ function Sondagem({ sondagemID, title, headerImage, tabs, accordions }) {
                 {tabSelected == 1 && (
                     tabs ?
                         <div className='tabContent'>
-                            <InfoTab accordions={accordions} />
+                            <InfoTab accordions={info} />
                         </div>
                         :
                         <div className='noTabsContent'>
-                            <InfoTab accordions={accordions} />
+                            <InfoTab accordions={info} />
                         </div>)
                 }
                 {tabs && tabSelected == 2 &&
                     <div className='tabContent'>
-                        <RATab sondagemID={sondagemID} />
+                        <RATab sondagemID={sondagemID} info={ra[0]} />
                     </div>
                 }
                 {tabs && tabSelected == 3 &&
