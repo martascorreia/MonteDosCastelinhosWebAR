@@ -20,7 +20,7 @@ export const getSondagem = (sondagemID) => {
                         id: "vr",
                         title: "RV",
                     }]}
-                accordions={
+                info={
                     [{
                         id: 1,
                         isOpen: true,
@@ -56,25 +56,16 @@ export const getSondagem = (sondagemID) => {
                         isOpen: false,
                         title: 'Objectos encontrados',
                         content: "Elargada ao longo das campanhas subsequentes, para uma"
-                    }
-                    ]}
+                    }]}
+                ra={[{
+                    firstDescription: `&nbspEsta experiência de <b>Realidade Aumentada</b> permite visualizar, sobre as ruínas, uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
+                    secondDescription: `&nbsp;Desloque-se até um dos 3 pontos de visualização, carregue no botão correspondente no mapa acima, aponte a câmara de forma a
+                    ficar alinhada com a imagem e clique em alinhar.`
+                }]}
             />)
     }
 
     if (sondagemID == 5) {
         return (<Sondagem sondagemID={5} title="Sondagem 5" />)
-    }
-}
-
-export const getSondagem4Info = (typeID) => {
-    if (typeID == "ra") {
-        return {
-            ra:
-            {
-                firstDescription: `&nbspEsta experiência de <b>Realidade Aumentada</b> permite visualizar, sobre as ruínas, uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
-                secondDescription: `&nbsp;Para ser possível alinhar o modelo com o ambiente real, desloque-se até um dos 3 pontos de visualização, aponte a câmara de forma a
-                ficar alinhada com a imagem e clique em alinhar.`
-            }
-        }
     }
 }

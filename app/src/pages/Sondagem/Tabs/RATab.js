@@ -4,30 +4,20 @@ import "./../Sondagem.css"
 import "./RATab.css"
 import "./../Tabs.css"
 import { setOrientation } from '../../../utils/utils.js';
-import { getSondagem4Info } from '../../../utils/sondagensInfo.js';
+import Sondagem4ARMap from '../../AugmentedReality/Sondagagem4ARMap';
 
-function RATab({ sondagemID }) {
-    const [info, setInfo] = useState(null);
-
+function RATab({ sondagemID, info }) {
     setOrientation("portrait");
-
-    useEffect(() => {
-        if (info != null) return;
-        if (sondagemID == 4) {
-            setInfo(getSondagem4Info("ra"));
-        }
-    }, [info]);
-
     return (
         <div className="RATab">
-            {info && sondagemID == 4 &&
+            {info !== null && info.size != 0 && sondagemID == 4 &&
                 <div className="RASondagem4">
                     <div className='description'>
-                        <a dangerouslySetInnerHTML={{ __html: info.ra.firstDescription }} />
+                        <a dangerouslySetInnerHTML={{ __html: info.firstDescription }} />
                     </div>
-                    <img className='mapImage' src={process.env.PUBLIC_URL + "/images/sondagem4Header.png"} />
+                    <Sondagem4ARMap/>
                     <div className='description'>
-                    <a dangerouslySetInnerHTML={{ __html: info.ra.secondDescription }} />
+                        <a dangerouslySetInnerHTML={{ __html: info.secondDescription }} />
                     </div>
                 </div>
             }

@@ -59,7 +59,7 @@ function VirtualReality() {
             ref={entityRef}
             geometry-merger
             material="shader: flat" />
-          <a-entity id="camera" camera look-controls touch-controls />
+          <a-entity id="camera" camera look-controls="touchEnabled: false; mouseEnabled: true;" touch-controls />
         </a-scene>
       </div >
     </div>
