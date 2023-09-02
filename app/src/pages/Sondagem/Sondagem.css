@@ -34,42 +34,13 @@
     z-index: 3;
 }
 
-.accordions{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 90%;
-    word-wrap: break-word;
-    font-size: 16px;
-    text-align: justify;
-}
-
-.experiences{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-    padding: 20px;
-}
-
 .description{
     display: flex;
     text-align: justify;
     word-wrap: break-word;
+    flex-direction: column;
+    gap: 5px;
 }
-
-.experiencesMenu{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: stretch;
-    align-content: normal;
-  }
 
 .infoTitles{
     font-size: 22px;
@@ -81,7 +52,7 @@
     font-style: bold;
 }
 
-.infoImage{
+.infoImage, .mapImage{
     max-width: 100%;
     max-height: 250px;
 }

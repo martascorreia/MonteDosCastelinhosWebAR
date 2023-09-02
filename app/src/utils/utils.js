@@ -64,7 +64,6 @@ export const cleanModel = (model) => {
                 }
             }
         });
-        console.log(model)
     }
 
     // Manually trigger garbage collection
