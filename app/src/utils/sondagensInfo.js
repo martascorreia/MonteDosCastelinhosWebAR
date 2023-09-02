@@ -1,29 +1,28 @@
 import Sondagem from './../pages/Sondagem/Sondagem';
 
-export const getSondagemInfo = (sondagemID) => {
+export const getSondagem = (sondagemID) => {
     if (sondagemID == 4) {
         return (
             <Sondagem
                 sondagemID={4}
                 title="Sondagem 4"
+                headerImage="/images/sondagem4Header.png"
                 tabs={[
                     {
-                        title: "Informação",
-                        icon: ""
+                        id: "info",
+                        title: "Info",
                     },
                     {
-                        title: "Realidade Aumentada",
-                        icon: `<AugmentedReality size={60}
-                        strokeWidth={1.5} />`
+                        id: "ar",
+                        title: "RA",
                     },
                     {
-                        title: "Realidade Virtual",
-                        icon: ""
+                        id: "vr",
+                        title: "RV",
                     }]}
-                VRurl="/MonteDosCastelinhosWebAR/sondagem4/rv"
-                ARurl="/MonteDosCastelinhosWebAR/sondagem4/ra" //TODO switch to sondagem 4
                 accordions={
                     [{
+                        id: 1,
                         isOpen: true,
                         title: 'História',
                         content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
@@ -37,8 +36,8 @@ export const getSondagemInfo = (sondagemID) => {
                             "qualidade da sequência estratigráfica identificada, conduziu que esta primeira sondagem" +
                             "fosse progressivamente alargada ao longo das campanhas subsequentes, para uma"
                     },
-
                     {
+                        id: 2,
                         isOpen: false,
                         title: 'Escavações',
                         content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
@@ -53,6 +52,7 @@ export const getSondagemInfo = (sondagemID) => {
                             "fosse progressivamente alargada ao longo das campanhas subsequentes, para uma"
                     },
                     {
+                        id: 3,
                         isOpen: false,
                         title: 'Objectos encontrados',
                         content: "Elargada ao longo das campanhas subsequentes, para uma"
@@ -63,5 +63,18 @@ export const getSondagemInfo = (sondagemID) => {
 
     if (sondagemID == 5) {
         return (<Sondagem sondagemID={5} title="Sondagem 5" />)
+    }
+}
+
+export const getSondagem4Info = (typeID) => {
+    if (typeID == "ra") {
+        return {
+            ra:
+            {
+                firstDescription: `&nbspEsta experiência de <b>Realidade Aumentada</b> permite visualizar, sobre as ruínas, uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
+                secondDescription: `&nbsp;Para ser possível alinhar o modelo com o ambiente real, desloque-se até um dos 3 pontos de visualização, aponte a câmara de forma a
+                ficar alinhada com a imagem e clique em alinhar.`
+            }
+        }
     }
 }

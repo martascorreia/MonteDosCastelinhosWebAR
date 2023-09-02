@@ -3,23 +3,24 @@ import TopButtons from "../../components/TopButtons/TopButtons"
 import "../../index.css"
 import "./Sondagem.css"
 import "./Tabs.css"
-import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.1.png';
-import InfoTab from './InfoTab'
-import ExperiencesTab from './ExperiencesTab';
+import InfoTab from './Tabs/InfoTab'
+import RATab from './Tabs/RATab'
+import VRTab from './Tabs/VRTab'
 import { setOrientation } from '../../utils/utils.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
+import { faVrCardboard, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
-function Sondagem({ title, tabs, VRurl, ARurl, accordions }) {
+function Sondagem({ sondagemID, title, headerImage, tabs, accordions }) {
     setOrientation("portrait");
-    const [tabSelected, setTabSelected] = useState(2);
+    const [tabSelected, setTabSelected] = useState(1);
 
     return (
         <div className="Sondagem" id="sondagem">
             <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
             <div className="content sondagemContent">
                 <div className='infoTitle'>
-                    <img className='sondagemImage' src={sondagem4Img} />
+                    <img className='sondagemImage' src={process.env.PUBLIC_URL + headerImage} />
                     <div className='sondagemTitle'>{title}</div>
                 </div>
                 {tabs &&
@@ -27,29 +28,42 @@ function Sondagem({ title, tabs, VRurl, ARurl, accordions }) {
                         {tabs.map((item, index) => (
                             <div className={`tabType ${tabSelected == index + 1 ? "tabSelected" : ""}`} onClick={() => setTabSelected(index + 1)}>
                                 <div className="tabBtn">
-                                    <div id="tabIcon">
-                                        <div dangerouslySetInnerHTML={{ __html: item.icon }}/>
+                                    <div className="tabIcon">
+                                        {item.id == "info" &&
+                                            <FontAwesomeIcon icon={faCircleInfo} />
+                                        }
+                                        {item.id == "ar" &&
+                                            <AugmentedReality size={50} strokeWidth={1.5} />
+                                        }
+                                        {item.id == "vr" &&
+                                            <FontAwesomeIcon icon={faVrCardboard} />
+                                        }
                                     </div>
-                                    <div id="tabTitle">
+                                    <div className="tabTitle">
                                         {item.title}
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>}
-                {tabs && tabSelected == 1 &&
-                    <div className='tabContent'>
-                        <InfoTab accordions={accordions} />
-                    </div>
+                {tabSelected == 1 && (
+                    tabs ?
+                        <div className='tabContent'>
+                            <InfoTab accordions={accordions} />
+                        </div>
+                        :
+                        <div className='noTabsContent'>
+                            <InfoTab accordions={accordions} />
+                        </div>)
                 }
                 {tabs && tabSelected == 2 &&
                     <div className='tabContent'>
-                        <ExperiencesTab VRurl={VRurl} ARurl={ARurl} />
+                        <RATab sondagemID={sondagemID} />
                     </div>
                 }
-                {!tabs &&
-                    <div className='noTabsContent'>
-                        <InfoTab accordions={accordions} />
+                {tabs && tabSelected == 3 &&
+                    <div className='tabContent'>
+                        <VRTab sondagemID={sondagemID} />
                     </div>
                 }
             </div >
