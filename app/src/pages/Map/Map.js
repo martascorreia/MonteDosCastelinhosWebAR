@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "./Map.css"
 import "../../index.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-import { GoogleMap, Marker, useLoadScript, LoadScript } from "@react-google-maps/api";
-
-
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 function Map() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyD-o5rhMpVLpjZBFyx_pVkE3OPhYCYR4Jk",
@@ -29,11 +29,9 @@ function Map() {
     disableDefaultUI: true,
     restriction: {
       latLngBounds: bounds,
-      strictBounds: false
+      strictBounds: true
     },
   };
-
- 
 
   return (
     <div className="Map">
@@ -51,6 +49,9 @@ function Map() {
           </GoogleMap>
         )}
       </div >
+      <button className="locationBtn roundBtn">
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </button>
     </div>
   );
 }

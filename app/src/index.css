@@ -30,6 +30,10 @@ code {
   width: 100%;
 }
 
+.topBtns-nav-link{
+  text-decoration: none;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -39,4 +43,15 @@ code {
   height: 100vh;
   width: 100vw;
   margin: 0px auto;
+}
+
+.roundBtn {
+  display: flex;
+  background-color: var(--main-blue);
+  border: none;
+  color: var(--white);
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 50%;
+  height: 100%;
 }

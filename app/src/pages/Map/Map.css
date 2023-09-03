@@ -1,3 +1,8 @@
+.SondagemMap{
+    position: relative;
+    display: flex;
+}
+
 .Map {
     background-color: var(--white);
     height: 100vh;
@@ -22,10 +27,18 @@
     height: 60px;
 }
 
-.mapPoint1, .mapPoint2, .mapPoint3{
+.mapPoint{
     background-color: rgba(240, 248, 255, 0);
     border: none;
     border-radius: 50%;
     position: absolute;
 }
 
+.locationBtn{
+    display: flex;
+    justify-content: space-between;  
+    position: absolute;
+    width: 90%;
+    z-index: 99;
+    padding: 5%;
+}
