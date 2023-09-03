@@ -11,9 +11,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
 import { faVrCardboard, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
-function Sondagem({ sondagemID, title, headerImage, tabs, info, ra }) {
+function Sondagem({ sondagemID, title, headerImage, tabs, info, ra, vr }) {
     setOrientation("portrait");
-    const [tabSelected, setTabSelected] = useState(1);
+    const [tabSelected, setTabSelected] = useState(3);
 
     return (
         <div className="Sondagem" id="sondagem">
@@ -46,15 +46,15 @@ function Sondagem({ sondagemID, title, headerImage, tabs, info, ra }) {
                             </div>
                         ))}
                     </div>}
-                {tabSelected == 1 && (
-                    tabs ?
-                        <div className='tabContent'>
-                            <InfoTab accordions={info} />
-                        </div>
-                        :
-                        <div className='noTabsContent'>
-                            <InfoTab accordions={info} />
-                        </div>)
+                {!tabs &&
+                    <div className='noTabsContent'>
+                        <InfoTab accordions={info} />
+                    </div>
+                }
+                {tabs && tabSelected == 1 &&
+                    <div className='tabContent'>
+                        <InfoTab accordions={info} />
+                    </div>
                 }
                 {tabs && tabSelected == 2 &&
                     <div className='tabContent'>
@@ -63,7 +63,7 @@ function Sondagem({ sondagemID, title, headerImage, tabs, info, ra }) {
                 }
                 {tabs && tabSelected == 3 &&
                     <div className='tabContent'>
-                        <VRTab sondagemID={sondagemID} />
+                        <VRTab sondagemID={sondagemID} info={vr[0]} />
                     </div>
                 }
             </div >

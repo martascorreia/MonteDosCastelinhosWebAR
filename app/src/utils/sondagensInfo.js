@@ -58,9 +58,13 @@ export const getSondagem = (sondagemID) => {
                         content: "Elargada ao longo das campanhas subsequentes, para uma"
                     }]}
                 ra={[{
-                    firstDescription: `&nbspEsta experiência de <b>Realidade Aumentada</b> permite visualizar, sobre as ruínas, uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
+                    firstDescription: `&nbspEsta experiência de <b>Realidade Aumentada</b> permite a visualização, sobre as ruínas, de uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
                     secondDescription: `&nbsp;Desloque-se até um dos 3 pontos de visualização, carregue no botão correspondente no mapa acima, aponte a câmara de forma a
                     ficar alinhada com a imagem e clique em alinhar.`
+                }]}s
+                vr={[{
+                    firstDescription: `&nbspEsta experiência de <b>Realidade Virtual</b> permite a visualização e exploração de uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
+                    secondDescription: `&nbsp;Utilize as setas para se mover.`
                 }]}
             />)
     }

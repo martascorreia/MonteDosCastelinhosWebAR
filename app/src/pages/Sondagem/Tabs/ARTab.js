@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../index.css"
 import "./../Sondagem.css"
-import "./ARTab.css"
 import "./../Tabs.css"
 import { setOrientation } from '../../../utils/utils.js';
 import Sondagem4ARMap from '../../AugmentedReality/Sondagagem4ARMap';
