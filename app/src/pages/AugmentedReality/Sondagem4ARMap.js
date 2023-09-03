@@ -10,17 +10,17 @@ function Sondagem4ARMap() {
     <div className="SondagemMap">
       <img className='mapImage' src={process.env.PUBLIC_URL + "/images/sondagem4Map.jpg"} />
       <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra42'} className="nav-link">
-        <button className='mapPoint1'>
+        <button className='mapPoint mapPoint1AR4'>
           <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point1shadow.png"} />
         </button>
       </Link>
       <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra42'} className="nav-link">
-        <button className='mapPoint2'>
+        <button className='mapPoint mapPoint2AR4'>
           <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point2shadow.png"} />
         </button>
       </Link>
       <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra43'} className="nav-link">
-        <button className='mapPoint3'>
+        <button className='mapPoint mapPoint3AR4'>
           <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point3shadow.png"} />
         </button>
       </Link>
