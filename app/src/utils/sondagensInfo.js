@@ -20,8 +20,8 @@ export const getSondagem = (sondagemID) => {
                         id: "vr",
                         title: "RV",
                     }]}
-                info={
-                    [{
+                info={[
+                    {
                         id: 1,
                         isOpen: true,
                         title: 'História',
