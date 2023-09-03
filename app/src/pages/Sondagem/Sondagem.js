@@ -4,7 +4,7 @@ import "../../index.css"
 import "./Sondagem.css"
 import "./Tabs.css"
 import InfoTab from './Tabs/InfoTab'
-import RATab from './Tabs/RATab'
+import ARTab from './Tabs/ARTab'
 import VRTab from './Tabs/VRTab'
 import { setOrientation } from '../../utils/utils.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -58,7 +58,7 @@ function Sondagem({ sondagemID, title, headerImage, tabs, info, ra }) {
                 }
                 {tabs && tabSelected == 2 &&
                     <div className='tabContent'>
-                        <RATab sondagemID={sondagemID} info={ra[0]} />
+                        <ARTab sondagemID={sondagemID} info={ra[0]} />
                     </div>
                 }
                 {tabs && tabSelected == 3 &&

@@ -9,6 +9,7 @@
     position: absolute !important;
 }
 
+
 .alignElements{
     position: absolute;
     display: flex;
@@ -58,12 +59,22 @@
 
 .mapPoint1, .mapPoint2, .mapPoint3{
     background-color: rgba(240, 248, 255, 0);
-    border: solid;
-    border-radius: 10%;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
 }
 
 .mapPoint1{
-    position: absolute;
     top: 68%;
     left: 85%;
+}
+
+.mapPoint2{
+    top: 20%;
+    left: 5%;
+}
+
+.mapPoint3{
+    top: 35%;
+    left: 40%;
 }

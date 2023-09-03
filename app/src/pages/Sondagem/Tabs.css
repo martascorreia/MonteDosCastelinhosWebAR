@@ -49,7 +49,7 @@
     top: 20vh;
 }
 
-.InfoTab, .RATab, .VRTab{
+.InfoTab, .ARTab, .VRTab{
     display: flex;
     justify-content: center;
     width: 90%;
