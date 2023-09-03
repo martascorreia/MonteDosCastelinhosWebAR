@@ -40,41 +40,17 @@
     font-family: "Lucida Sans";
 }
 
-
-.Sondagem4ARMap{
-    display: flex;
-    position: relative;
-}
-
-.mapImage{
-    max-width: 100%;
-    max-height: 300px;
-    border: 2px solid var(--medium-grey);
-}
-
-.mapPoints{
-    max-width: 50px;
-    height: 50px;
-}
-
-.mapPoint1, .mapPoint2, .mapPoint3{
-    background-color: rgba(240, 248, 255, 0);
-    border: none;
-    border-radius: 50%;
-    position: absolute;
-}
-
 .mapPoint1{
-    top: 68%;
-    left: 85%;
+    top: 63%;
+    left: 80%;
 }
 
 .mapPoint2{
-    top: 20%;
+    top: 17%;
     left: 5%;
 }
 
 .mapPoint3{
-    top: 35%;
-    left: 40%;
+    top: 32%;
+    left: 37%;
 }
