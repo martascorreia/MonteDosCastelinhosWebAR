@@ -3,7 +3,7 @@ import "../../../index.css"
 import "./../Sondagem.css"
 import "./../Tabs.css"
 import { setOrientation } from '../../../utils/utils.js';
-import Sondagem4VRMap from '../../VirtualReality/Sondagagem4VRMap';
+import Sondagem4VRMap from '../../VirtualReality/Sondagem4VRMap';
 
 function VRTab({ sondagemID, info }) {
     setOrientation("portrait");

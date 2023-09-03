@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home/Home"
+import Map from "./pages/Map/Map"
 import Sondagem4VR from "./pages/VirtualReality/Sondagem4VR"
 import Sondagem41 from "./pages/AugmentedReality/Sondagem41"
 import Sondagem42 from "./pages/AugmentedReality/Sondagem42"
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/*' element={<Home />} />
           <Route path='/MonteDosCastelinhosWebAR' element={<Home />} />
+          <Route path='/MonteDosCastelinhosWebAR/mapa' element={<Map />}/>
           <Route path='/MonteDosCastelinhosWebAR/sondagem4' element={getSondagem("4")} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/ra41' element={<Sondagem41 />} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/ra42' element={<Sondagem42 />} />
