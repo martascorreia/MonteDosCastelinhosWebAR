@@ -1,0 +1,12 @@
+.accordions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 16px;
+    text-align: justify;
+}
