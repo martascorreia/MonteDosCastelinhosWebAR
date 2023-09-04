@@ -11,6 +11,9 @@ function VRTab({ sondagemID, info }) {
         <div className="VRTab">
             {info !== null && info.size != 0 && sondagemID == 4 &&
                 <div className="VRSondagem4">
+                    <div className='vrTitle'>
+                        Realidade Virtual
+                    </div>
                     <div className='description'>
                         <a dangerouslySetInnerHTML={{ __html: info.firstDescription }} />
                     </div>

@@ -11,15 +11,20 @@ function InfoTab({ accordions }) {
     setOrientation("portrait");
     return (
         <div className="InfoTab">
-            <div className='accordions'>
-                {accordions &&
-                    accordions.map((item, index) => (
-                        <Accordion
-                            accordionOpen={item.isOpen}
-                            title={item.title}
-                            content={item.content} />
-                    ))}
-                <img className='infoImage' src={sondagem4Img} />
+            <div className="InfoSondagem"> 
+                <div className='vrTitle'>
+                    Informação
+                </div>
+                <div className='accordions'>
+                    {accordions &&
+                        accordions.map((item, index) => (
+                            <Accordion
+                                accordionOpen={item.isOpen}
+                                title={item.title}
+                                content={item.content} />
+                        ))}
+                    <img className='infoImage' src={sondagem4Img} />
+                </div>
             </div>
         </div >
     );

@@ -54,6 +54,8 @@
     width: 90%;
     padding-top: 15px;
     padding-bottom: 15px;
+    flex-direction: column;
+
 }
 
 .tabBtn{
@@ -85,14 +87,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Lexend Deca";
     text-align: center;
 }
 
-.ARSondagem4, .VRSondagem4{
+.ARSondagem4, .VRSondagem4, .InfoSondagem{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
+}
+
+.raTitle, .vrTitle{
+    font-size: 18px;
+    font-weight: bold;
 }

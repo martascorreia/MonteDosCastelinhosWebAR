@@ -13,11 +13,39 @@ function Map() {
   const navigate = useNavigate();
   const center = useMemo(() => ({ lat: 39.012666, lng: -8.974542 }), []);
   const [options, setOptions] = useState(null);
+  const [userLocation, setUserLocation] = useState(null);
+  const [isUserPresent, setIsUserPresent] = useState(false);
+
+  const swLat = 39.010969;
+  const swLng = -8.979158;
+  const neLat = 39.013578;
+  const neLng = -8.972700;
+
+  useEffect(() => {
+    const updateLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const location = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          setUserLocation(location);
+        });
+      }
+    };
+
+    // Update user location every X seconds (e.g., 10 seconds)
+    const interval = setInterval(updateLocation, 10000);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(interval);
+
+  }, []);
 
   useEffect(() => {
     if (isLoaded) {
-      const southwest = new window.google.maps.LatLng(39.010969, -8.979158);
-      const northeast = new window.google.maps.LatLng(39.013578, -8.972700);
+      const southwest = new window.google.maps.LatLng(swLat, swLng);
+      const northeast = new window.google.maps.LatLng(neLat, neLng);
       const newBounds = new window.google.maps.LatLngBounds(southwest, northeast);
       setOptions({
         mapTypeId: 'satellite',
@@ -28,12 +56,42 @@ function Map() {
         }
       });
     } else {
+      getUserLocation()
       setOptions({
         mapTypeId: 'satellite',
         disableDefaultUI: true,
       });
     }
   }, [isLoaded]);
+
+  const getUserLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          var coordinates = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          setUserLocation(coordinates);
+          var isUser = isUserWithinBounds(coordinates);
+          console.log(isUser)
+          setIsUserPresent(isUser);
+        },
+        (error) => {
+          console.error('Error getting user location:', error);
+        }
+      );
+    }
+  };
+
+  const isUserWithinBounds = (userLocation) => {
+    return (
+      userLocation.lat >= swLat &&
+      userLocation.lat <= neLat &&
+      userLocation.lng >= swLng &&
+      userLocation.lng <= neLng
+    );
+  };
 
   return (
     <div className="Map">
@@ -63,6 +121,8 @@ function Map() {
               }}
               onClick={() => navigate('/MonteDosCastelinhosWebAR/sondagem5')}
             />
+            {isUserPresent && userLocation &&
+              <MarkerF position={{ lat: userLocation.lat, lng: userLocation.lng }} />}
           </GoogleMap>
         )}
       </div >
