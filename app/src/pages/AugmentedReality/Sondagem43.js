@@ -3,7 +3,7 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
-import sondagem43 from '../../resources/images/sondagem4.3.png';
+import sondagem43 from '../../resources/models/sondagem4.3.png';
 import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 import { isBrowser, isMobile } from 'react-device-detect';
 

@@ -13,11 +13,11 @@ import { faVrCardboard, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 function Sondagem({ sondagemID, title, headerImage, tabs, info, ra, vr }) {
     setOrientation("portrait");
-    const [tabSelected, setTabSelected] = useState(3);
+    const [tabSelected, setTabSelected] = useState(1);
 
     return (
         <div className="Sondagem" id="sondagem">
-            <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
+            <TopButtons backUrl={"/MonteDosCastelinhosWebAR/mapa"} />
             <div className="content sondagemContent">
                 <div className='infoTitle'>
                     <img className='sondagemImage' src={process.env.PUBLIC_URL + headerImage} />

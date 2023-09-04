@@ -10,7 +10,7 @@ function Sondagem4VRMap() {
       <img className='mapImage' src={process.env.PUBLIC_URL + "/images/sondagem4Map.jpg"} />
       <Link to={'/MonteDosCastelinhosWebAR/sondagem4/rv'} className="nav-link">
         <button className='mapPoint mapPoint1VR4'>
-          <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point1shadow.png"} />
+          <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point1.png"} />
         </button>
       </Link>
     </div>
