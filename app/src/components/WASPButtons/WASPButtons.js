@@ -10,7 +10,7 @@ function WASPButtons({ }) {
     const event = new KeyboardEvent('keypress', {
       key: key,
     });
-    console.log(event)
+    //console.log(event)
   }
 
   return (

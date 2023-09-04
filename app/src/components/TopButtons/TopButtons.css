@@ -11,16 +11,6 @@
   margin-left: auto;
 }
 
-.roundBtn {
-  display: flex;
-  background-color: var(--main-blue);
-  border: none;
-  color: var(--white);
-  padding: 15px;
-  font-size: 20px;
-  border-radius: 50%;
-  height: 100%;
-}
 
 .svg-inline--fa {
   width: 1em;

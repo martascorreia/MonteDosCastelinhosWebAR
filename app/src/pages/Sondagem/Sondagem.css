@@ -1,0 +1,60 @@
+.Sondagem{
+    width: 100vw;
+    height: 100vh;
+}
+
+.infoTitle{
+    top: 0;
+    height: 24vh;
+    width: 100%;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;  
+    position: absolute;
+    z-index: 2; 
+    border-bottom: 5px solid var(--light-grey);
+}
+
+.sondagemImage{
+    width: 100vw;
+    position: absolute;
+}
+
+.sondagemTitle{
+    padding: 1.5vh;
+    font-size: 22px;
+    border-radius: 35px;
+    width: 80%;
+    height: 10%;
+    background-color: var(--white);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 5%;
+    z-index: 3;
+}
+
+.description{
+    display: flex;
+    text-align: justify;
+    word-wrap: break-word;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.infoTitles{
+    font-size: 22px;
+    font-style: bold;
+}
+
+.infoSubTitles{
+    font-size: 20px;
+    font-style: bold;
+}
+
+.infoImage{
+    max-width: 100%;
+    max-height: 250px;
+    justify-content: center;
+}
