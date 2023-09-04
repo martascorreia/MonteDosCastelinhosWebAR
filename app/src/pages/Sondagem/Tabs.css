@@ -3,7 +3,6 @@
     height: 9vh;
     align-items: center;
     width: 100%;
-    top: 20vh;
     position: absolute;       
     z-index: 1; 
 }
@@ -42,11 +41,11 @@
 }
 
 .tabContent{
-    top: 29vh;
+    top: 33vh;
 }
 
-.noTabsContent{
-    top: 20vh;
+.tabs, .noTabsContent{
+    top: 24vh;
 }
 
 .InfoTab, .ARTab, .VRTab{

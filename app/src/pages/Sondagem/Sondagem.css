@@ -5,7 +5,7 @@
 
 .infoTitle{
     top: 0;
-    height: 20vh;
+    height: 24vh;
     width: 100%;
     background-color: var(--light-grey);
     display: flex;
@@ -13,6 +13,7 @@
     align-items: flex-end;  
     position: absolute;
     z-index: 2; 
+    border-bottom: 5px solid var(--light-grey);
 }
 
 .sondagemImage{

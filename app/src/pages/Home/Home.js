@@ -16,12 +16,14 @@ function Home() {
       <div className="content">
         <img src={logo} className="logo" alt="logo" />
         <div className="menu">
-          <Link to={'/MonteDosCastelinhosWebAR/mapa'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/mapa" text="Mapa" /></Link>
-          <Link to={'/MonteDosCastelinhosWebAR/sondagem4'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/sondagem4" text="Sondagem 4" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/mapa'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/mapa" text="Visita" /></Link>
+          <Link to={'/MonteDosCastelinhosWebAR/mapa'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/mapa" text="Mais" /></Link>
+
+          {/* <Link to={'/MonteDosCastelinhosWebAR/sondagem4'} className="nav-link"><TextButton href="/MonteDosCastelinhosWebAR/sondagem4" text="Sondagem 4" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra41'} className="nav-link"><TextButton text="RA - Sondagem 4.1" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra42'} className="nav-link"><TextButton text="RA - Sondagem 4.2" /></Link>
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra43'} className="nav-link"><TextButton text="RA - Sondagem 4.3" /></Link>
-          <Link to={'/MonteDosCastelinhosWebAR/sondagem4/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>
+  <Link to={'/MonteDosCastelinhosWebAR/sondagem4/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>*/}
         </div>
       </div >
     </div>
