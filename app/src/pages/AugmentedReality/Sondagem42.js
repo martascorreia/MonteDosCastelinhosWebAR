@@ -60,7 +60,7 @@ function Sondagem42() {
               ref={entityRef}
               geometry-merger
               material="shader: flat" />}
-          {isBrowser && modelAligned &&
+          {modelAligned &&
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
             </div>}

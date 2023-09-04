@@ -47,7 +47,7 @@ function Sondagem41() {
     cleanCamera();
     entityRef.current = null;
   };
-
+  
   return (
     <div className="AugmentedReality">
       <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
@@ -60,7 +60,7 @@ function Sondagem41() {
               ref={entityRef}
               geometry-merger
               material="shader: flat" />}
-          {isBrowser && modelAligned &&
+          {modelAligned &&
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
             </div>}

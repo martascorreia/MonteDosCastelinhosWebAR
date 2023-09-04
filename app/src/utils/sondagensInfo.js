@@ -23,7 +23,7 @@ export const getSondagem = (sondagemID) => {
                 info={[
                     {
                         id: 1,
-                        isOpen: true,
+                        isOpen: false,
                         title: 'História',
                         content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
                             "inclinada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas" +
@@ -77,7 +77,7 @@ export const getSondagem = (sondagemID) => {
                 info={[
                     {
                         id: 1,
-                        isOpen: true,
+                        isOpen: false,
                         title: 'História',
                         content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
                             "inclinada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas" +
