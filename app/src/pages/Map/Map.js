@@ -105,6 +105,14 @@ function Map() {
             center={center}
             zoom={19}
             options={options}>
+              <MarkerF
+              position={{ lat: 39.011974, lng: -8.974278 }}
+              icon={{
+                url: (process.env.PUBLIC_URL + "/images/MapPoints/point8.png"),
+                scaledSize: new window.google.maps.Size(64, 64),
+              }}
+              onClick={() => navigate('/MonteDosCastelinhosWebAR/sondagem8')}
+            />
             <MarkerF
               position={{ lat: 39.012666, lng: -8.974542 }}
               icon={{
