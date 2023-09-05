@@ -9,7 +9,7 @@ function Sondagem4ARMap() {
   return (
     <div className="SondagemMap">
       <img className='mapImage' src={process.env.PUBLIC_URL + "/images/sondagem4Map.jpg"} />
-      <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra42'} className="nav-link">
+      <Link to={'/MonteDosCastelinhosWebAR/sondagem4/ra41'} className="nav-link">
         <button className='mapPoint mapPoint1AR4'>
           <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point1.png"} />
         </button>

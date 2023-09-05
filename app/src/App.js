@@ -23,6 +23,7 @@ function App() {
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/ra43' element={<Sondagem43 />} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/rv' element={<Sondagem4VR />} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem5' element={getSondagem("5")} />
+          <Route path='/MonteDosCastelinhosWebAR/sondagem8' element={getSondagem("8")} />
         </Routes>
       </BrowserRouter>
     </div >
