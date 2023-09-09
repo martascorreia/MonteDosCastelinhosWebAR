@@ -1,6 +1,11 @@
-.SondagemMap{
+.SondagemMap, .MainMap{
     position: relative;
     display: flex;
+}
+
+.MainMap{
+    height: 100%;
+    width: 100%;
 }
 
 .Map {
@@ -16,6 +21,12 @@
     width: 100%;
 }
 
+.mainMapImage{
+    min-height: 100vh;
+    min-width: 100vw;
+    z-index: 0;
+}
+
 .mapImage{
     max-width: 100%;
     max-height: 300px;
@@ -25,6 +36,7 @@
 .mapPoints{
     max-width: 60px;
     height: 60px;
+    z-index: 3;
 }
 
 .mapPoint{
@@ -41,4 +53,24 @@
     width: 90%;
     z-index: 99;
     padding: 5%;
+}
+
+.mainMapPoint4{
+    top: 20%;
+    left: 7%;
+}
+
+.mainMapPoint5{
+    top: 73%;
+    left: 48%;
+}
+
+.mainMapPoint8{
+    top: 60%;
+    left: 20%;
+}
+
+.mainMapPoint9{
+    top: 80%;
+    left: 7%;
 }

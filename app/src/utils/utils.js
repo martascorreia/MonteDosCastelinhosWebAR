@@ -93,3 +93,21 @@ export const cleanCamera = () => {
       element.remove();
     });
   };
+
+
+export const getUserLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          var coordinates = {
+            lat: 39.011755,  //position.coords.latitude,
+            lng: -8.973750 //position.coords.longitude,
+          };
+          return coordinates;
+        },
+        (error) => {
+          console.error('Error getting user location:', error);
+        }
+      );
+    }
+  };
