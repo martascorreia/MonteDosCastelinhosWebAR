@@ -18,7 +18,7 @@ function Sondagem({ sondagemID, title, headerImage, tabs, info, ra, vr }) {
     return (
         <div className="Sondagem" id="sondagem">
             <TopButtons backUrl={"/MonteDosCastelinhosWebAR/mapa"} />
-            <div className="content sondagemContent">
+            <div className="content">
                 <div className='infoTitle'>
                     <img className='sondagemImage' src={process.env.PUBLIC_URL + headerImage} />
                     <div className='sondagemTitle'>{title}</div>
