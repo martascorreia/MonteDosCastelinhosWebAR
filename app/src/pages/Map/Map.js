@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
 import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
+import { getUserLocation } from "../../utils/utils.js"
+import { Link } from 'react-router-dom';
+
 function Map() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyD-o5rhMpVLpjZBFyx_pVkE3OPhYCYR4Jk",
@@ -22,27 +25,6 @@ function Map() {
   const neLng = -8.972700;
 
   useEffect(() => {
-    const updateLocation = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          const location = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-          setUserLocation(location);
-        });
-      }
-    };
-
-    // Update user location every X seconds (e.g., 10 seconds)
-    const interval = setInterval(updateLocation, 10000);
-
-    // Clear the interval when the component unmounts
-    return () => clearInterval(interval);
-
-  }, []);
-
-  useEffect(() => {
     if (isLoaded) {
       const southwest = new window.google.maps.LatLng(swLat, swLng);
       const northeast = new window.google.maps.LatLng(neLat, neLng);
@@ -56,7 +38,7 @@ function Map() {
         }
       });
     } else {
-      getUserLocation()
+      //getUserCurrentLocation()
       setOptions({
         mapTypeId: 'satellite',
         disableDefaultUI: true,
@@ -64,23 +46,13 @@ function Map() {
     }
   }, [isLoaded]);
 
-  const getUserLocation = () => {
+  /*const getUserCurrentLocation = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          var coordinates = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
+          var coordinates = getUserLocation();
           setUserLocation(coordinates);
           var isUser = isUserWithinBounds(coordinates);
           console.log(isUser)
           setIsUserPresent(isUser);
-        },
-        (error) => {
-          console.error('Error getting user location:', error);
-        }
-      );
     }
   };
 
@@ -91,13 +63,31 @@ function Map() {
       userLocation.lng >= swLng &&
       userLocation.lng <= neLng
     );
-  };
+  };*/
 
   return (
     <div className="Map">
       <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
       <div className="content">
-        {!isLoaded ? (
+        <div className='MainMap'>
+          <img className='mainMapImage' src={process.env.PUBLIC_URL + "/images/map_smaller.jpg"} />
+          <Link to={'/MonteDosCastelinhosWebAR/sondagem4/'} className="nav-link">
+            <button className='mapPoint mainMapPoint4'>
+              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point4.png"} />
+            </button>
+          </Link>
+          <Link to={'/MonteDosCastelinhosWebAR/sondagem5/'} className="nav-link">
+            <button className='mapPoint mainMapPoint5'>
+              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point5.png"} />
+            </button>
+          </Link> 
+          <Link to={'/MonteDosCastelinhosWebAR/sondagem8/'} className="nav-link">
+            <button className='mapPoint mainMapPoint8'>
+              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point8.png"} />
+            </button>
+          </Link>
+        </div>
+        {/*!isLoaded ? (
           <h1>Loading...</h1>
         ) : (
           <GoogleMap
@@ -105,7 +95,7 @@ function Map() {
             center={center}
             zoom={19}
             options={options}>
-              <MarkerF
+            {/*<MarkerF
               position={{ lat: 39.011974, lng: -8.974278 }}
               icon={{
                 url: (process.env.PUBLIC_URL + "/images/MapPoints/point8.png"),
@@ -128,11 +118,11 @@ function Map() {
                 scaledSize: new window.google.maps.Size(64, 64),
               }}
               onClick={() => navigate('/MonteDosCastelinhosWebAR/sondagem5')}
-            />
-            {isUserPresent && userLocation &&
+            />}
+            {isUserPresent && userLocation && false &&
               <MarkerF position={{ lat: userLocation.lat, lng: userLocation.lng }} />}
           </GoogleMap>
-        )}
+            )*/}
       </div >
       <button className="locationBtn roundBtn">
         <FontAwesomeIcon icon={faArrowLeft} />

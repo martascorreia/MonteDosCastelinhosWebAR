@@ -2,7 +2,6 @@ import React from 'react';
 import "../../index.css"
 import "./AugmentedReality.css"
 import "./../Map/Map.css"
-
 import { Link } from 'react-router-dom';
 
 function Sondagem4ARMap() {
