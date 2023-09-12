@@ -1,13 +1,21 @@
-.waspButtons{
+.directionButtons, .heightButtons{
   display: flex;
   flex-direction: column;
   justify-content: space-between;  
   position: absolute;
   z-index: 99;
   padding: 2%;
-  gap: 5px;
+}
+
+.directionButtons{
   bottom:0;
   right: 0;
+}
+
+.heightButtons{
+  bottom: 15px;
+  left: 30px;
+  gap: 10px;
 }
 
 .svg-inline--fa {
@@ -25,4 +33,5 @@
 .middleBtns{
   display: flex;
   flex-direction: row;
+  gap: 40px
 }
