@@ -7,6 +7,7 @@ import { setOrientation, loadModel } from '../../utils/utils.js';
 
 function VirtualReality() {
   setOrientation("landscape");
+  const [cameraPosition, setCameraPosition] = useState({ x: 0, y: 0, z: 0 });
   const [modelLoaded, setModelLoaded] = useState(false);
   const entityRef = useRef();
 
@@ -48,10 +49,15 @@ function VirtualReality() {
     });
   };
 
+  const handleCameraMovement = (newPosition) => {
+    // Update the camera position
+    setCameraPosition(newPosition);
+  };
+
   return (
     <div className="VirtualReality">
       <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/rvTab"} />
-      <WASPButtons />
+      <WASPButtons cameraPosition={cameraPosition} onCameraMovement={handleCameraMovement} />
       <div className="content">
         <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
           <a-entity
@@ -59,7 +65,8 @@ function VirtualReality() {
             ref={entityRef}
             geometry-merger
             material="shader: flat" />
-          <a-entity id="camera" camera look-controls="touchEnabled: false; mouseEnabled: true;" touch-controls wasd-controls="acceleration: 100; fly: true" />
+          <a-camera position={`${cameraPosition.x} ${cameraPosition.y} ${cameraPosition.z}`}
+            look-controls="touchEnabled: false; mouseEnabled: true;" wasd-controls="acceleration: 100; fly: true" />
         </a-scene>
       </div >
     </div>
