@@ -41,29 +41,37 @@ function WASPButtons({ cameraPosition, onCameraMovement }) {
 
   return (
     <div className='waspButtons'>
-      <div className='upBtns'>
-        <button className="roundBtn" onClick={() => activateKey('w')}>
-          <FontAwesomeIcon icon={faAngleUp} />
-        </button>
-      </div >
-      <div className='middleBtns'>
-        <button className="roundBtn" onClick={() => activateKey('a')}>
-          <FontAwesomeIcon icon={faAngleLeft} />
-        </button>
-        <button className="roundBtn" onClick={() => activateKey('e')}>
-          <FontAwesomeIcon icon={faAngleDoubleUp} />
-        </button>
-        <button className="roundBtn" onClick={() => activateKey('r')}>
-          <FontAwesomeIcon icon={faAngleDoubleDown} />
-        </button>
-        <button className="roundBtn" onClick={() => activateKey('d')}>
-          <FontAwesomeIcon icon={faAngleRight} />
-        </button>
+      <div className='directionButtons'>
+        <div className='upBtns'>
+          <button className="roundBtn" onClick={() => activateKey('w')}>
+            <FontAwesomeIcon icon={faAngleUp} />
+          </button>
+        </div >
+        <div className='middleBtns'>
+          <button className="roundBtn" onClick={() => activateKey('a')}>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </button>
+          <button className="roundBtn" onClick={() => activateKey('d')}>
+            <FontAwesomeIcon icon={faAngleRight} />
+          </button>
+        </div>
+        <div className='downBtns'>
+          <button className="roundBtn" onClick={() => activateKey('s')}>
+            <FontAwesomeIcon icon={faAngleDown} />
+          </button>
+        </div>
       </div>
-      <div className='downBtns'>
-        <button className="roundBtn" onClick={() => activateKey('s')}>
-          <FontAwesomeIcon icon={faAngleDown} />
-        </button>
+      <div className='heightButtons'>
+        <div className='upBtns'>
+          <button className="roundBtn" onClick={() => activateKey('e')}>
+            <FontAwesomeIcon icon={faAngleDoubleUp} />
+          </button>
+        </div >
+        <div className='downBtns'>
+          <button className="roundBtn" onClick={() => activateKey('r')}>
+            <FontAwesomeIcon icon={faAngleDoubleDown} />
+          </button>
+        </div>
       </div>
     </div>
   );
