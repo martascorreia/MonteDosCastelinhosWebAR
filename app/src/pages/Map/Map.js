@@ -13,7 +13,7 @@ function Map() {
           <div className='sondagemTitle'>Mapa</div>
         </div>
         <div className='mainMapMap'>
-          <img className='mainMapImage' src={process.env.PUBLIC_URL + "/images/Maps/map_smaller.jpg"} />
+          <img className='mainMapImage' src={process.env.PUBLIC_URL + "/images/Maps/mainMap_smaller.jpg"} />
           <Link to={'/MonteDosCastelinhosWebAR/sondagem4/'} className="nav-link">
             <button className='mapPoint mainMapPoint4'>
               <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point4.png"} />
