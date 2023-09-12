@@ -4,6 +4,7 @@ import "./../Sondagem.css"
 import "./../Tabs.css"
 import { setOrientation } from '../../../utils/utils.js';
 import Sondagem4VRMap from '../../VirtualReality/Sondagem4VRMap';
+import Accordion from '../../../components/Accordion/Accordion'
 
 function VRTab({ sondagemID, info }) {
     setOrientation("portrait");
@@ -18,8 +19,11 @@ function VRTab({ sondagemID, info }) {
                         <a dangerouslySetInnerHTML={{ __html: info.firstDescription }} />
                     </div>
                     <Sondagem4VRMap/>
-                    <div className='description'>
-                        <a dangerouslySetInnerHTML={{ __html: info.secondDescription }} />
+                    <div className='instructions'>
+                        <Accordion
+                            accordionOpen={false}
+                            title="Instruções"
+                            content={<a dangerouslySetInnerHTML={{ __html: info.instructions }} />} />
                     </div>
                 </div>
             }

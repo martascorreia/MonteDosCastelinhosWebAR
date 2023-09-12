@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.content{
+.mapContent{
     gap: 0 !important;
 }
 
@@ -64,21 +64,21 @@
 }
 
 .mainMapPoint4{
-    top: 20%;
+    top: 17%;
     left: 7%;
 }
 
 .mainMapPoint5{
-    top: 73%;
+    top: 70%;
     left: 48%;
 }
 
 .mainMapPoint8{
-    top: 60%;
+    top: 55%;
     left: 20%;
 }
 
 .mainMapPoint9{
     top: 80%;
-    left: 7%;
+    left: 75%;
 }
