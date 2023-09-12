@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function Sondagem4VRMap() {
   return (
     <div className="SondagemMap">
-      <img className='mapImage' src={process.env.PUBLIC_URL + "/images/sondagem4Map.jpg"} />
+      <img className='mapImage' src={process.env.PUBLIC_URL + "/images/Maps/sondagem4Map.jpg"} />
       <Link to={'/MonteDosCastelinhosWebAR/sondagem4/rv'} className="nav-link">
         <button className='mapPoint mapPoint1VR4'>
           <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point1.png"} />
