@@ -17,12 +17,16 @@ function App() {
           <Route path='/*' element={<Home />} />
           <Route path='/MonteDosCastelinhosWebAR' element={<Home />} />
           <Route path='/MonteDosCastelinhosWebAR/mapa' element={<Map />}/>
-          <Route path='/MonteDosCastelinhosWebAR/sondagem4' element={getSondagem("4")} />
+          <Route path='/MonteDosCastelinhosWebAR/sondagem4' element={getSondagem("4", 1)}/>
+          <Route path='/MonteDosCastelinhosWebAR/sondagem4/raTab' element={getSondagem("4", 2)}/>
+          <Route path='/MonteDosCastelinhosWebAR/sondagem4/rvTab' element={getSondagem("4", 3)}/>
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/ra41' element={<Sondagem41 />} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/ra42' element={<Sondagem42 />} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/ra43' element={<Sondagem43 />} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/rv' element={<Sondagem4VR />} />
-          <Route path='/MonteDosCastelinhosWebAR/sondagem5' element={getSondagem("5")} />
+          <Route path='/MonteDosCastelinhosWebAR/sondagem5' element={getSondagem("5", 1)} />
+          <Route path='/MonteDosCastelinhosWebAR/sondagem8' element={getSondagem("8", 1)} />
+          <Route path='/MonteDosCastelinhosWebAR/sondagem9' element={getSondagem("9", 1)} />
         </Routes>
       </BrowserRouter>
     </div >

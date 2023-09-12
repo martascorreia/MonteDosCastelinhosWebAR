@@ -1,4 +1,4 @@
-.SondagemMap{
+.SondagemMap, .mainMapMap{
     position: relative;
     display: flex;
 }
@@ -10,10 +10,38 @@
     justify-content: center;
     align-items: center;
 }
-  
-.mapContainer {
+
+.mapContent{
+    gap: 0 !important;
+}
+
+.mainMapMap{
     height: 100%;
     width: 100%;
+    border-top: 5px solid var(--light-grey);
+}
+
+.mainMapHeader{
+    height: 25%;
+    width: 100%;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;  
+    z-index: 2; 
+}
+
+.mainMapFooter{
+    height: 5%;
+    width: 100%;
+    background-color: var(--light-grey);
+    z-index: 2; 
+}
+  
+.mainMapImage{
+    height: 100%;
+    width: 100%;
+    z-index: 0;
 }
 
 .mapImage{
@@ -25,6 +53,7 @@
 .mapPoints{
     max-width: 60px;
     height: 60px;
+    z-index: 3;
 }
 
 .mapPoint{
@@ -34,11 +63,22 @@
     position: absolute;
 }
 
-.locationBtn{
-    display: flex;
-    justify-content: space-between;  
-    position: absolute;
-    width: 90%;
-    z-index: 99;
-    padding: 5%;
+.mainMapPoint4{
+    top: 17%;
+    left: 7%;
+}
+
+.mainMapPoint5{
+    top: 70%;
+    left: 48%;
+}
+
+.mainMapPoint8{
+    top: 55%;
+    left: 20%;
+}
+
+.mainMapPoint9{
+    top: 80%;
+    left: 75%;
 }
