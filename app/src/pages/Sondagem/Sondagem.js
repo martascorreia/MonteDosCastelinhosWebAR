@@ -10,15 +10,16 @@ import { setOrientation } from '../../utils/utils.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
 import { faVrCardboard, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 
-function Sondagem({ sondagemID, title, headerImage, tabs, info, ra, vr }) {
+function Sondagem({ sondagemID, title, headerImage, tab, tabs, info, ra, vr }) {
     setOrientation("portrait");
-    const [tabSelected, setTabSelected] = useState(1);
+    const [tabSelected, setTabSelected] = useState(tab ? tab : 1);
 
     return (
         <div className="Sondagem" id="sondagem">
             <TopButtons backUrl={"/MonteDosCastelinhosWebAR/mapa"} />
-            <div className="content sondagemContent">
+            <div className="content">
                 <div className='infoTitle'>
                     <img className='sondagemImage' src={process.env.PUBLIC_URL + headerImage} />
                     <div className='sondagemTitle'>{title}</div>
@@ -28,17 +29,27 @@ function Sondagem({ sondagemID, title, headerImage, tabs, info, ra, vr }) {
                         {tabs.map((item, index) => (
                             <div className={`tabType ${tabSelected == index + 1 ? "tabSelected" : ""}`} onClick={() => setTabSelected(index + 1)}>
                                 <div className="tabBtn">
-                                    <div className="tabIcon">
-                                        {item.id == "info" &&
-                                            <FontAwesomeIcon icon={faCircleInfo} />
-                                        }
-                                        {item.id == "ar" &&
-                                            <AugmentedReality size={50} strokeWidth={1.5} />
-                                        }
-                                        {item.id == "vr" &&
-                                            <FontAwesomeIcon icon={faVrCardboard} />
-                                        }
-                                    </div>
+                                    {item.id == "info" &&
+                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/'} className="nav-link">
+                                            <div className="tabIcon">
+                                                <FontAwesomeIcon icon={faCircleInfo} />
+                                            </div>
+                                        </Link>
+                                    }
+                                    {item.id == "ar" &&
+                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/raTab'} className="nav-link">
+                                            <div className="tabIcon">
+                                                <AugmentedReality size={50} strokeWidth={1.5} />
+                                            </div>
+                                        </Link>
+                                    }
+                                    {item.id == "vr" &&
+                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/rvTab'} className="nav-link">
+                                            <div className="tabIcon">
+                                                <FontAwesomeIcon icon={faVrCardboard} />
+                                            </div>
+                                        </Link>
+                                    }
                                     <div className="tabTitle">
                                         {item.title}
                                     </div>

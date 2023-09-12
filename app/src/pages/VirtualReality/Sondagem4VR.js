@@ -50,7 +50,7 @@ function VirtualReality() {
 
   return (
     <div className="VirtualReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4"} />
+      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/rvTab"} />
       <WASPButtons />
       <div className="content">
         <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
@@ -59,7 +59,7 @@ function VirtualReality() {
             ref={entityRef}
             geometry-merger
             material="shader: flat" />
-          <a-entity id="camera" camera look-controls="touchEnabled: false; mouseEnabled: true;" touch-controls />
+          <a-entity id="camera" camera look-controls="touchEnabled: false; mouseEnabled: true;" touch-controls wasd-controls="acceleration: 100; fly: true" />
         </a-scene>
       </div >
     </div>
