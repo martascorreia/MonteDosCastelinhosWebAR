@@ -4,59 +4,54 @@ import { faAngleLeft, faAngleRight, faAngleUp, faAngleDown, faAngleDoubleUp, faA
 import "../../index.css"
 import "./WASPButtons.css"
 
-function WASPButtons({ cameraPosition, onCameraMovement }) {
+function WASPButtons() {
+  // Function to simulate a key press event
+  const simulateKeyPress = (key) => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: key }));
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: key }));
+  };
 
-  const activateKey = (direction) => {
-    // Define movement amounts based on the button clicked
-    const movementAmount = 5.0; // Adjust as needed
+  // Handle camera movement based on mobile control clicks
+  const handleMobileControlClick = (direction) => {
+    // ... (calculate movementAmount and movement vector)
 
-    // Calculate the new camera position based on the direction
-    let newPosition = { x: 0, y: 0, z: 0, ...cameraPosition };
     switch (direction) {
       case 'w':
-        newPosition.z -= movementAmount;
-        break;
-      case 'a':
-        newPosition.x -= movementAmount;
+        simulateKeyPress('w');
         break;
       case 's':
-        newPosition.z += movementAmount;
+        simulateKeyPress('s');
+        break;
+      case 'a':
+        simulateKeyPress('a');
         break;
       case 'd':
-        newPosition.x += movementAmount;
+        simulateKeyPress('d');
         break;
-      case 'e':
-        newPosition.y += movementAmount;
-        break;
-      case 'r':
-        newPosition.y -= movementAmount;
-        break;
+      // Handle other directions if needed
       default:
         break;
     }
-
-    // Apply the new camera position
-    onCameraMovement(newPosition);
-  }
+  };
 
   return (
     <div className='waspButtons'>
       <div className='directionButtons'>
         <div className='upBtns'>
-          <button className="roundBtn" onClick={() => activateKey('w')}>
+          <button className="roundBtn" onClick={() => handleMobileControlClick('w')}>
             <FontAwesomeIcon icon={faAngleUp} />
           </button>
         </div >
         <div className='middleBtns'>
-          <button className="roundBtn" onClick={() => activateKey('a')}>
+          <button className="roundBtn" onClick={() => handleMobileControlClick('a')}>
             <FontAwesomeIcon icon={faAngleLeft} />
           </button>
-          <button className="roundBtn" onClick={() => activateKey('d')}>
+          <button className="roundBtn" onClick={() => handleMobileControlClick('d')}>
             <FontAwesomeIcon icon={faAngleRight} />
           </button>
         </div>
         <div className='downBtns'>
-          <button className="roundBtn" onClick={() => activateKey('s')}>
+          <button className="roundBtn" onClick={() => handleMobileControlClick('s')}>
             <FontAwesomeIcon icon={faAngleDown} />
           </button>
         </div>

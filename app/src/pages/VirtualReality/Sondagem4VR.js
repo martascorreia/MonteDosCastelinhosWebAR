@@ -5,9 +5,8 @@ import "./VirtualReality.css"
 import WASPButtons from '../../components/WASPButtons/WASPButtons.js';
 import { setOrientation, loadModel } from '../../utils/utils.js';
 
-function VirtualReality() {
+function VirtualReality({id}) {
   setOrientation("landscape");
-  const [cameraPosition, setCameraPosition] = useState({ x: 0, y: 0, z: 0 });
   const [modelLoaded, setModelLoaded] = useState(false);
   const entityRef = useRef();
 
@@ -21,8 +20,11 @@ function VirtualReality() {
     loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb', true)
       .then((loadedModel) => {
         if (entityRef.current) {
+          console.log(id)
           entityRef.current.object3D.add(loadedModel);
-          entityRef.current.object3D.position.set(-550, -215, -15);
+          if (id == 1) entityRef.current.object3D.position.set(-550, -215, 60);
+          if (id == 2) entityRef.current.object3D.position.set(-550, -210, 160);
+          if (id == 3) entityRef.current.object3D.position.set(-515, -225, 180);
           entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
           entityRef.current.setAttribute('rotation', '0 -50 0');
           setModelLoaded(true);
@@ -49,15 +51,11 @@ function VirtualReality() {
     });
   };
 
-  const handleCameraMovement = (newPosition) => {
-    // Update the camera position
-    setCameraPosition(newPosition);
-  };
-
   return (
     <div className="VirtualReality">
       <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/rvTab"} />
-      <WASPButtons cameraPosition={cameraPosition} onCameraMovement={handleCameraMovement} />
+      {//<WASPButtons />
+      }
       <div className="content">
         <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
           <a-entity
@@ -65,8 +63,7 @@ function VirtualReality() {
             ref={entityRef}
             geometry-merger
             material="shader: flat" />
-          <a-camera position={`${cameraPosition.x} ${cameraPosition.y} ${cameraPosition.z}`}
-            look-controls="touchEnabled: false; mouseEnabled: true;" wasd-controls="acceleration: 100; fly: true" />
+          <a-camera look-controls="touchEnabled: true; mouseEnabled: true;" wasd-controls="acceleration: 100; fly: true" />
         </a-scene>
       </div >
     </div>

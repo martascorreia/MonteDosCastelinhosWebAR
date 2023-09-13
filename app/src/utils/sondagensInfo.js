@@ -67,10 +67,8 @@ export const getSondagem = (sondagemID, tab) => {
                 }]}
                 vr={[{
                     firstDescription: `&nbspEsta experiência de <b>Realidade Virtual</b> permite a visualização e exploração de uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
-                    instructions: `1. Desloque-se até um dos 3 pontos de visualização <br>
-                                    2. Carregue no botão correspondente, no mapa acima <br>
-                                    3. Aponte a câmara de forma a ficar alinhada com a imagem no ecrã<br>
-                                    4. Clique no botão "alinhado"`
+                    instructions: `1. Escolha um dos pontos de visualização do modelo virtual <br>
+                                    2. Mova a câmara para observar a vista 360º daquele ponto`
                 }]}
             />)
     }
