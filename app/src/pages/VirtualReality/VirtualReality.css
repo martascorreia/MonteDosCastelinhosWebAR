@@ -6,7 +6,17 @@
   align-items: center
 }
 
-.mapPoint1VR4{
-  top: 42%;
+.mapPointAVR4{
+  top: 40%;
   left: 68%;
+}
+
+.mapPointBVR4{
+  top: 20%;
+  left: 52%;
+}
+
+.mapPointCVR4{
+  top: 20%;
+  left: 38%;
 }
