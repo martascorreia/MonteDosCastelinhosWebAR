@@ -1,5 +1,7 @@
 :root {
+  --main-color: #86b38a;
   --main-blue: #6FAFC9;
+  --main-green: #86b38a;
   --white: #ffffff;
   --very-light-grey: #eeeeee;
   --light-grey: #E2E2E2;
@@ -47,7 +49,7 @@ code {
 
 .roundBtn {
   display: flex;
-  background-color: var(--main-blue);
+  background-color: var(--main-color);
   border: none;
   color: var(--white);
   padding: 15px;

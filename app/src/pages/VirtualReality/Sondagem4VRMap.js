@@ -23,6 +23,16 @@ function Sondagem4VRMap() {
           <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/pointC.png"} />
         </button>
       </Link>
+      <Link to={'/MonteDosCastelinhosWebAR/sondagem4/rvD'} className="nav-link">
+        <button className='mapPoint mapPointDVR4'>
+          <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/pointD.png"} />
+        </button>
+      </Link>
+      <Link to={'/MonteDosCastelinhosWebAR/sondagem4/rvE'} className="nav-link">
+        <button className='mapPoint mapPointEVR4'>
+          <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/pointE.png"} />
+        </button>
+      </Link>
     </div>
   );
 }

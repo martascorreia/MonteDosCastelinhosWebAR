@@ -53,7 +53,7 @@ function Sondagem43() {
       <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/raTab"} />
       <div className="content">
         <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
-          {isMobile && <a-camera rotation-reader look-controls="touchEnabled: false; mouseEnabled: false;" />}
+          {isMobile && <a-camera rotation-reader look-controls="touchEnabled: false; mouseEnabled: false;" wasd-controls="enabled: false"/>}
           {isBrowser && modelAligned &&
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
