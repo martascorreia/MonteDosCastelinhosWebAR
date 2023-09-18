@@ -6,7 +6,7 @@ export const getSondagem = (sondagemID, tab) => {
             <Sondagem
                 sondagemID={4}
                 title="Sondagem 4"
-                headerImage="/images/Headers/sondagem4Header.png"
+                headerImage="/images/Headers/sondagem4Header.jpg"
                 tab={tab}
                 tabs={[
                     {
@@ -77,7 +77,7 @@ export const getSondagem = (sondagemID, tab) => {
         return (
             <Sondagem sondagemID={5}
                 title="Sondagem 5"
-                headerImage="/images/Headers/sondagem4Header.png" //TODO CHANGE
+                headerImage="/images/Headers/sondagem5Header.jpg" //TODO CHANGE
                 tab={tab}
                 info={[
                     {
@@ -122,7 +122,7 @@ export const getSondagem = (sondagemID, tab) => {
         return (
             <Sondagem sondagemID={8}
                 title="Sondagem 8"
-                headerImage="/images/Headers/sondagem4Header.png" //TODO CHANGE
+                headerImage="/images/Headers/sondagem8Header.jpg" //TODO CHANGE
                 tab={tab}
                 info={[
                     {
@@ -167,7 +167,7 @@ export const getSondagem = (sondagemID, tab) => {
         return (
             <Sondagem sondagemID={9}
                 title="Sondagem 9"
-                headerImage="/images/Headers/sondagem4Header.png" //TODO CHANGE
+                headerImage="/images/Headers/sondagem9Header.jpg" //TODO CHANGE
                 tab={tab}
                 info={[
                     {

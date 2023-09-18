@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
+
 import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.2.png';
@@ -10,7 +12,7 @@ function Sondagem42() {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const entityRef = useRef();
 
   const handleButtonClick = () => {
@@ -18,30 +20,36 @@ function Sondagem42() {
   };
 
   useEffect(() => {
-    if (modelAligned && model == null) {
-      setIsLoading(true);
+    if (model == null) {
       load3DModel();
     }
-  }, [modelAligned]);
+    if (modelAligned && model != null) {
+      setModelInScene();
+    }
+  }, [model, modelAligned]);
 
   // Load model
   const load3DModel = () => {
     loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb', true)
       .then((loadedModel) => {
-        if (entityRef.current) {
-          entityRef.current.object3D.add(loadedModel);
-          entityRef.current.object3D.position.set(680, -490, -300);
-          entityRef.current.object3D.scale.set(2, 2, 2);
-          entityRef.current.setAttribute('rotation', '2 70 10');
-          setIsLoading(false);
-          setModel(loadedModel);
-        }
+        setModel(loadedModel);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error('Error loading model:', error);
       });
   };
-  
+
+  // Set model
+  const setModelInScene = () => {
+    if (entityRef.current) {
+      entityRef.current.object3D.add(model);
+      entityRef.current.object3D.position.set(680, -490, -300);
+      entityRef.current.object3D.scale.set(2, 2, 2);
+      entityRef.current.setAttribute('rotation', '2 70 10');
+    }
+  };
+
   // Cleanup resources
   const handleCleanup = () => {
     cleanCamera();
@@ -51,28 +59,31 @@ function Sondagem42() {
   return (
     <div className="AugmentedReality">
       <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/raTab"} />
-      <div className="content">
-        <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
-          {isMobile && <a-camera rotation-reader look-controls="touchEnabled: true; mouseEnabled: true;" />}
-          {modelAligned &&
-            <a-entity
-              className="model"
-              ref={entityRef}
-              geometry-merger
-              material="shader: flat" />}
-          {modelAligned &&
+      {isLoading &&
+        <LoadingScreen />}
+      {!isLoading &&
+        <div className="content">
+          <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
+            {isMobile && <a-camera rotation-reader look-controls="touchEnabled: true; mouseEnabled: true;" wasd-controls="enabled: false" />}
+            {modelAligned &&
+              <a-entity
+                className="model"
+                ref={entityRef}
+                geometry-merger
+                material="shader: flat" />}
+            {modelAligned &&
+              <div className="alignElements">
+                <img className="alignImage" src={sondagem4Img} />
+              </div>}
+          </a-scene>
+          {!modelAligned &&
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
+              <button className="alignedBtn" onClick={handleButtonClick}>
+                Alinhado
+              </button>
             </div>}
-        </a-scene>
-        {!modelAligned &&
-          <div className="alignElements">
-            <img className="alignImage" src={sondagem4Img} />
-            <button className="alignedBtn" onClick={handleButtonClick}>
-              Alinhado
-            </button>
-          </div>}
-      </div >
+        </div >}
     </div>
   );
 }

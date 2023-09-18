@@ -29,16 +29,6 @@ export const loadModel = async (modelPath, isFull) => {
         return partialModelCache[modelPath];
     }
 
-    //clean the other model
-    if (isFull && Object.keys(partialModelCache).length !== 0) {
-        cleanModel(partialModelCache[Object.keys(partialModelCache)[0]])
-        partialModelCache = {}
-    }
-    if (!isFull && Object.keys(fullModelCache).length !== 0) {
-        cleanModel(fullModelCache[Object.keys(fullModelCache)[0]])
-        fullModelCache = {}
-    }
-
     //load model
     return new Promise((resolve, reject) => {
         const loader = new GLTFLoader();

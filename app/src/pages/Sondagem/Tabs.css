@@ -40,9 +40,9 @@
 }
 
 .tabSelected{
-    background-color: var(--main-blue);
+    background-color: var( --main-color);
     color: var(--white) !important;
-    border-bottom: 1px solid var(--main-blue);
+    border-bottom: 1px solid var( --main-color);
 }
 
 .tabSelected svg{
