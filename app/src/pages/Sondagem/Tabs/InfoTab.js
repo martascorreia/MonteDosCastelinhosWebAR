@@ -10,7 +10,7 @@ function InfoTab({ accordions }) {
     setOrientation("portrait");
     return (
         <div className="InfoTab">
-            <div className="InfoSondagem"> 
+            <div className="InfoSondagem">
                 <div className='vrTitle'>
                     Informação
                 </div>
@@ -18,6 +18,7 @@ function InfoTab({ accordions }) {
                     {accordions &&
                         accordions.map((item, index) => (
                             <Accordion
+                                id={item.id}
                                 accordionOpen={item.isOpen}
                                 title={item.title}
                                 content={item.content} />

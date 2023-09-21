@@ -30,21 +30,21 @@ function Sondagem({ sondagemID, title, headerImage, tab, tabs, info, ra, vr }) {
                             <div className={`tabType ${tabSelected == index + 1 ? "tabSelected" : ""}`} onClick={() => setTabSelected(index + 1)}>
                                 <div className="tabBtn">
                                     {item.id == "info" &&
-                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/'} className="nav-link">
+                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/'} className="nav-link" id={index}>
                                             <div className="tabIcon">
                                                 <FontAwesomeIcon icon={faCircleInfo} />
                                             </div>
                                         </Link>
                                     }
                                     {item.id == "ar" &&
-                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/raTab'} className="nav-link">
+                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/raTab'} className="nav-link" id={index}>
                                             <div className="tabIcon">
                                                 <AugmentedReality size={50} strokeWidth={1.5} />
                                             </div>
                                         </Link>
                                     }
                                     {item.id == "vr" &&
-                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/rvTab'} className="nav-link">
+                                        <Link to={'/MonteDosCastelinhosWebAR/sondagem' + sondagemID + '/rvTab'} className="nav-link" id={index}>
                                             <div className="tabIcon">
                                                 <FontAwesomeIcon icon={faVrCardboard} />
                                             </div>

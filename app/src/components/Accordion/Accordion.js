@@ -5,11 +5,11 @@ import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 import "./Accordion.css";
 
-function BasicAccordion({accordionOpen, title, content}) {
+function Accordion({id, accordionOpen, title, content}) {
   const [isOpen, setIsOpen] = useState(accordionOpen);
 
   return (
-    <div className="Accordion">
+    <div className="Accordion" id={id}>
       <div className="accordionHeader" onClick={() => setIsOpen(!isOpen)}>
         <div className='accordionTitle'>
           {title}
@@ -27,4 +27,4 @@ function BasicAccordion({accordionOpen, title, content}) {
   );
 }
 
-export default BasicAccordion;
+export default Accordion;

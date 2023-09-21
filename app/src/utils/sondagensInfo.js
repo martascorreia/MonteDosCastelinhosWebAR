@@ -75,7 +75,8 @@ export const getSondagem = (sondagemID, tab) => {
 
     if (sondagemID == 5) {
         return (
-            <Sondagem sondagemID={5}
+            <Sondagem
+                sondagemID={5}
                 title="Sondagem 5"
                 headerImage="/images/Headers/sondagem5Header.jpg" //TODO CHANGE
                 tab={tab}
@@ -120,7 +121,8 @@ export const getSondagem = (sondagemID, tab) => {
     }
     if (sondagemID == 8) {
         return (
-            <Sondagem sondagemID={8}
+            <Sondagem
+                sondagemID={8}
                 title="Sondagem 8"
                 headerImage="/images/Headers/sondagem8Header.jpg" //TODO CHANGE
                 tab={tab}
@@ -165,7 +167,8 @@ export const getSondagem = (sondagemID, tab) => {
     }
     if (sondagemID == 9) {
         return (
-            <Sondagem sondagemID={9}
+            <Sondagem
+                sondagemID={9}
                 title="Sondagem 9"
                 headerImage="/images/Headers/sondagem9Header.jpg" //TODO CHANGE
                 tab={tab}
