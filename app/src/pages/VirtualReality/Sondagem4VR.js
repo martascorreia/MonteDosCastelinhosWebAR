@@ -4,7 +4,7 @@ import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
 
 import "../../index.css"
 import "./VirtualReality.css"
-import { setOrientation, loadModel } from '../../utils/utils.js';
+import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 
 function VirtualReality({ id }) {
   setOrientation("landscape");
@@ -49,18 +49,30 @@ function VirtualReality({ id }) {
 
   // Cleanup resources
   const handleCleanup = () => {
-    cleanCamera();
-    entityRef.current = null;
-  };
+    //clean up model
+    let entity = entityRef.current;
+    if (entity) {
+      const object3D = entityRef.current.object3D.children.find(child => child === model);
+      if (object3D) {
+        // dispose geometry and materials
+        object3D.traverse((node) => {
+          if (node.isMesh) {
+            node.geometry.dispose();
+            node.material.dispose();
+          }
+        });
 
-  const cleanCamera = () => {
-    const elementsToRemove = document.querySelectorAll("video");
-    elementsToRemove.forEach(element => {
-      if (!element.paused) {
-        element.pause();
+        // remove the model from the entity
+        entity.object3D.remove(object3D);
+        setModel(null);
       }
-      element.remove();
-    });
+    }
+    // clear references
+    entity = null;
+    entityRef.current = null;
+
+    // clean up camera
+    cleanCamera();
   };
 
   return (

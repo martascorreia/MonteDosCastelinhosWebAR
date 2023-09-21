@@ -4,7 +4,7 @@ import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
 import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.1.png';
-import { setOrientation, loadModel, setCamera, cleanCamera } from '../../utils/utils.js';
+import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 
 function Sondagem41() {
   setOrientation("landscape");
