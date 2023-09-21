@@ -5,35 +5,19 @@
   "private": true,
   "dependencies": {
     "@fontsource/lexend-deca": "^4.5.14",
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
-    "@fortawesome/free-regular-svg-icons": "^6.3.0",
-    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.3.2",
+    "@fortawesome/free-solid-svg-icons": "^6.3.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@googlemaps/react-wrapper": "^1.1.35",
-    "@react-google-maps/api": "^2.19.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "aframe": "github:aframevr/aframe#480a303b3c1932170552a3e4f9287298c1039c27",
-    "aframe-geometry-merger-component": "^2.0.1",
-    "aframe-react": "^4.4.0",
-    "expo-screen-orientation": "^6.0.5",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.8.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-loading": "^2.0.3",
-    "react-router-dom": "^6.8.1",
+    "react-router-dom": "^6.16.0",
     "react-scripts": "^5.0.1",
-    "save": "^2.9.0",
-    "styled-components": "^5.3.6",
     "tabler-icons-react": "^1.56.0",
     "three": "^0.154.0",
-    "three-gltf-loader": "^1.111.0",
-    "types-aframe-react": "^1.0.2",
-    "web-vitals": "^3.3.2"
+    "web-vitals": "^3.3.2",
+    "@ar-js-org/ar.js": "3.4.2"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -56,9 +40,6 @@
     ]
   },
   "devDependencies": {
-    "@types/google-map-react": "^2.1.7",
-    "gh-pages": "^5.0.0",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "gh-pages": "^5.0.0"
   }
 }

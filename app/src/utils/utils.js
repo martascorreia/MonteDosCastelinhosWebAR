@@ -66,21 +66,46 @@ function disposeMaterial(material) {
     if (material.map) {
         material.map.dispose();
     }
-    
+
     if (material.alphaMap) {
         material.alphaMap.dispose();
     }
-    
+
     material.dispose();
 }
 
 export const cleanCamera = () => {
     const elementsToRemove = document.querySelectorAll("video");
     elementsToRemove.forEach(element => {
-      if (!element.paused) {
-        element.pause();
-      }
-      element.remove();
+        if (!element.paused) {
+            element.pause();
+        }
+        element.remove();
     });
-  };
+};
 
+export const setCamera = () => {
+    const videoElement = document.getElementById('webcam');
+    // Check if getUserMedia is available in the browser
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Specify the constraints to use the back camera
+        const constraints = {
+            video: {
+                facingMode: 'environment', // Use the back camera
+            },
+        };
+
+        // Request access to the camera with the specified constraints
+        navigator.mediaDevices
+            .getUserMedia(constraints)
+            .then(function (stream) {
+                // Assign the stream to the video element
+                videoElement.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error('Error accessing the back camera:', error);
+            });
+    } else {
+        console.error('getUserMedia is not supported in this browser');
+    }
+}
