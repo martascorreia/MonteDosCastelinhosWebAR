@@ -1,15 +1,12 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
-
 import "../../index.css"
 import "./AugmentedReality.css"
-import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
-import sondagem43 from '../../resources/models/sondagem4.3.png';
+import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.2.png';
 import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
-import { isBrowser, isMobile } from 'react-device-detect';
 
-function Sondagem43() {
+function Sondagem4C() {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
@@ -23,24 +20,18 @@ function Sondagem43() {
   };
 
   useEffect(() => {
-    if (isBrowser && model == null) {
+    if (model == null) {
       load3DModel();
-    } else if (isMobile && model == null) {
-      setIsLoading(false);
     }
-
-    if (isBrowser && modelAligned && model != null) {
+    if (modelAligned && model != null) {
       setModelInScene();
-    } else if (isMobile && modelAligned && model != null) {
-      setIsModelSet(true)
     }
   }, [model, modelAligned]);
 
   // Load model
   const load3DModel = () => {
-    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.3.smaller.glb', false)
+    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb')
       .then((loadedModel) => {
-        console.log("model loaded")
         setModel(loadedModel);
         setIsLoading(false);
       })
@@ -53,9 +44,9 @@ function Sondagem43() {
   const setModelInScene = () => {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(90, -460, 220);
-      entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
-      entityRef.current.setAttribute('rotation', '25 35 18');
+      entityRef.current.object3D.position.set(540, -555, 0);
+      entityRef.current.object3D.scale.set(2, 2.5, 2);
+      entityRef.current.setAttribute('rotation', '2 50 10');
       setIsModelSet(true)
     }
   };
@@ -102,25 +93,17 @@ function Sondagem43() {
             <a-camera
               rotation-reader
               look-controls="touchEnabled: true; mouseEnabled: true;" />
-            {isBrowser &&
-              <a-entity
-                className="model"
-                ref={entityRef}
-                geometry-merger
-                material="shader: flat" />}
-            {isMobile &&
-              <a-image
-                src={sondagem43}
-                position="0 1 -7.7"
-                scale="21 5.5 0"
-                material="transparent: true; blending: normal"
-              />}
+            <a-entity
+              className="model"
+              ref={entityRef}
+              geometry-merger
+              material="shader: flat" />
             {false &&
               <div className="alignElements">
                 <img className="alignImage" src={sondagem4Img} />
               </div>}
           </a-scene>
-        </div>}
+        </div >}
       {!isLoading && !modelAligned &&
         <div className="content">
           <a-scene
@@ -138,7 +121,7 @@ function Sondagem43() {
             </button>
           </div>
         </div>}
-    </div >
+    </div>
   );
 }
-export default Sondagem43;
+export default Sondagem4C;

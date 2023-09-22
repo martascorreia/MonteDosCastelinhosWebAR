@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
-
 import "../../index.css"
 import "./VirtualReality.css"
 import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
@@ -13,17 +12,25 @@ function VirtualReality({ id }) {
   const entityRef = useRef();
 
   useEffect(() => {
-    if (model == null) {
-      load3DModel();
-    }
-    if (model != null) {
-      setModelInScene();
+    var hasRefreshed = localStorage.getItem('refreshFlag');
+    hasRefreshed = (hasRefreshed == null || hasRefreshed == 'false') ? false : true;
+
+    if (!hasRefreshed) {
+      console.log("refreshing")
+      window.location.reload()
+      localStorage.setItem('refreshFlag', true);
+    } else {
+      if (model == null) {
+        load3DModel();
+      } else {
+        setModelInScene();
+      }
     }
   }, [model]);
 
   // Load model
   const load3DModel = () => {
-    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb', true)
+    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb')
       .then((loadedModel) => {
         setModel(loadedModel);
         setIsLoading(false);
@@ -73,6 +80,9 @@ function VirtualReality({ id }) {
 
     // clean up camera
     cleanCamera();
+
+    //clean refresh flag
+    localStorage.setItem('refreshFlag', false);
   };
 
   return (

@@ -4,15 +4,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home/Home"
 import Map from "./pages/Map/Map"
 import Sondagem4VR from "./pages/VirtualReality/Sondagem4VR"
-import Sondagem41 from "./pages/AugmentedReality/Sondagem41"
-import Sondagem42 from "./pages/AugmentedReality/Sondagem42"
-import Sondagem43 from "./pages/AugmentedReality/Sondagem43"
+import Sondagem4A from "./pages/AugmentedReality/Sondagem4A"
+import Sondagem4C from "./pages/AugmentedReality/Sondagem4C"
+import Sondagem4B from "./pages/AugmentedReality/Sondagem4B"
 import { getSondagem } from './utils/sondagensInfo';
 
 function App() {
   return (
     <div className="App" id="app">
-      <BrowserRouter>
+      <BrowserRouter >
         <Routes>
           <Route path='/*' element={<Home />} />
           <Route path='/MonteDosCastelinhosWebAR' element={<Home />} />
@@ -20,9 +20,9 @@ function App() {
           <Route path='/MonteDosCastelinhosWebAR/sondagem4' element={getSondagem("4", 1)}/>
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/raTab' element={getSondagem("4", 2)}/>
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/rvTab' element={getSondagem("4", 3)}/>
-          <Route path='/MonteDosCastelinhosWebAR/sondagem4/raA' element={<Sondagem41 />} />
-          <Route path='/MonteDosCastelinhosWebAR/sondagem4/raB' element={<Sondagem43 />} />
-          <Route path='/MonteDosCastelinhosWebAR/sondagem4/raC' element={<Sondagem42 />} />
+          <Route path='/MonteDosCastelinhosWebAR/sondagem4/raA' element={<Sondagem4A />} />
+          <Route path='/MonteDosCastelinhosWebAR/sondagem4/raB' element={<Sondagem4B />} />
+          <Route path='/MonteDosCastelinhosWebAR/sondagem4/raC' element={<Sondagem4C />} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/rvA' element={<Sondagem4VR id={1}/>} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/rvB' element={<Sondagem4VR id={2}/>} />
           <Route path='/MonteDosCastelinhosWebAR/sondagem4/rvC' element={<Sondagem4VR id={3}/>} />
