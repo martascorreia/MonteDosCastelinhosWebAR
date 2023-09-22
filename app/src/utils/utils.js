@@ -2,39 +2,30 @@ export const setOrientation = (type) => {
     const isMobile = navigator.userAgentData.mobile;
     if (!isMobile) return;
 
-    if (type == "landscape") {
-        screen.orientation.lock("landscape-primary")
-            .then(function () {
-            })
-            .catch(function (error) {
-            });
-    } else {
-        screen.orientation.lock("portrait-primary")
-            .then(function () {
-            })
-            .catch(function (error) {
-            });
-    }
+    var typeLock = type == "landscape" ? "landscape-primary" : "portrait-primary"
+    screen.orientation.lock(typeLock)
+        .then(function () { })
+        .catch(function (error) { });
 }
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-var fullModelCache = {};
-var partialModelCache = {};
+var modelCache = {};
 
-export const loadModel = async (modelPath, isFull) => {
+export const loadModel = async (modelPath) => {
     //if already loaded
-    if (isFull && fullModelCache[modelPath]) {
-        return fullModelCache[modelPath];
-    } else if (partialModelCache[modelPath]) {
-        return partialModelCache[modelPath];
+    if (modelCache[modelPath]) {
+        console.log("has model")
+        return modelCache[modelPath];
     }
+
+    console.log("no model cached")
 
     //load model
     return new Promise((resolve, reject) => {
         const loader = new GLTFLoader();
         loader.load(modelPath, (glb) => {
             const model = glb.scene;
-            isFull ? fullModelCache[modelPath] = model : partialModelCache[modelPath] = model;
+            modelCache[modelPath] = model;
             resolve(model);
         }, null, reject);
     });

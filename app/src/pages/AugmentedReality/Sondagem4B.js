@@ -1,0 +1,69 @@
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import TopButtons from "../../components/TopButtons/TopButtons.js"
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
+
+import "../../index.css"
+import "./AugmentedReality.css"
+import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
+import sondagem4B from '../../resources/models/sondagem4.3.png';
+import { setOrientation, cleanCamera } from '../../utils/utils.js';
+
+function Sondagem4B() {
+  setOrientation("landscape");
+  const [modelAligned, setModelAligned] = useState(false);
+
+  const handleButtonClick = () => {
+    cleanCamera();
+    setModelAligned(true);
+  };
+
+  // Cleanup resources
+  const handleCleanup = () => {
+    cleanCamera();
+  };
+
+  return (
+    <div className="AugmentedReality">
+      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/raTab"} />
+      {modelAligned &&
+        <div className="content">
+          <a-scene className="scene"
+            embedded
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
+            vr-mode-ui='enabled: false'>
+            <a-camera
+              rotation-reader
+              look-controls="touchEnabled: true; mouseEnabled: true;" />
+            <a-image
+              src={sondagem4B}
+              position="0 1 -7.7"
+              scale="21 5.5 0"
+              material="transparent: true; blending: normal"
+            />
+            {false &&
+              <div className="alignElements">
+                <img className="alignImage" src={sondagem4Img} />
+              </div>}
+          </a-scene>
+        </div>}
+      {!modelAligned &&
+        <div className="content">
+          <a-scene
+            className="scene"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
+            vr-mode-ui='enabled: false'>
+            <a-camera
+              rotation-reader
+              look-controls="touchEnabled: false; mouseEnabled: false;" />
+          </a-scene>
+          <div className="alignElements">
+            <img className="alignImage" src={sondagem4Img} />
+            <button className="alignedBtn" onClick={handleButtonClick}>
+              Alinhado
+            </button>
+          </div>
+        </div>}
+    </div >
+  );
+}
+export default Sondagem4B;

@@ -1,13 +1,12 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
-
 import "../../index.css"
 import "./AugmentedReality.css"
-import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.2.png';
+import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.1.png';
 import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 
-function Sondagem42() {
+function Sondagem4A() {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
@@ -31,7 +30,7 @@ function Sondagem42() {
 
   // Load model
   const load3DModel = () => {
-    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb', true)
+    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb')
       .then((loadedModel) => {
         setModel(loadedModel);
         setIsLoading(false);
@@ -45,9 +44,9 @@ function Sondagem42() {
   const setModelInScene = () => {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(540, -555, 0);
-      entityRef.current.object3D.scale.set(2, 2.5, 2);
-      entityRef.current.setAttribute('rotation', '2 50 10');
+      entityRef.current.object3D.position.set(-480, -300, -500);
+      entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
+      entityRef.current.setAttribute('rotation', '0 -50 0');
       setIsModelSet(true)
     }
   };
@@ -86,12 +85,15 @@ function Sondagem42() {
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&
-        <div className="content">
-          <a-scene className="scene"
+        <div className="content" id="realidadeAumentada">
+          <a-scene
+            className="scene"
             embedded
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
             <a-camera
+              //position="0 1.6 0"
+              //rotation="0 0 0"
               rotation-reader
               look-controls="touchEnabled: true; mouseEnabled: true;" />
             <a-entity
@@ -104,7 +106,7 @@ function Sondagem42() {
                 <img className="alignImage" src={sondagem4Img} />
               </div>}
           </a-scene>
-        </div >}
+        </div>}
       {!isLoading && !modelAligned &&
         <div className="content">
           <a-scene
@@ -122,7 +124,7 @@ function Sondagem42() {
             </button>
           </div>
         </div>}
-    </div>
+    </div >
   );
 }
-export default Sondagem42;
+export default Sondagem4A;
