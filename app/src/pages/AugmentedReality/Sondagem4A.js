@@ -88,12 +88,9 @@ function Sondagem4A() {
         <div className="content" id="realidadeAumentada">
           <a-scene
             className="scene"
-            embedded
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
             <a-camera
-              //position="0 1.6 0"
-              //rotation="0 0 0"
               rotation-reader
               look-controls="touchEnabled: true; mouseEnabled: true;" />
             <a-entity

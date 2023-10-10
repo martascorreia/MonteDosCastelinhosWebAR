@@ -13,7 +13,8 @@ function VirtualReality({ id }) {
 
   useEffect(() => {
     var hasRefreshed = localStorage.getItem('refreshFlag');
-    hasRefreshed = (hasRefreshed == null || hasRefreshed == 'false') ? false : true;
+    //hasRefreshed = (hasRefreshed == null || hasRefreshed == 'false') ? false : true;
+    hasRefreshed = true
 
     if (!hasRefreshed) {
       console.log("refreshing")
