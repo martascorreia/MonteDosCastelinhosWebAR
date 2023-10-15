@@ -12,6 +12,7 @@ function VirtualReality({ id, label }) {
   const entityRef = useRef();
 
   useEffect(() => {
+    localStorage.setItem('sondagem4VR' + id + 'Flag', 'true');
     var hasRefreshed = localStorage.getItem('refreshFlag');
     //hasRefreshed = (hasRefreshed == null || hasRefreshed == 'false') ? false : true;
     hasRefreshed = true
@@ -45,11 +46,11 @@ function VirtualReality({ id, label }) {
   const setModelInScene = () => {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
-      if (id == 1) entityRef.current.object3D.position.set(-550, -210, 60);  //A
-      if (id == 2) entityRef.current.object3D.position.set(-555, -210, 150); //B
-      if (id == 3) entityRef.current.object3D.position.set(-515, -225, 180); //C
-      if (id == 4) entityRef.current.object3D.position.set(-480, -225, 215); //D
-      if (id == 5) entityRef.current.object3D.position.set(-420, -235, 110); //E
+      if (id == 'A') entityRef.current.object3D.position.set(-550, -210, 60);  //A
+      if (id == 'B') entityRef.current.object3D.position.set(-555, -210, 150); //B
+      if (id == 'C') entityRef.current.object3D.position.set(-515, -225, 180); //C
+      if (id == 'D') entityRef.current.object3D.position.set(-480, -225, 215); //D
+      if (id == 'E') entityRef.current.object3D.position.set(-420, -235, 110); //E
       entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
       entityRef.current.setAttribute('rotation', '0 -50 0');
     }

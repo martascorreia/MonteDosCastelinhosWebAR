@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons.js"
-import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
 
 import "../../index.css"
 import "./AugmentedReality.css"
@@ -24,9 +23,13 @@ function Sondagem4B() {
     cleanCamera();
   };
 
+  useEffect(() => {
+    localStorage.setItem('sondagem4ARBFlag', 'true');
+  });
+
   return (
     <div className="AugmentedReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label}/>
+      <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
       {modelAligned &&
         <div className="content">
           <a-scene className="scene"

@@ -39,7 +39,7 @@ function Sondagem({ sondagemID, title, headerImage, tab, tabs, info, ra, vr }) {
                                     {item.id == "ar" &&
                                         <Link to={'/sondagem' + sondagemID + '/raTab'} className="nav-link" id={index}>
                                             <div className="tabIcon">
-                                                <AugmentedReality size={50} strokeWidth={1.5} />
+                                                <AugmentedReality width={50} height={40} strokeWidth={1.5}/>
                                             </div>
                                         </Link>
                                     }

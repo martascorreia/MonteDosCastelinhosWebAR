@@ -22,6 +22,8 @@ function Sondagem4C() {
   };
 
   useEffect(() => {
+    localStorage.setItem('sondagem4ARCFlag', 'true');
+
     if (model == null) {
       load3DModel();
     }

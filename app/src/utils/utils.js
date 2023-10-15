@@ -100,3 +100,19 @@ export const setCamera = () => {
         console.error('getUserMedia is not supported in this browser');
     }
 }
+
+
+export const cleanSondagemFlags = () => {
+    //VR
+    localStorage.setItem('sondagem4VRAFlag', 'false');
+    localStorage.setItem('sondagem4VRBFlag', 'false');
+    localStorage.setItem('sondagem4VRCFlag', 'false');
+    localStorage.setItem('sondagem4VRDFlag', 'false');
+    localStorage.setItem('sondagem4VREFlag', 'false');
+
+    //AR
+    localStorage.setItem('sondagem4ARAFlag', 'false');
+    localStorage.setItem('sondagem4ARBFlag', 'false');
+    localStorage.setItem('sondagem4ARCFlag', 'false');
+}
+
