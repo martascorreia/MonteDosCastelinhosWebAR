@@ -22,11 +22,11 @@ function App() {
           <Route path='/sondagem4/raA' element={<Sondagem4A />} />
           <Route path='/sondagem4/raB' element={<Sondagem4B />} />
           <Route path='/sondagem4/raC' element={<Sondagem4C />} />
-          <Route path='/sondagem4/rvA' element={<Sondagem4VR id={1} label={"Entrada"} />} />
-          <Route path='/sondagem4/rvB' element={<Sondagem4VR id={2} label={"Banhos"} />} />
-          <Route path='/sondagem4/rvC' element={<Sondagem4VR id={3} label={"Átrio"} />} />
-          <Route path='/sondagem4/rvD' element={<Sondagem4VR id={4} label={"Quartos"} />} />
-          <Route path='/sondagem4/rvE' element={<Sondagem4VR id={5} label={"Anexos"} />} />
+          <Route path='/sondagem4/rvA' element={<Sondagem4VR id={'A'} label={"Entrada"} />} />
+          <Route path='/sondagem4/rvB' element={<Sondagem4VR id={'B'} label={"Banhos"} />} />
+          <Route path='/sondagem4/rvC' element={<Sondagem4VR id={'C'} label={"Átrio"} />} />
+          <Route path='/sondagem4/rvD' element={<Sondagem4VR id={'D'} label={"Quartos"} />} />
+          <Route path='/sondagem4/rvE' element={<Sondagem4VR id={'E'} label={"Anexos"} />} />
           <Route path='/sondagem5' element={getSondagem("5", 1)} />
           <Route path='/sondagem8' element={getSondagem("8", 1)} />
           <Route path='/sondagem9' element={getSondagem("9", 1)} />

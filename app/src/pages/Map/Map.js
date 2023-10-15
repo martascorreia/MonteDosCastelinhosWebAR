@@ -2,8 +2,14 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import "./Map.css"
 import "../../index.css"
 import { Link } from 'react-router-dom';
+import { useEffect } from "react";
+import { cleanSondagemFlags } from '../../utils/utils.js';
 
 function Map() {
+
+  useEffect(() => {
+    cleanSondagemFlags();
+  });
 
   return (
     <div className="Map">
