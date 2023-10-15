@@ -11,10 +11,12 @@ import { setOrientation, cleanCamera } from '../../utils/utils.js';
 function Sondagem4B() {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
+  const [label, setLabel] = useState(null);
 
   const handleButtonClick = () => {
     cleanCamera();
     setModelAligned(true);
+    setLabel("Vista Central");
   };
 
   // Cleanup resources
@@ -24,7 +26,7 @@ function Sondagem4B() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/raTab"} />
+      <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label}/>
       {modelAligned &&
         <div className="content">
           <a-scene className="scene"

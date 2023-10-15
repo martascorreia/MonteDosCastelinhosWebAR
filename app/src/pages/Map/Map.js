@@ -7,31 +7,31 @@ function Map() {
 
   return (
     <div className="Map">
-      <TopButtons backUrl={"/MonteDosCastelinhosWebAR"} />
+      <TopButtons backUrl={"/"} />
       <div className="content mapContent">
         <div className='mainMapHeader'>
           <div className='sondagemTitle'>Mapa</div>
         </div>
         <div className='mainMapMap'>
-          <img className='mainMapImage' src={process.env.PUBLIC_URL + "/images/Maps/mainMap_smaller.jpg"} />
-          <Link to={'/MonteDosCastelinhosWebAR/sondagem4/'} className="nav-link">
+          <img className='mainMapImage' src={process.env.PUBLIC_URL + "/images/Maps/mainMap.jpg"} />
+          <Link to={'/sondagem4/'} className="nav-link">
             <button className='mapPoint mainMapPoint4'>
               <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point4.png"} />
             </button>
           </Link>
-          <Link to={'/MonteDosCastelinhosWebAR/sondagem5/'} className="nav-link">
+          <Link to={'/sondagem5/'} className="nav-link">
             <button className='mapPoint mainMapPoint5'>
-              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point5.png"} />
+              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point2.png"} />
             </button>
           </Link>
-          <Link to={'/MonteDosCastelinhosWebAR/sondagem8/'} className="nav-link">
+          <Link to={'/sondagem8/'} className="nav-link">
             <button className='mapPoint mainMapPoint8'>
-              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point8.png"} />
+              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point3.png"} />
             </button>
           </Link>
-          <Link to={'/MonteDosCastelinhosWebAR/sondagem9/'} className="nav-link">
+          <Link to={'/sondagem9/'} className="nav-link">
             <button className='mapPoint mainMapPoint9'>
-              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point9.png"} />
+              <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point1.png"} />
             </button>
           </Link>
         </div>

@@ -11,7 +11,31 @@
   margin-left: auto;
 }
 
-
 .svg-inline--fa {
   width: 1em;
 }
+.top{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.topLabel {
+  position: absolute;
+  top: 10%;
+  background-color: var(--white);
+  border: none;
+  color: var(--dark-grey);
+  padding: 1.5vh;
+  font-size: 22px;
+  border-radius: 35px;
+  z-index: 99;
+
+  border-radius: 35px;
+  width: 40%;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
