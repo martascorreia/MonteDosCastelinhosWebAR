@@ -21,7 +21,7 @@ function ARTab({ sondagemID, info }) {
                     <Sondagem4ARMap />
                     <div className='instructions'>
                         <Accordion
-                            accordionOpen={false}
+                            accordionOpen={true}
                             title="Instruções"
                             content={<a dangerouslySetInnerHTML={{ __html: info.instructions }} />} />
                     </div>

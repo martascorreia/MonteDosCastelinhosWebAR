@@ -13,10 +13,12 @@ function Sondagem4A() {
   const [isModelSet, setIsModelSet] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const entityRef = useRef();
+  const [label, setLabel] = useState(null);
 
   const handleButtonClick = () => {
     cleanCamera();
     setModelAligned(true);
+    setLabel("Vista Frontal");
   };
 
   useEffect(() => {
@@ -81,7 +83,7 @@ function Sondagem4A() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/raTab"} />
+      <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label}/>
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&

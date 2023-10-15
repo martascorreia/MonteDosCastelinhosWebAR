@@ -21,7 +21,7 @@ function VRTab({ sondagemID, info }) {
                     <Sondagem4VRMap/>
                     <div className='instructions'>
                         <Accordion
-                            accordionOpen={false}
+                            accordionOpen={true}
                             title="Instruções"
                             content={<a dangerouslySetInnerHTML={{ __html: info.instructions }} />} />
                     </div>

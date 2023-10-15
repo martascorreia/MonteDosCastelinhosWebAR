@@ -5,7 +5,7 @@ import "../../index.css"
 import "./VirtualReality.css"
 import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
 
-function VirtualReality({ id }) {
+function VirtualReality({ id, label }) {
   setOrientation("landscape");
   const [model, setModel] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -88,9 +88,13 @@ function VirtualReality({ id }) {
 
   return (
     <div className="VirtualReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/MonteDosCastelinhosWebAR/sondagem4/rvTab"} />
+      {isLoading &&
+        <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/rvTab"} />}
       {isLoading &&
         <LoadingScreen />}
+
+      {!isLoading &&
+        <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/rvTab"} label={label} />}
       {!isLoading &&
         <div className="content">
           <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
