@@ -17,13 +17,7 @@ function Home() {
         <img src={logo} className="logo" alt="logo" />
         <div className="menu">
           <Link to={'/mapa'} className="nav-link"><TextButton href="/mapa" text="Visita" /></Link>
-          <Link to={'/mapa'} className="nav-link"><TextButton href="/mapa" text="Mais" /></Link>
-
-          {/* <Link to={'/sondagem4'} className="nav-link"><TextButton href="/sondagem4" text="Sondagem 4" /></Link>
-          <Link to={'/sondagem4/ra41'} className="nav-link"><TextButton text="RA - Sondagem 4.1" /></Link>
-          <Link to={'/sondagem4/ra42'} className="nav-link"><TextButton text="RA - Sondagem 4.2" /></Link>
-          <Link to={'/sondagem4/ra43'} className="nav-link"><TextButton text="RA - Sondagem 4.3" /></Link>
-  <Link to={'/sondagem4/rv'} className="nav-link"><TextButton text="Realidade Virtual" /></Link>*/}
+          <Link to={'/mais'} className="nav-link"><TextButton href="/mapa" text="Sobre" /></Link>
         </div>
       </div >
     </div>

@@ -26,8 +26,8 @@ function Sondagem4ARMap() {
       </Link>
       <Link to={'/sondagem4/raC'} className="nav-link">
         <button className='mapPoint mapPointCAR4'>
-          {(sondagem4ARCFlag == null || sondagem4ARCFlag == 'false') && <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/pointB.png"} />}
-          {(sondagem4ARCFlag == 'true') && <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/pointBdarker.png"} />}
+          {(sondagem4ARCFlag == null || sondagem4ARCFlag == 'false') && <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/pointC.png"} />}
+          {(sondagem4ARCFlag == 'true') && <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/pointCdarker.png"} />}
         </button>
       </Link>
     </div>

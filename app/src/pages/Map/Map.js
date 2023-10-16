@@ -41,8 +41,7 @@ function Map() {
             </button>
           </Link>
         </div>
-        <div className='mainMapFooter'>
-        </div>
+        <div className='mainMapFooter'/>
       </div >
     </div>
   );

@@ -7,7 +7,7 @@ function LoadingScreen() {
 
   return (
     <div className="loadingScreen">
-      <ReactLoading type="spin" color="#86b38a"
+      <ReactLoading type="spin" color="#6FAFC9"
         height={100} width={100} />
         A carregar...
     </div>

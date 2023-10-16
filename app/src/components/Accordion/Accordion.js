@@ -19,8 +19,7 @@ function Accordion({id, accordionOpen, title, content}) {
         </div>
       </div>
       {isOpen &&
-        <div className="accordionContent">
-          {content}
+        <div className="accordionContent" dangerouslySetInnerHTML={{__html: content}}>
         </div>
       }
     </div>

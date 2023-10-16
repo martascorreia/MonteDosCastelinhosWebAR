@@ -3,6 +3,7 @@ import './App.css';
 import { HashRouter , Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home/Home"
 import Map from "./pages/Map/Map"
+import About from "./pages/About/About"
 import Sondagem4VR from "./pages/VirtualReality/Sondagem4VR"
 import Sondagem4A from "./pages/AugmentedReality/Sondagem4A"
 import Sondagem4C from "./pages/AugmentedReality/Sondagem4C"
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/mapa' element={<Map />} />
+          <Route path='/mais' element={<About />} />
           <Route path='/sondagem4' element={getSondagem("4", 1)} />
           <Route path='/sondagem4/raTab' element={getSondagem("4", 2)} />
           <Route path='/sondagem4/rvTab' element={getSondagem("4", 3)} />
