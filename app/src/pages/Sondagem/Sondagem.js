@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons"
 import "../../index.css"
 import "./Sondagem.css"
@@ -12,9 +12,20 @@ import { AugmentedReality } from 'tabler-icons-react';
 import { faVrCardboard, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
 
-function Sondagem({ sondagemID, title, headerImage, tab, tabs, info, ra, vr }) {
+function Sondagem({ id, sondagemID, title, headerImage, tab, tabs, info, ra, vr }) {
     setOrientation("portrait");
     const [tabSelected, setTabSelected] = useState(tab ? tab : 1);
+    const [hasRefreshed, setHasRefreshed] = useState(localStorage.getItem('hasRefreshed') == 'false' ? false : true);
+
+    useEffect(() => {
+        if (!hasRefreshed) {
+            console.log(hasRefreshed)
+            localStorage.setItem('hasRefreshed', 'true');
+            console.log("reloading page");
+            window.location.reload();
+        }
+
+    }, []);
 
     return (
         <div className="Sondagem" id="sondagem">
@@ -39,7 +50,7 @@ function Sondagem({ sondagemID, title, headerImage, tab, tabs, info, ra, vr }) {
                                     {item.id == "ar" &&
                                         <Link to={'/sondagem' + sondagemID + '/raTab'} className="nav-link" id={index}>
                                             <div className="tabIcon">
-                                                <AugmentedReality width={50} height={40} strokeWidth={1.5}/>
+                                                <AugmentedReality width={50} height={40} strokeWidth={1.5} />
                                             </div>
                                         </Link>
                                     }

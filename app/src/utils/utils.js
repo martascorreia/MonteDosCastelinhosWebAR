@@ -12,13 +12,10 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 var modelCache = {};
 
 export const loadModel = async (modelPath) => {
-    //if already loaded
+    //model already loaded
     if (modelCache[modelPath]) {
-        console.log("has model")
         return modelCache[modelPath];
     }
-
-    console.log("no model cached")
 
     //load model
     return new Promise((resolve, reject) => {
@@ -31,39 +28,16 @@ export const loadModel = async (modelPath) => {
     });
 };
 
-export const cleanModel = (model) => {
-    if (model) {
-        model.traverse((node) => {
+export const cleanModel = (object3D) => {
+    if (object3D) {
+        object3D.traverse((node) => {
             if (node.isMesh) {
                 node.geometry.dispose();
-                if (Array.isArray(node.material)) {
-                    node.material.forEach(material => {
-                        disposeMaterial(material);
-                    });
-                } else {
-                    disposeMaterial(node.material);
-                }
+                node.material.dispose();
             }
         });
     }
-
-    // Manually trigger garbage collection
-    if (typeof window.gc === 'function') {
-        window.gc();
-    }
 };
-
-function disposeMaterial(material) {
-    if (material.map) {
-        material.map.dispose();
-    }
-
-    if (material.alphaMap) {
-        material.alphaMap.dispose();
-    }
-
-    material.dispose();
-}
 
 export const cleanCamera = () => {
     const elementsToRemove = document.querySelectorAll("video");

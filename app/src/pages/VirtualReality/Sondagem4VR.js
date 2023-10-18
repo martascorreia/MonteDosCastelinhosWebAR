@@ -3,7 +3,7 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
 import "../../index.css"
 import "./VirtualReality.css"
-import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
+import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../utils/utils.js';
 
 function VirtualReality({ id, label }) {
   setOrientation("landscape");
@@ -13,20 +13,12 @@ function VirtualReality({ id, label }) {
 
   useEffect(() => {
     localStorage.setItem('sondagem4VR' + id + 'Flag', 'true');
-    var hasRefreshed = localStorage.getItem('refreshFlag');
-    //hasRefreshed = (hasRefreshed == null || hasRefreshed == 'false') ? false : true;
-    hasRefreshed = true
+    localStorage.setItem('hasRefreshed', 'false');
 
-    if (!hasRefreshed) {
-      console.log("refreshing")
-      window.location.reload()
-      localStorage.setItem('refreshFlag', true);
+    if (model == null) {
+      load3DModel();
     } else {
-      if (model == null) {
-        load3DModel();
-      } else {
-        setModelInScene();
-      }
+      setModelInScene();
     }
   }, [model]);
 
@@ -64,12 +56,7 @@ function VirtualReality({ id, label }) {
       const object3D = entityRef.current.object3D.children.find(child => child === model);
       if (object3D) {
         // dispose geometry and materials
-        object3D.traverse((node) => {
-          if (node.isMesh) {
-            node.geometry.dispose();
-            node.material.dispose();
-          }
-        });
+        cleanModel(object3D);
 
         // remove the model from the entity
         entity.object3D.remove(object3D);

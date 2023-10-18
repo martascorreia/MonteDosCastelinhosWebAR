@@ -4,7 +4,8 @@ export const getSondagem = (sondagemID, tab) => {
     if (sondagemID == 4) {
         return (
             <Sondagem
-                sondagemID={4}
+                id={sondagemID + "." + tab}
+                sondagemID={sondagemID}
                 title="Sondagem 4"
                 headerImage="/images/Headers/sondagem4Header.jpg"
                 tab={tab}
@@ -59,15 +60,19 @@ export const getSondagem = (sondagemID, tab) => {
                         content: "Elargada ao longo das campanhas subsequentes, para uma"
                     }]}
                 ra={[{
-                    firstDescription: `&nbspEsta experiência de <b>Realidade Aumentada</b> permite a visualização, sobre as ruínas, de uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
-                    instructions: `1. Desloque-se até um dos 3 pontos de visualização; <br>
-                                        2. Pressione no botão correspondente, no mapa acima; <br>
-                                        3. Aponte a câmara de forma a ficar alinhada com a imagem no ecrã;<br>
-                                        4. Clique no botão "alinhado".`,
+                    id: 1,
+                    description: `&nbsp;Esta experiência de <b>Realidade Aumentada</b> permite a visualização, sobre as ruínas, 
+                    de uma <b>rescontrução 3D</b> da habitação que aqui existíria.<br>`,
+                    instructions: `1. Desloque-se até um pontos do mapa; <br>
+                    2. Pressione no botão correspondente, no mapa acima; <br>
+                    3. Aponte a câmara de forma a ficar alinhada com a imagem no ecrã;<br>
+                    4. Clique no botão "alinhado".`,
                 }]}
                 vr={[{
-                    firstDescription: `&nbspEsta experiência de <b>Realidade Virtual</b> permite a visualização e exploração de uma <b>rescontrução 3D</b> da casa que aqui existiria.`,
-                    instructions: `1. Escolha e pressione um dos pontos de visualização do modelo virtual; <br>
+                    id: 1,
+                    description: `&nbspEsta experiência de <b>Realidade Virtual</b> permite a visualização de vários pontos de 
+                    observação numa <b>rescontrução 3D</b> da casa que aqui existiria.`,
+                    instructions: `1. Pressione um dos pontos de visualização do modelo virtual; <br>
                                     2. Mova a câmara para observar a vista 360º daquele ponto.`
                 }]}
             />)
@@ -76,7 +81,8 @@ export const getSondagem = (sondagemID, tab) => {
     if (sondagemID == 5) {
         return (
             <Sondagem
-                sondagemID={5}
+                id={sondagemID + "." + tab}
+                sondagemID={sondagemID}
                 title="Sondagem 5"
                 headerImage="/images/Headers/sondagem5Header.jpg" //TODO CHANGE
                 tab={tab}
@@ -122,7 +128,8 @@ export const getSondagem = (sondagemID, tab) => {
     if (sondagemID == 8) {
         return (
             <Sondagem
-                sondagemID={8}
+                id={sondagemID + "." + tab}
+                sondagemID={sondagemID}
                 title="Sondagem 8"
                 headerImage="/images/Headers/sondagem8Header.jpg" //TODO CHANGE
                 tab={tab}
@@ -168,7 +175,8 @@ export const getSondagem = (sondagemID, tab) => {
     if (sondagemID == 9) {
         return (
             <Sondagem
-                sondagemID={9}
+                id={sondagemID + "." + tab}
+                sondagemID={sondagemID}
                 title="Sondagem 9"
                 headerImage="/images/Headers/sondagem9Header.jpg" //TODO CHANGE
                 tab={tab}

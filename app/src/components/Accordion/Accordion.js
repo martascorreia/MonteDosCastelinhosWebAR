@@ -5,7 +5,7 @@ import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 import "./Accordion.css";
 
-function Accordion({id, accordionOpen, title, content}) {
+function Accordion({ id, accordionOpen, title, content }) {
   const [isOpen, setIsOpen] = useState(accordionOpen);
 
   return (
@@ -19,9 +19,7 @@ function Accordion({id, accordionOpen, title, content}) {
         </div>
       </div>
       {isOpen &&
-        <div className="accordionContent" dangerouslySetInnerHTML={{__html: content}}>
-        </div>
-      }
+        <div className="accordionContent" dangerouslySetInnerHTML={{ __html: content }} />}
     </div>
   );
 }
