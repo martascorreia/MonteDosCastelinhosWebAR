@@ -27,8 +27,7 @@ function About() {
             id={1}
             accordionOpen={true}
             title={"Objetivo"}
-            content={`
-            <a>&nbsp;O objetivo principal do projeto foi explorar as tecnologias atualmente disponíveis para o desenvolvimento de Realidade Aumentada
+            content={`<a>&nbsp;O objetivo principal do projeto foi explorar as tecnologias atualmente disponíveis para o desenvolvimento de Realidade Aumentada
               diretamente na Web, com foco em experiências para locais de Herança Cultural, como as ruínas do Monte dos Castelinhos.</a>`} />
           <Accordion
             id={1}

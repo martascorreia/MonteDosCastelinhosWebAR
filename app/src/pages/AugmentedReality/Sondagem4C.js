@@ -4,7 +4,7 @@ import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
 import "../../index.css"
 import "./AugmentedReality.css"
 import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.2.png';
-import { setOrientation, loadModel, cleanCamera } from '../../utils/utils.js';
+import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../utils/utils.js';
 
 function Sondagem4C() {
   setOrientation("landscape");
@@ -23,6 +23,7 @@ function Sondagem4C() {
 
   useEffect(() => {
     localStorage.setItem('sondagem4ARCFlag', 'true');
+    localStorage.setItem('hasRefreshed', 'false');
 
     if (model == null) {
       load3DModel();
@@ -63,12 +64,7 @@ function Sondagem4C() {
       const object3D = entityRef.current.object3D.children.find(child => child === model);
       if (object3D) {
         // dispose geometry and materials
-        object3D.traverse((node) => {
-          if (node.isMesh) {
-            node.geometry.dispose();
-            node.material.dispose();
-          }
-        });
+        cleanModel(object3D);
 
         // remove the model from the entity
         entity.object3D.remove(object3D);

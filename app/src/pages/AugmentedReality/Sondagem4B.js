@@ -25,6 +25,7 @@ function Sondagem4B() {
 
   useEffect(() => {
     localStorage.setItem('sondagem4ARBFlag', 'true');
+    localStorage.setItem('hasRefreshed', 'false');
   });
 
   return (

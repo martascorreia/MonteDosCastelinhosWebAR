@@ -16,14 +16,14 @@ function VRTab({ sondagemID, info }) {
                         Realidade Virtual
                     </div>
                     <div className='description'>
-                        <a dangerouslySetInnerHTML={{ __html: info.firstDescription }} />
+                        <a dangerouslySetInnerHTML={{ __html: info.description }} />
                     </div>
                     <Sondagem4VRMap/>
                     <div className='instructions'>
                         <Accordion
                             accordionOpen={true}
                             title="Instruções"
-                            content={<a dangerouslySetInnerHTML={{ __html: info.instructions }} />} />
+                            content={info.instructions} />
                     </div>
                 </div>
             }

@@ -11,7 +11,7 @@ function Sondagem4ARMap() {
 
   return (
     <div className="SondagemMap">
-      <img className='mapImage' src={process.env.PUBLIC_URL + "/images/Maps/sondagem4ARMap.jpg"} />
+      <img className='mapImage' src={process.env.PUBLIC_URL + "/images/Maps/sondagem4ARMapSmaller.jpg"} />
       <Link to={'/sondagem4/raA'} className="nav-link">
         <button className='mapPoint mapPointAAR4'>
           {(sondagem4ARAFlag == null || sondagem4ARAFlag == 'false') && <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/pointA.png"} />}
