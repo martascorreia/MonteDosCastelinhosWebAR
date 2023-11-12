@@ -12,7 +12,6 @@ export const isFullScreen = () => {
 }
 
 export const setFullScreen = (alreadyFullScreen, setFullScreen) => {  
-    console.log(isFullScreen() + " " + alreadyFullScreen + " " + setFullScreen);
     //full -> normal
     if(alreadyFullScreen && !setFullScreen){
         document.exitFullscreen();
