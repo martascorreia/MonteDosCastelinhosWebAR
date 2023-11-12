@@ -10,7 +10,6 @@ const FullScreenButton = ({isFullScreen, setIsFullScreen}) => {
   const [screenType, setScreenType] = useState(isFullScreen ? faDownLeftAndUpRightToCenter : faUpRightAndDownLeftFromCenter);
 
   function changeScreen() {
-    console.log("isFullScreen", document.fullscreenElement != null);
     //normal -> full
     if(screenType === faUpRightAndDownLeftFromCenter){
       setScreenType(faDownLeftAndUpRightToCenter);

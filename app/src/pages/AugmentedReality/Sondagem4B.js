@@ -30,7 +30,7 @@ function Sondagem4B() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
+      <TopButtons  isARExperience={true} cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
       {modelAligned &&
         <div className="content">
           <a-scene className="scene"

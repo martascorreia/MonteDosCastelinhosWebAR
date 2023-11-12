@@ -49,9 +49,13 @@ function Sondagem4A() {
   const setModelInScene = () => {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(-480, -300, -500);
-      entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
-      entityRef.current.setAttribute('rotation', '0 -50 0');
+      // x z y
+      // | y
+      // - x
+      // / z
+      entityRef.current.object3D.position.set(-790, -370, -240);
+      entityRef.current.object3D.scale.set(2, 2, 2);
+      entityRef.current.setAttribute('rotation', '5 -35 -5');
       setIsModelSet(true)
     }
   };
@@ -81,7 +85,7 @@ function Sondagem4A() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label}/>
+      <TopButtons isARExperience={true} cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label}/>
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&
@@ -98,7 +102,7 @@ function Sondagem4A() {
               ref={entityRef}
               geometry-merger
               material="shader: flat" />
-            {false &&
+            {true &&
               <div className="alignElements">
                 <img className="alignImage" src={sondagem4Img} />
               </div>}
