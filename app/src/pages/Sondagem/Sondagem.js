@@ -24,7 +24,6 @@ function Sondagem({ id, sondagemID, title, headerImage, tab, tabs, info, ra, vr 
             console.log("reloading page");
             window.location.reload();
         }
-
     }, []);
 
     return (
