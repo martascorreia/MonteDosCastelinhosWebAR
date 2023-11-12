@@ -10,6 +10,8 @@ function TopButtons({ isHome, isARExperience, backUrl, cleanUp, label }) {
 
   return (
     <div className="top">
+      {!fullScreen &&
+        <FullScreenPopUp />}
       <div className="topButtons">
         {!isHome &&
           <BackButton backUrl={backUrl} cleanUp={cleanUp} />}
