@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { cleanSondagemFlags } from '../../utils/utils.js';
 
 function Map() {
-
   useEffect(() => {
     cleanSondagemFlags();
   });
@@ -19,7 +18,7 @@ function Map() {
           <div className='sondagemTitle'>Mapa</div>
         </div>
         <div className='mainMapMap'>
-          <img className='mainMapImage' src={process.env.PUBLIC_URL + "/images/Maps/mainMap.jpg"} />
+          <img className='mainMapImage' src={process.env.PUBLIC_URL + "/images/Maps/mainMap.png"} />
           <Link to={'/sondagem4/'} className="nav-link">
             <button className='mapPoint mainMapPoint4'>
               <img className='mapPoints' src={process.env.PUBLIC_URL + "/images/MapPoints/point4.png"} />
@@ -41,7 +40,9 @@ function Map() {
             </button>
           </Link>
         </div>
-        <div className='mainMapFooter'/>
+        <div className='mainMapFooter'>
+          <img className='mapLabels' src={process.env.PUBLIC_URL + "/images/Maps/labels.png"} />
+        </div>
       </div >
     </div>
   );

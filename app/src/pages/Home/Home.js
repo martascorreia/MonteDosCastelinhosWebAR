@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../resources/images/logo.png';
-import TopButtons from "../../components/TopButtons/TopButtons.js"
-import TextButton from "../../components/TextButton/TextButton.js"
+import TopButtons from "../../components/TopButtons/TopButtons"
+import TextButton from "../../components/TextButton/TextButton"
 import { Link } from 'react-router-dom';
 import "./Home.css"
 import "../../index.css"
 import "@fontsource/lexend-deca";
-import { setOrientation } from '../../utils/utils.js';
+import { setOrientation, setFullScreen, isFullScreen } from '../../utils/utils.js';
 
 function Home() {
-  setOrientation("portrait");
+  useEffect(() => {
+    setOrientation("portrait");
+  }, []);
+
   return (
     <div className="Home" id="home">
       <TopButtons isHome={true} />

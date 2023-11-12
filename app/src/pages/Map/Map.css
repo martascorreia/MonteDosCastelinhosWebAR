@@ -18,7 +18,6 @@
 .mainMapMap{
     height: 100%;
     width: 100%;
-    border-top: 5px solid var(--light-grey);
 }
 
 .mainMapHeader{
@@ -32,15 +31,23 @@
 }
 
 .mainMapFooter{
-    height: 5%;
+    height: 18%;
     width: 100%;
     background-color: var(--light-grey);
     z-index: 2; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
   
 .mainMapImage{
     height: 100%;
     width: 100%;
+}
+
+.mapLabels{
+    height: 95%;
+    width: 90%;
 }
 
 .mapImage{
@@ -63,21 +70,21 @@
 }
 
 .mainMapPoint4{
-    top: 17%;
+    top: 9%;
     left: 7%;
 }
 
 .mainMapPoint5{
-    top: 70%;
+    top: 68%;
     left: 48%;
 }
 
 .mainMapPoint8{
-    top: 55%;
+    top: 50%;
     left: 20%;
 }
 
 .mainMapPoint9{
-    top: 80%;
+    top: 76%;
     left: 75%;
 }

@@ -7,6 +7,21 @@ export const setOrientation = (type) => {
         .then(function () { })
         .catch(function (error) { });
 }
+export const isFullScreen = () => {  
+    return document.fullscreenElement != null;
+}
+
+export const setFullScreen = (alreadyFullScreen, setFullScreen) => {  
+    console.log(isFullScreen() + " " + alreadyFullScreen + " " + setFullScreen);
+    //full -> normal
+    if(alreadyFullScreen && !setFullScreen){
+        document.exitFullscreen();
+
+     //normal -> full
+    } else if(!alreadyFullScreen && setFullScreen){
+        document.body.requestFullscreen();
+    }
+  }
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 var modelCache = {};
