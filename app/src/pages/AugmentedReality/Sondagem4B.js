@@ -3,8 +3,8 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 
 import "../../index.css"
 import "./AugmentedReality.css"
-import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.3.png';
-import sondagem4B from '../../resources/models/sondagem4.3.png';
+import sondagem4Img from '../../resources/images/alignmentImages/sondagem4B.png';
+import sondagem4B from '../../resources/models/sondagem4B.png';
 import { setOrientation, cleanCamera } from '../../utils/utils.js';
 
 function Sondagem4B() {

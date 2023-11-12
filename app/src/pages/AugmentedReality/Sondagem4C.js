@@ -3,7 +3,7 @@ import TopButtons from "../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
 import "../../index.css"
 import "./AugmentedReality.css"
-import sondagem4Img from '../../resources/images/alignmentImages/sondagem4.2.png';
+import sondagem4Img from '../../resources/images/alignmentImages/sondagem4C.png';
 import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../utils/utils.js';
 
 function Sondagem4C() {
