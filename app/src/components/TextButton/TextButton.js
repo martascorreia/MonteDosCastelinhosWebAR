@@ -2,10 +2,11 @@ import React from 'react';
 import "./TextButton.css";
 import "../../index.css"
 
-const TextButton = (text) => {
+const TextButton = ({text, acceptPermissions}) => {
+
   return (
     <div className="textButton">
-      <button id="textBtn">{text.text}</button>
+      <button id="textBtn" onClick={acceptPermissions}>{text}</button>
     </div>
   );
 }

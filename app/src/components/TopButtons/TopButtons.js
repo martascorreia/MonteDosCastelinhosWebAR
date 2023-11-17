@@ -5,16 +5,19 @@ import FullScreenButton from './FullScreenButton'
 import FullScreenPopUp from "./FullScreenPopUp"
 import "./TopButtons.css"
 
-function TopButtons({ isHome, backUrl, cleanUp, label }) {
+function TopButtons({ isHome, clickFullScreen, isARExperience, backUrl, cleanUp, label }) {
   const [fullScreen, setFullScreen] = useState(document.fullscreenElement != null);
+  const [permissionsAccepted, setPermissionsAccepted] = useState(localStorage.getItem('permissionsAccepted') == 'true');
 
   return (
     <div className="top">
-      {!console.log("not full screen " + !fullScreen) && !fullScreen && <FullScreenPopUp />}
+      {!fullScreen && permissionsAccepted &&
+        <FullScreenPopUp />}
       <div className="topButtons">
         {!isHome &&
-        <BackButton backUrl={backUrl} cleanUp={cleanUp} />}
-        <FullScreenButton isFullScreen={fullScreen} setIsFullScreen={setFullScreen}/>
+          <BackButton backUrl={backUrl} cleanUp={cleanUp} />}
+        {!isARExperience &&
+          <FullScreenButton isFullScreen={fullScreen} setIsFullScreen={setFullScreen} clickFullScreen={clickFullScreen}/>}
       </div>
       {label && <TopLabel label={label} />}
     </div>

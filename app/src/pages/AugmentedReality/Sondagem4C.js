@@ -49,9 +49,9 @@ function Sondagem4C() {
   const setModelInScene = () => {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(540, -555, 0);
-      entityRef.current.object3D.scale.set(2, 2.5, 2);
-      entityRef.current.setAttribute('rotation', '2 50 10');
+      entityRef.current.object3D.position.set(85, -145, -660);
+      entityRef.current.object3D.scale.set(3, 3.33, 3);
+      entityRef.current.setAttribute('rotation', '5 65 17');
       setIsModelSet(true)
     }
   };
@@ -81,27 +81,30 @@ function Sondagem4C() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label}/>
+      <TopButtons isARExperience={true} cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&
         <div className="content">
           <a-scene className="scene"
             embedded
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
             vr-mode-ui='enabled: false'>
             <a-camera
-              rotation-reader
+              position="0 0 0"
+              rotation="0 -45 0"
               look-controls="touchEnabled: true; mouseEnabled: true;" />
-            <a-entity
-              className="model"
-              ref={entityRef}
-              geometry-merger
-              material="shader: flat" />
-            {false &&
-              <div className="alignElements">
-                <img className="alignImage" src={sondagem4Img} />
-              </div>}
+            <a-entity rotation="0 0 0">
+              <a-entity
+                className="model"
+                ref={entityRef}
+                geometry-merger
+                material="shader: flat" />
+              {true &&
+                <div className="alignElements">
+                  <img className="alignImage" src={sondagem4Img} />
+                </div>}
+            </a-entity>
           </a-scene>
         </div >}
       {!isLoading && !modelAligned &&
