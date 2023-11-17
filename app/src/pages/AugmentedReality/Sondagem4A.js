@@ -49,9 +49,9 @@ function Sondagem4A() {
   const setModelInScene = () => {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(-480, -300, -500);
-      entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
-      entityRef.current.setAttribute('rotation', '0 -50 0');
+      entityRef.current.object3D.position.set(-75, -90, -580);
+      entityRef.current.object3D.scale.set(1.8, 1.8, 1.8);
+      entityRef.current.setAttribute('rotation', '7 -35 -7');
       setIsModelSet(true)
     }
   };
@@ -81,32 +81,37 @@ function Sondagem4A() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label}/>
+      <TopButtons isARExperience={true} cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&
         <div className="content" id="realidadeAumentada">
           <a-scene
+            embedded
             className="scene"
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
             vr-mode-ui='enabled: false'>
             <a-camera
-              rotation-reader
+              position="0 0 0"
+              rotation="0 -45 0"
               look-controls="touchEnabled: true; mouseEnabled: true;" />
-            <a-entity
-              className="model"
-              ref={entityRef}
-              geometry-merger
-              material="shader: flat" />
-            {false &&
-              <div className="alignElements">
-                <img className="alignImage" src={sondagem4Img} />
-              </div>}
+            <a-entity rotation="0 0 0">
+              <a-entity
+                className="model"
+                ref={entityRef}
+                geometry-merger
+                material="shader: flat" />
+              {true &&
+                <div className="alignElements">
+                  <img className="alignImage" src={sondagem4Img} />
+                </div>}
+            </a-entity>
           </a-scene>
         </div>}
       {!isLoading && !modelAligned &&
         <div className="content">
           <a-scene
+            embedded
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>

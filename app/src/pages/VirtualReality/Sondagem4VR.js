@@ -38,13 +38,29 @@ function VirtualReality({ id, label }) {
   const setModelInScene = () => {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
-      if (id == 'A') entityRef.current.object3D.position.set(-550, -210, 60);  //A
-      if (id == 'B') entityRef.current.object3D.position.set(-555, -210, 150); //B
-      if (id == 'C') entityRef.current.object3D.position.set(-515, -225, 180); //C
-      if (id == 'D') entityRef.current.object3D.position.set(-480, -225, 215); //D
-      if (id == 'E') entityRef.current.object3D.position.set(-420, -235, 110); //E
+      entityRef.current.setAttribute('rotation', '0 0 0');
+
+      //A
+      if (id == 'A') entityRef.current.object3D.position.set(95, -55, -70);
+      if (id == 'A') entityRef.current.setAttribute('rotation', '0 -130 0');
+
+      //B
+      if (id == 'B') entityRef.current.object3D.position.set(-45, -55, 5); //B
+      if (id == 'B') entityRef.current.setAttribute('rotation', '0 -25 0');
+
+      //C
+      if (id == 'C') entityRef.current.object3D.position.set(0, -63, 15);
+      if (id == 'C') entityRef.current.setAttribute('rotation', '0 -25 0');
+
+      //D
+      if (id == 'D') entityRef.current.object3D.position.set(40, -67, 30);
+      if (id == 'D') entityRef.current.setAttribute('rotation', '0 -25 0');
+
+      //E
+      if (id == 'E') entityRef.current.object3D.position.set(-70, -80, -70);
+      if (id == 'E') entityRef.current.setAttribute('rotation', '0 50 0');
+
       entityRef.current.object3D.scale.set(1.3, 1.3, 1.3);
-      entityRef.current.setAttribute('rotation', '0 -50 0');
     }
   };
 
@@ -80,7 +96,6 @@ function VirtualReality({ id, label }) {
         <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/rvTab"} />}
       {isLoading &&
         <LoadingScreen />}
-
       {!isLoading &&
         <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/rvTab"} label={label} />}
       {!isLoading &&
