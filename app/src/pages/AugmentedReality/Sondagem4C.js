@@ -88,7 +88,7 @@ function Sondagem4C() {
         <div className="content">
           <a-scene className="scene"
             embedded
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
             <a-camera
               position="0 0 0"
