@@ -85,11 +85,11 @@ function Sondagem4A() {
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&
-        <div className="content" id="realidadeAumentada">
+        <div className="content">
           <a-scene
             embedded
             className="scene"
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
             <a-camera
               position="0 0 0"
