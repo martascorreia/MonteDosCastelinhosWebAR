@@ -30,7 +30,7 @@ function Sondagem4B() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons  isARExperience={true} cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
+      <TopButtons isARExperience={true} cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
       {modelAligned &&
         <div className="content">
           <a-scene className="scene"
@@ -38,18 +38,22 @@ function Sondagem4B() {
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
             <a-camera
-              rotation-reader
+              position="0 0 0"
+              rotation="-30 -90 0"
               look-controls="touchEnabled: true; mouseEnabled: true;" />
-            <a-image
-              src={sondagem4B}
-              position="0 1 -7.7"
-              scale="21 5.5 0"
-              material="transparent: true; blending: normal"
-            />
-            {false &&
-              <div className="alignElements">
-                <img className="alignImage" src={sondagem4Img} />
-              </div>}
+            <a-entity rotation="0 0 0">
+              <a-image
+                src={sondagem4B}
+                position="0 0 -7.5"
+                scale="30 7 0"
+                rotation="0 0 -3"
+                material="transparent: true; blending: normal"
+              />
+              {true &&
+                <div className="alignElements">
+                  <img className="alignImage" src={sondagem4Img} />
+                </div>}
+            </a-entity>
           </a-scene>
         </div>}
       {!modelAligned &&
