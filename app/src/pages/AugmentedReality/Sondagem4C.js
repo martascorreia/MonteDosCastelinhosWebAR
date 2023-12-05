@@ -92,14 +92,15 @@ function Sondagem4C() {
             vr-mode-ui='enabled: false'>
             <a-camera
               position="0 0 0"
-              rotation="0 -45 0"
+              rotation="0 0 0"
               look-controls="touchEnabled: true; mouseEnabled: true;" />
             <a-entity rotation="0 0 0">
               <a-entity
                 className="model"
                 ref={entityRef}
                 geometry-merger
-                material="shader: flat" />
+                //material="shader: flat" 
+                />
               {true &&
                 <div className="alignElements">
                   <img className="alignImage" src={sondagem4Img} />

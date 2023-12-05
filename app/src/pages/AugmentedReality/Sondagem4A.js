@@ -50,6 +50,7 @@ function Sondagem4A() {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
       entityRef.current.object3D.position.set(-75, -90, -580);
+      //entityRef.current.object3D.scale.set(3.6, 3.6, 3.6);
       entityRef.current.object3D.scale.set(1.8, 1.8, 1.8);
       entityRef.current.setAttribute('rotation', '7 -35 -7');
       setIsModelSet(true)
@@ -91,16 +92,17 @@ function Sondagem4A() {
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
-            <a-camera
-              position="0 0 0"
-              rotation="0 -45 0"
-              look-controls="touchEnabled: true; mouseEnabled: true;" />
             <a-entity rotation="0 0 0">
+              <a-camera
+                position="0 0 0"
+                rotation="0 -45 0"
+                look-controls="touchEnabled: true; mouseEnabled: true;" />
               <a-entity
                 className="model"
                 ref={entityRef}
                 geometry-merger
-                material="shader: flat" />
+                //material="shader: flat" 
+                />
               {true &&
                 <div className="alignElements">
                   <img className="alignImage" src={sondagem4Img} />
@@ -115,9 +117,13 @@ function Sondagem4A() {
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
-            <a-camera
-              rotation-reader
-              look-controls="touchEnabled: false; mouseEnabled: false;" />
+            <a-entity rotation="0 0 0">
+              <a-camera
+                position="0 0 0"
+                rotation="0 -45 0"
+                rotation-reader
+                look-controls="touchEnabled: false; mouseEnabled: false;" />
+            </a-entity>
           </a-scene>
           <div className="alignElements">
             <img className="alignImage" src={sondagem4Img} />
