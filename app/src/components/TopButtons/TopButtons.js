@@ -11,7 +11,7 @@ function TopButtons({ isHome, clickFullScreen, hideFullScreenButton, backUrl, cl
 
   return (
     <div className="top">
-      {!fullScreen && permissionsAccepted &&
+      {!fullScreen && permissionsAccepted && !hideFullScreenButton &&
         <FullScreenPopUp />}
       <div className="topButtons">
         {!isHome &&
