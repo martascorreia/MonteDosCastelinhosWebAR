@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import TopButtons from "../../components/TopButtons/TopButtons.js"
-import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
-import "../../index.css"
-import "./AugmentedReality.css"
-import sondagem4Img from '../../resources/images/alignmentImages/sondagem4A.png';
-import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../utils/utils.js';
+import TopButtons from "../../../components/TopButtons/TopButtons.js"
+import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
+import "../../../index.css"
+import "./../AugmentedReality.css"
+import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
+import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../../utils/utils.js';
 
-function Sondagem4A() {
+function Sondagem4A({backUrl}) {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
@@ -82,7 +82,7 @@ function Sondagem4A() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons isARExperience={true} cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
+      <TopButtons hideFullScreenButton={true} cleanUp={handleCleanup} backUrl={backUrl} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&

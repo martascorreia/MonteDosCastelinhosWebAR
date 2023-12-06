@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import TopButtons from "../../components/TopButtons/TopButtons.js"
+import TopButtons from "../../../components/TopButtons/TopButtons.js"
+import "../../../index.css"
+import "./../AugmentedReality.css"
+import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4B.png';
+import sondagem4B from '../../../resources/models/sondagem4B.png';
+import { setOrientation, cleanCamera } from '../../../utils/utils.js';
 
-import "../../index.css"
-import "./AugmentedReality.css"
-import sondagem4Img from '../../resources/images/alignmentImages/sondagem4B.png';
-import sondagem4B from '../../resources/models/sondagem4B.png';
-import { setOrientation, cleanCamera } from '../../utils/utils.js';
-
-function Sondagem4B() {
+function Sondagem4B({backUrl}) {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [label, setLabel] = useState(null);
@@ -30,7 +29,7 @@ function Sondagem4B() {
 
   return (
     <div className="AugmentedReality">
-      <TopButtons isARExperience={true} cleanUp={handleCleanup} backUrl={"/sondagem4/raTab"} label={label} />
+      <TopButtons hideFullScreenButton={true} cleanUp={handleCleanup} backUrl={backUrl} label={label} />
       {modelAligned &&
         <div className="content">
           <a-scene className="scene"
