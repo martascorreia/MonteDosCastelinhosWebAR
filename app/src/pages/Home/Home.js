@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import logo from '../../resources/images/logo.png';
-import TopButtons from "../../components/TopButtons/TopButtons"
+import TopButtons from '../../components/TopButtons/TopButtons'
 import TextButton from "../../components/TextButton/TextButton"
 import { Link } from 'react-router-dom';
 import "./Home.css"
@@ -18,7 +18,6 @@ function Home() {
     setPermissionsAccepted(true);
     setClickFullScreen(true)
   }
-
 
   return (
     <div className="Home" id="home">

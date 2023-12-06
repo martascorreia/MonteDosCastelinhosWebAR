@@ -1,0 +1,34 @@
+.squareButton {
+  border: none;
+  color: var(--darker-grey);
+  padding: 1.5vh;
+  font-size: 22px;
+  border-radius: 35%;
+  width: 80%;
+  background-color: var(--light-grey);
+  font-family: "Lexend Deca";
+  height: 110px;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.squareBtnIcon{
+  border: none;
+  color: var(--darker-grey);
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.squareBtnText{
+  border: none;
+  color: var(--darker-grey);
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,78 @@
+.Sonsagem4ARMapContent{
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Sonsagem4ARMapElements{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    width: 90%;
+}
+
+.vrMapContent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.mapPointAVR4{
+    top: 40%;
+    left: 68%;
+}
+
+.mapPointBVR4{
+top: 20%;
+left: 52%;
+}
+
+.mapPointCVR4{
+top: 20%;
+left: 38%;
+}
+
+.mapPointDVR4{
+top: 22%;
+left: 24%;
+}
+
+.mapPointEVR4{
+top: 58%;
+left: 24%;
+}
+
+.augmentedRealityScene{
+    width: 100%;
+    height: 100%;
+}
+
+.mapImage{
+    border-radius: 2%;
+    border: 5px solid var(--main-color);
+}
+
+.arMapInstructions{
+    max-width: 45%;
+    padding: 20px;
+    font-size: 18px;
+    padding-top: 7%;
+}
+
+.arMapInstructionsTitle{
+    font-style: bold;
+    font-size: 23px;
+}

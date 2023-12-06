@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import TopButtons from "../../components/TopButtons/TopButtons.js"
-import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js"
-import "../../index.css"
-import "./VirtualReality.css"
-import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../utils/utils.js';
+import TopButtons from "../../../components/TopButtons/TopButtons.js"
+import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
+import "../../../index.css"
+import "./../VirtualReality.css"
+import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../../utils/utils.js';
 
 function VirtualReality({ id, label }) {
   setOrientation("landscape");
@@ -93,11 +93,11 @@ function VirtualReality({ id, label }) {
   return (
     <div className="VirtualReality">
       {isLoading &&
-        <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/rvTab"} />}
+        <TopButtons cleanUp={handleCleanup} backUrl={backUrl} />}
       {isLoading &&
         <LoadingScreen />}
       {!isLoading &&
-        <TopButtons cleanUp={handleCleanup} backUrl={"/sondagem4/rvTab"} label={label} />}
+        <TopButtons cleanUp={handleCleanup} backUrl={backUrl} label={label} />}
       {!isLoading &&
         <div className="content">
           <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
