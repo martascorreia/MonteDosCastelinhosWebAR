@@ -74,9 +74,19 @@
     left: 7%;
 }
 
+.mainMapPoint4Reversed{
+    top: 75%;
+    left: 80%;
+}
+
 .mainMapPoint5{
     top: 68%;
     left: 48%;
+}
+
+.mainMapPoint5Reversed{
+    top: 15%;
+    left: 33%;
 }
 
 .mainMapPoint8{
@@ -84,7 +94,17 @@
     left: 20%;
 }
 
+.mainMapPoint8Reversed{
+    top: 30%;
+    left: 60%;
+}
+
 .mainMapPoint9{
     top: 76%;
     left: 75%;
+}
+
+.mainMapPoint9Reversed{
+    top: 5%;
+    left: 5%;
 }

@@ -5,7 +5,7 @@ import "../../../index.css"
 import "./../VirtualReality.css"
 import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../../utils/utils.js';
 
-function VirtualReality({ id, label }) {
+function VirtualReality({ id, label, backUrl }) {
   setOrientation("landscape");
   const [model, setModel] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -87,7 +87,7 @@ function VirtualReality({ id, label }) {
     cleanCamera();
 
     //clean refresh flag
-    localStorage.setItem('refreshFlag', false);
+    localStorage.setItem('hasRefreshed', false);
   };
 
   return (
