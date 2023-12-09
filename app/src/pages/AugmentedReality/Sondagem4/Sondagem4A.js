@@ -86,25 +86,6 @@ function Sondagem4A({ backUrl }) {
     cleanCamera();
   };
 
-  const printEntityPosition = () => {
-    if (entityRef.current) {
-      console.log('Model Position:', entityRef.current.object3D.position);
-      console.log('Model Rotation:', entityRef.current.object3D.rotation);
-    }
-    if (cameraRef.current) {
-      console.log('Camera Position:', cameraRef.current.object3D.position);
-      console.log('Camera Rotation:', cameraRef.current.object3D.rotation);
-    }
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(printEntityPosition, 5000);
-    return () => {
-      // Clean up interval on component unmount
-      clearInterval(intervalId);
-    };
-  }, []);
-
   return (
     <div className="AugmentedReality">
       <TopButtons hideFullScreenButton={true} cleanUp={handleCleanup} backUrl={backUrl} label={label} />
