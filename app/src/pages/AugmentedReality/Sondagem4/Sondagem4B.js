@@ -5,6 +5,7 @@ import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4B.png';
 import sondagem4B from '../../../resources/models/sondagem4B.png';
 import { setOrientation, cleanCamera } from '../../../utils/utils.js';
+import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 
 function Sondagem4B({backUrl}) {
   setOrientation("landscape");
@@ -67,9 +68,7 @@ function Sondagem4B({backUrl}) {
           </a-scene>
           <div className="alignElements">
             <img className="alignImage" src={sondagem4Img} />
-            <button className="alignedBtn" onClick={handleButtonClick}>
-              Alinhado
-            </button>
+            <AligmentButton onClick={handleButtonClick}/>
           </div>
         </div>}
     </div >

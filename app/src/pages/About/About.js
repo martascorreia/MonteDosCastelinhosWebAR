@@ -30,7 +30,7 @@ function About() {
             content={`<a>&nbsp;O objetivo principal do projeto foi explorar as tecnologias atualmente disponíveis para o desenvolvimento de Realidade Aumentada
               diretamente na Web, com foco em experiências para locais de Herança Cultural, como as ruínas do Monte dos Castelinhos.</a>`} />
           <Accordion
-            id={1}
+            id={2}
             accordionOpen={true}
             title={"Autores"}
             content={`<a>&nbsp;Esta aplicação foi realizada por <b>Marta Correia</b>, aluna da Faculdade de Ciências da Universidade de Lisboa, com a co-orientação da 
