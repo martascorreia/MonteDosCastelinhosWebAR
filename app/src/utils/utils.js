@@ -7,6 +7,11 @@ export const setOrientation = (type) => {
         .then(function () { })
         .catch(function (error) { });
 }
+
+export const reloadPage = () => {  
+    window.location.reload();
+}
+
 export const isFullScreen = () => {  
     return document.fullscreenElement != null;
 }
