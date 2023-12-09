@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {useState} from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons"; //full
@@ -6,12 +6,13 @@ import { faDownLeftAndUpRightToCenter } from "@fortawesome/free-solid-svg-icons"
 import "../../index.css"
 import { setFullScreen } from '../../utils/utils';
 
-const FullScreenButton = ({isFullScreen, setIsFullScreen, clickFullScreen}) => {
+const FullScreenButton = ({isFullScreen, setIsFullScreen, clickFullScreen }) => {
   const [screenType, setScreenType] = useState(isFullScreen ? faDownLeftAndUpRightToCenter : faUpRightAndDownLeftFromCenter);
+  const fullScreenBtnRef = useRef();
 
   useEffect(() => {
     if (clickFullScreen) {
-      changeScreen();
+      fullScreenBtnRef.current.click();
     }
 }, [clickFullScreen]);
 
@@ -31,8 +32,8 @@ const FullScreenButton = ({isFullScreen, setIsFullScreen, clickFullScreen}) => {
   }
 
   return (
-    <button className="fullScreenBtn roundBtn">
-      <FontAwesomeIcon id="fullScreenBtn" onClick={changeScreen} icon={screenType} />
+    <button className="fullScreenBtn roundBtn" id="fullScreenBtn" ref={fullScreenBtnRef} onClick={changeScreen}>
+      <FontAwesomeIcon icon={screenType} />
     </button>      
   );
 }

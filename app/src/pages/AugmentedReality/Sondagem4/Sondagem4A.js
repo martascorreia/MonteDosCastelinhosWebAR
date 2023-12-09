@@ -5,14 +5,16 @@ import "../../../index.css"
 import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
 import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../../utils/utils.js';
+import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 
-function Sondagem4A({backUrl}) {
+function Sondagem4A({ backUrl }) {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
   const [isModelSet, setIsModelSet] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const entityRef = useRef();
+  const cameraRef = useRef();
   const [label, setLabel] = useState(null);
 
   const handleButtonClick = () => {
@@ -50,7 +52,6 @@ function Sondagem4A({backUrl}) {
     if (entityRef.current) {
       entityRef.current.object3D.add(model);
       entityRef.current.object3D.position.set(-75, -90, -580);
-      //entityRef.current.object3D.scale.set(3.6, 3.6, 3.6);
       entityRef.current.object3D.scale.set(1.8, 1.8, 1.8);
       entityRef.current.setAttribute('rotation', '7 -35 -7');
       setIsModelSet(true)
@@ -76,9 +77,33 @@ function Sondagem4A({backUrl}) {
     entity = null;
     entityRef.current = null;
 
+    const scenes = document.querySelectorAll('a-scene');
+    scenes.forEach(scene => {
+      scene.remove();
+    });
+
     // clean up camera
     cleanCamera();
   };
+
+  const printEntityPosition = () => {
+    if (entityRef.current) {
+      console.log('Model Position:', entityRef.current.object3D.position);
+      console.log('Model Rotation:', entityRef.current.object3D.rotation);
+    }
+    if (cameraRef.current) {
+      console.log('Camera Position:', cameraRef.current.object3D.position);
+      console.log('Camera Rotation:', cameraRef.current.object3D.rotation);
+    }
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(printEntityPosition, 5000);
+    return () => {
+      // Clean up interval on component unmount
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <div className="AugmentedReality">
@@ -92,22 +117,24 @@ function Sondagem4A({backUrl}) {
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
-            <a-entity rotation="0 0 0">
+            <a-entity>
               <a-camera
                 position="0 0 0"
-                rotation="0 -45 0"
-                look-controls="touchEnabled: true; mouseEnabled: true;" />
-              <a-entity
+                rotation="0 0 0"
+                ref={cameraRef}
+                look-controls="touchEnabled: true; mouseEnabled: true;">
+                <a-entity rotation="0 0 0"/>
+              </a-camera>
+              <a-entity rotation="0 0 0"
                 className="model"
                 ref={entityRef}
                 geometry-merger
-                //material="shader: flat" 
-                />
-              {true &&
-                <div className="alignElements">
-                  <img className="alignImage" src={sondagem4Img} />
-                </div>}
+              />
             </a-entity>
+            {true &&
+              <div className="alignElements">
+                <img className="alignImage" src={sondagem4Img} />
+              </div>}
           </a-scene>
         </div>}
       {!isLoading && !modelAligned &&
@@ -117,19 +144,11 @@ function Sondagem4A({backUrl}) {
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
-            <a-entity rotation="0 0 0">
-              <a-camera
-                position="0 0 0"
-                rotation="0 -45 0"
-                rotation-reader
-                look-controls="touchEnabled: false; mouseEnabled: false;" />
-            </a-entity>
+            <a-camera />
           </a-scene>
           <div className="alignElements">
             <img className="alignImage" src={sondagem4Img} />
-            <button className="alignedBtn" onClick={handleButtonClick}>
-              Alinhado
-            </button>
+            <AligmentButton onClick={handleButtonClick}/>
           </div>
         </div>}
     </div >

@@ -1,12 +1,13 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, } from 'react';
 import TopButtons from "../../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
 import "../../../index.css"
 import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4C.png';
 import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../../utils/utils.js';
+import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 
-function Sondagem4C({backUrl}) {
+function Sondagem4C({ backUrl }) {
   setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
@@ -93,19 +94,18 @@ function Sondagem4C({backUrl}) {
             <a-camera
               position="0 0 0"
               rotation="0 0 0"
-              look-controls="touchEnabled: true; mouseEnabled: true;" />
-            <a-entity rotation="0 0 0">
-              <a-entity
-                className="model"
-                ref={entityRef}
-                geometry-merger
-                //material="shader: flat" 
-                />
-              {true &&
-                <div className="alignElements">
-                  <img className="alignImage" src={sondagem4Img} />
-                </div>}
-            </a-entity>
+              look-controls="touchEnabled: true; mouseEnabled: true;">
+              <a-entity rotation="0 0 0" />
+            </a-camera>
+            <a-entity
+              className="model"
+              ref={entityRef}
+              geometry-merger
+            />
+            {true &&
+              <div className="alignElements">
+                <img className="alignImage" src={sondagem4Img} />
+              </div>}
           </a-scene>
         </div >}
       {!isLoading && !modelAligned &&
@@ -114,15 +114,11 @@ function Sondagem4C({backUrl}) {
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
-            <a-camera
-              rotation-reader
-              look-controls="touchEnabled: false; mouseEnabled: false;" />
+            <a-camera />
           </a-scene>
           <div className="alignElements">
             <img className="alignImage" src={sondagem4Img} />
-            <button className="alignedBtn" onClick={handleButtonClick}>
-              Alinhado
-            </button>
+            <AligmentButton onClick={handleButtonClick}/>
           </div>
         </div>}
     </div>
