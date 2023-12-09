@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import TopButtons from "../../../components/TopButtons/TopButtons.js"
-import "./Sondagem4ARMap.css"
+import "./Sondagem4AR.css"
 import "../../../index.css"
 import { Link } from 'react-router-dom';
 import { setOrientation } from '../../../utils/utils.js';

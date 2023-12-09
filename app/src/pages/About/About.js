@@ -21,7 +21,7 @@ function About() {
         <div className='mainContent'>
           <div className='textContent'>
             <a>&nbsp; Esta aplicação web foi desenvolvida no âmbito do Projeto de Engenharia Informática <b>"Realidade Aumentada na Web aplicada à Herança Cultural"</b>,
-              para o Mestrado de Engenharia Informática na Faculdade de Ciências da Universidade de Lisboa, em colaboração com o Museu Arqueológico de Vila Franca de Xira.</a>
+              para o Mestrado de Engenharia Informática na Faculdade de Ciências da Universidade de Lisboa.</a>
           </div>
           <Accordion
             id={1}
@@ -31,6 +31,14 @@ function About() {
               diretamente na Web, com foco em experiências para locais de Herança Cultural, como as ruínas do Monte dos Castelinhos.</a>`} />
           <Accordion
             id={2}
+            accordionOpen={true}
+            title={"Fontes"}
+            content={`<a>&nbsp;Toda a informação relativa ao Monte dos Castelinhos foi baseada na publicação 
+            <a href="https://repositorio.ul.pt/bitstream/10451/31329/1/MontedosCastelinhos.pdf"> "Monte dos Castelinhos, Vila Franca de Xira e a Conquista Romana do Vale to Tejo"
+            </a> e da Tese de Doutoramento do Doutor João Pimenta <a href="https://repositorio.ul.pt/handle/10451/54143">
+            "Monte dos Castelinhos e as dinâmicas da conquista romana da Península de Lisboa e baixo Tejo"</a>.</a>`} />
+          <Accordion
+            id={3}
             accordionOpen={true}
             title={"Autores"}
             content={`<a>&nbsp;Esta aplicação foi realizada por <b>Marta Correia</b>, aluna da Faculdade de Ciências da Universidade de Lisboa, com a co-orientação da 

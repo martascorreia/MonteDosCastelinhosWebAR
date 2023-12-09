@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons"
 import "../../index.css"
 import "./Sondagem.css"
-import { setOrientation, isFullScreen } from '../../utils/utils.js';
+import { setOrientation, reloadPage } from '../../utils/utils.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
 import { faVrCardboard } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,7 @@ function Sondagem({ id, sondagemID, title, headerImage, info, ra, rv }) {
     useEffect(() => {
         if (!hasRefreshed) {
             localStorage.setItem('hasRefreshed', 'true');
-            window.location.reload();
+            reloadPage();
         }
     }, [hasRefreshed]);
 
