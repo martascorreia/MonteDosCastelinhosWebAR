@@ -1,4 +1,8 @@
 import Sondagem from './../pages/Sondagem/Sondagem';
+import sondagem4Header from './../resources/images/headers/sondagem4Header.jpg'
+import sondagem5Header from './../resources/images/headers/sondagem5Header.jpg'
+import sondagem8Header from './../resources/images/headers/sondagem8Header.jpg'
+import sondagem9Header from './../resources/images/headers/sondagem9Header.jpg'
 
 export const getSondagem = (sondagemID) => {
     if (sondagemID == 4) {
@@ -6,8 +10,8 @@ export const getSondagem = (sondagemID) => {
             <Sondagem
                 id={sondagemID}
                 sondagemID={sondagemID}
-                title="Habitação 1"
-                headerImage="/images/Headers/sondagem4Header.jpg"
+                title="Habitação A"
+                headerImage={sondagem4Header}
                 info={getInfo(sondagemID)}
                 ra={getAR(sondagemID)}
                 rv={getVR(sondagemID)}
@@ -19,8 +23,8 @@ export const getSondagem = (sondagemID) => {
             <Sondagem
                 id={sondagemID}
                 sondagemID={sondagemID}
-                title="Habitação 2"
-                headerImage="/images/Headers/sondagem5Header.jpg"
+                title="Habitação B"
+                headerImage={sondagem5Header}
                 info={getInfo(sondagemID)}
             />)
     }
@@ -30,7 +34,7 @@ export const getSondagem = (sondagemID) => {
             id={sondagemID}
             sondagemID={sondagemID}
                 title="Habitações e Oficinas"
-                headerImage="/images/Headers/sondagem8Header.jpg"
+                headerImage={sondagem8Header}
                 info={getInfo(sondagemID)}
             />)
     }
@@ -40,7 +44,7 @@ export const getSondagem = (sondagemID) => {
                 id={sondagemID}
                 sondagemID={sondagemID}
                 title="Muralha"
-                headerImage="/images/Headers/sondagem9Header.jpg"
+                headerImage={sondagem9Header}
                 info={getInfo(sondagemID)} s
             />)
     }

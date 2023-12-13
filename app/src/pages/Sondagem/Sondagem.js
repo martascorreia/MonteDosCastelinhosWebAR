@@ -25,7 +25,7 @@ function Sondagem({ id, sondagemID, title, headerImage, info, ra, rv }) {
             <TopButtons backUrl={"/mapa"} />
             <div className="content sondagemPageContent">
                 <div className='sondagemHeader'>
-                    <img className='sondagemImage' src={process.env.PUBLIC_URL + headerImage} />
+                    <img className='sondagemImage' src={headerImage} />
                     <div className='sondagemTitle'>{title}</div>
                 </div>
                 <div className="sondagemContent">
