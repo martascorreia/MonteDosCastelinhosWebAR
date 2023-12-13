@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons"
 import "../../index.css"
 import "./Sondagem.css"
-import { setOrientation, reloadPage } from '../../utils/utils.js';
+import { setOrientation, reloadPage, garbageCollect, setFullScreen } from '../../utils/utils.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
 import { faVrCardboard } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +17,7 @@ function Sondagem({ id, sondagemID, title, headerImage, info, ra, rv }) {
         if (!hasRefreshed) {
             localStorage.setItem('hasRefreshed', 'true');
             reloadPage();
+            //garbageCollect();
         }
     }, [hasRefreshed]);
 
@@ -31,8 +32,8 @@ function Sondagem({ id, sondagemID, title, headerImage, info, ra, rv }) {
                 <div className="sondagemContent">
                     {(ra || rv) &&
                         <div className="sondagemExperiences">
-                            {ra && <SquareButton text={"Realidade Aumentada"} icon={<AugmentedReality width={50} height={45} strokeWidth={1.7} />} link="raMapa" />}
-                            {rv && <SquareButton text={"Realidade Virtual"} icon={<FontAwesomeIcon icon={faVrCardboard} />} link="rvMapa" />}
+                            {ra && <SquareButton text={"Realidade Aumentada"} icon={<AugmentedReality width={50} height={45} strokeWidth={1.7} />} link="raMapa" onClick={() => setFullScreen(true)} />}
+                            {rv && <SquareButton text={"Realidade Virtual"} icon={<FontAwesomeIcon icon={faVrCardboard} />} link="rvMapa" onClick={() => setFullScreen(true)}/>}
                         </div >}
                     <div className="sondagemInfo">
                         <div className='accordions'>

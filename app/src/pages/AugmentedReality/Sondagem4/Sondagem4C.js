@@ -57,32 +57,18 @@ function Sondagem4C({ backUrl }) {
     }
   };
 
-  // Cleanup resources
-  const handleCleanup = () => {
-    //clean up model
-    let entity = entityRef.current;
-    if (entity) {
-      const object3D = entityRef.current.object3D.children.find(child => child === model);
-      if (object3D) {
-        // dispose geometry and materials
-        cleanModel(object3D);
+  const cleanUp = () => {
+    handleCleanup(model, entityRef, document.querySelectorAll('a-scene'));
+    setModel(null);
+    setFullScreen(false, true);
+  };
 
-        // remove the model from the entity
-        entity.object3D.remove(object3D);
-        setModel(null);
-      }
     }
-    // clear references
-    entity = null;
-    entityRef.current = null;
-
-    // clean up camera
-    cleanCamera();
   };
 
   return (
     <div className="AugmentedReality">
-      <TopButtons hideFullScreenButton={true} cleanUp={handleCleanup} backUrl={backUrl} label={label} />
+      <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&
@@ -118,7 +104,7 @@ function Sondagem4C({ backUrl }) {
           </a-scene>
           <div className="alignElements">
             <img className="alignImage" src={sondagem4Img} />
-            <AligmentButton onClick={handleButtonClick}/>
+            <AligmentButton onClick={handleButtonClick} />
           </div>
         </div>}
     </div>

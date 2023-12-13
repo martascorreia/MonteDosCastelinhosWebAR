@@ -8,24 +8,32 @@ export const setOrientation = (type) => {
         .catch(function (error) { });
 }
 
-export const reloadPage = () => {  
+export const reloadPage = () => {
     window.location.reload();
 }
 
-export const isFullScreen = () => {  
+export const garbageCollect = () => {
+    if (typeof window.gc === 'function') {
+        window.gc();
+    } else {
+        console.warn('Garbage collection is not supported in this browser.');
+    }
+}
+
+export const isFullScreen = () => {
     return document.fullscreenElement != null;
 }
 
-export const setFullScreen = (alreadyFullScreen, setFullScreen) => {  
+export const setFullScreen = (setFullScreen) => {
     //full -> normal
-    if(alreadyFullScreen && !setFullScreen){
+    if (isFullScreen() && !setFullScreen) {
         document.exitFullscreen();
 
-     //normal -> full
-    } else if(!alreadyFullScreen && setFullScreen){
+    //normal -> full
+    } else if (!isFullScreen() && setFullScreen) {
         document.body.requestFullscreen();
     }
-  }
+}
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 var modelCache = {};
@@ -44,27 +52,6 @@ export const loadModel = async (modelPath) => {
             modelCache[modelPath] = model;
             resolve(model);
         }, null, reject);
-    });
-};
-
-export const cleanModel = (object3D) => {
-    if (object3D) {
-        object3D.traverse((node) => {
-            if (node.isMesh) {
-                node.geometry.dispose();
-                node.material.dispose();
-            }
-        });
-    }
-};
-
-export const cleanCamera = () => {
-    const elementsToRemove = document.querySelectorAll("video");
-    elementsToRemove.forEach(element => {
-        if (!element.paused) {
-            element.pause();
-        }
-        element.remove();
     });
 };
 
@@ -109,3 +96,51 @@ export const cleanSondagemFlags = () => {
     localStorage.setItem('sondagem4ARCFlag', 'false');
 }
 
+
+export const handleCleanup = (model, entityRef, scenes) => {
+    //clean model
+    let entity = entityRef.current;
+    if (entity) {
+        const object3D = entityRef.current.object3D.children.find(child => child === model);
+        if (object3D) {
+            // dispose geometry and materials
+            cleanModel(object3D);
+
+            // remove the model from the entity
+            entity.object3D.remove(object3D);
+        }
+    }
+
+    // clear references
+    entity = null;
+    entityRef.current = null;
+
+    //clean scene
+    scenes.forEach(scene => {
+        scene.remove();
+    });
+
+    // clean camera
+    cleanCamera();
+};
+
+export const cleanModel = (object3D) => {
+    if (object3D) {
+        object3D.traverse((node) => {
+            if (node.isMesh) {
+                node.geometry.dispose();
+                node.material.dispose();
+            }
+        });
+    }
+};
+
+export const cleanCamera = () => {
+    const elementsToRemove = document.querySelectorAll("video");
+    elementsToRemove.forEach(element => {
+        if (!element.paused) {
+            element.pause();
+        }
+        element.remove();
+    });
+};

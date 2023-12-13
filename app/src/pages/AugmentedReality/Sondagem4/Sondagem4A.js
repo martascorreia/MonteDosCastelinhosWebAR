@@ -4,7 +4,7 @@ import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
 import "../../../index.css"
 import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
-import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../../utils/utils.js';
+import { setOrientation, loadModel, handleCleanup, cleanCamera, setFullScreen } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 
 function Sondagem4A({ backUrl }) {
@@ -58,37 +58,35 @@ function Sondagem4A({ backUrl }) {
     }
   };
 
-  // Cleanup resources
-  const handleCleanup = () => {
-    //clean up model
-    let entity = entityRef.current;
-    if (entity) {
-      const object3D = entityRef.current.object3D.children.find(child => child === model);
-      if (object3D) {
-        // dispose geometry and materials
-        cleanModel(object3D);
-
-        // remove the model from the entity
-        entity.object3D.remove(object3D);
-        setModel(null);
-      }
-    }
-    // clear references
-    entity = null;
-    entityRef.current = null;
-
-    const scenes = document.querySelectorAll('a-scene');
-    scenes.forEach(scene => {
-      scene.remove();
-    });
-
-    // clean up camera
-    cleanCamera();
+  const cleanUp = () => {
+    handleCleanup(model, entityRef, document.querySelectorAll('a-scene'));
+    setModel(null);
+    setFullScreen(false);
   };
+
+  const printEntityPosition = () => {
+    if (entityRef.current) {
+      console.log('Model Position:', entityRef.current.object3D.position);
+      console.log('Model Rotation:', entityRef.current.object3D.rotation);
+    }
+    if (cameraRef.current) {
+      console.log('Camera Position:', cameraRef.current.object3D.position);
+      console.log('Camera Rotation:', cameraRef.current.object3D.rotation);
+    }
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(printEntityPosition, 5000);
+    return () => {
+      // Clean up interval on component unmount
+      clearInterval(intervalId);
+    };
+  }, []);
+
 
   return (
     <div className="AugmentedReality">
-      <TopButtons hideFullScreenButton={true} cleanUp={handleCleanup} backUrl={backUrl} label={label} />
+      <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && modelAligned &&

@@ -16,7 +16,7 @@ function Home() {
   
   function handleAcceptedPermissions(){
     setPermissionsAccepted(true);
-    setClickFullScreen(true)
+    //setClickFullScreen(true)
   }
 
   return (

@@ -7,9 +7,13 @@ function LoadingScreen() {
 
   return (
     <div className="loadingScreen">
-      <ReactLoading type="spin" color="#6FAFC9"
-        height={100} width={100} />
+      <ReactLoading type="spin" color="#6FAFC9" height={100} width={100} />
+      <div className='loadingScreenText'>
         A carregar...
+      </div>
+      <div className='loadingScreenText'>
+        (pode demorar alguns segundos)
+      </div>
     </div>
   );
 }

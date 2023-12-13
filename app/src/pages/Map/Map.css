@@ -5,23 +5,23 @@
 
 .Map {
     background-color: var(--white);
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-}
-
-.mapContent{
-    gap: 0 !important;
-}
-
-.mainMapMap{
     height: 100%;
     width: 100%;
 }
 
+.mapContent{
+    gap: 0 !important;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.mainMapMap{
+    width: 100%;
+    flex-grow: 1;
+}
+
 .mainMapHeader{
-    height: 25%;
+    height: 85px;
     width: 100%;
     background-color: var(--light-grey);
     display: flex;
@@ -31,7 +31,6 @@
 }
 
 .mainMapFooter{
-    height: 18%;
     width: 100%;
     background-color: var(--light-grey);
     z-index: 2; 
@@ -42,7 +41,7 @@
   
 .mainMapImage{
     height: 100%;
-    width: 100%;
+    min-width: 100%;
 }
 
 .mapLabels{

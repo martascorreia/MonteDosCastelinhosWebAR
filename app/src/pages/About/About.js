@@ -14,7 +14,7 @@ function About() {
   return (
     <div className="About">
       <TopButtons backUrl={"/"} />
-      <div className="content mapContent">
+      <div className="content aboutContent">
         <div className='mainHeader'>
           <div className='sondagemTitle'>Sobre</div>
         </div>

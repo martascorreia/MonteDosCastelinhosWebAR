@@ -4,7 +4,8 @@ import TopButtons from "../../../components/TopButtons/TopButtons.js"
 import "./Sondagem4VRMap.css"
 import "../../../index.css"
 import { Link } from 'react-router-dom';
-import { setOrientation } from '../../../utils/utils.js';
+import { setOrientation, setFullScreen } from '../../../utils/utils.js';
+
 import sondagem4VRMap from '../../../resources/images/maps/sondagem4VRMap.jpg';
 import sondagem4VRMapLabels from '../../../resources/images/maps/vrMapLabels.png';
 
@@ -27,14 +28,13 @@ function Sondagem4VRMap({ instructions }) {
   const [sondagem4VRDFlag, setSondagem4VRDFlag] = useState(localStorage.getItem('sondagem4VRDFlag') == 'true' ? true : false);
   const [sondagem4VREFlag, setSondagem4VREFlag] = useState(localStorage.getItem('sondagem4VREFlag') == 'true' ? true : false);
 
+  const cleanUp = () => {
+    setFullScreen(false);
+  };
+
   return (
-    <div className="Sonsagem4VRMap">
-      <TopButtons hideFullScreenButton={true} backUrl={"/sondagem4"} />
-      <div className="content Sonsagem4ARMapContent">
-        <div className='Sonsagem4ARMapElements'>
-          <div className="arMapInstructions">
-            <div className="arMapInstructionsTitle">
-              Instruções
+    <div className="Sondagem4VRMap">
+      <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={"/sondagem4"} />
       <div className="content Sondagem4VRMapContent">
         <div className='Sondagem4VRMapElements'>
           <div className="vrMapInstructions">
