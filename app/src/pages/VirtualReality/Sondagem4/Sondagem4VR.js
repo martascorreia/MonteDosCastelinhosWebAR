@@ -3,7 +3,7 @@ import TopButtons from "../../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
 import "../../../index.css"
 import "./../VirtualReality.css"
-import { setOrientation, loadModel, cleanCamera, cleanModel } from '../../../utils/utils.js';
+import { setOrientation, loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
 
 function VirtualReality({ id, label, backUrl }) {
   setOrientation("landscape");
@@ -65,39 +65,20 @@ function VirtualReality({ id, label, backUrl }) {
   };
 
   // Cleanup resources
-  const handleCleanup = () => {
-    //clean up model
-    let entity = entityRef.current;
-    if (entity) {
-      const object3D = entityRef.current.object3D.children.find(child => child === model);
-      if (object3D) {
-        // dispose geometry and materials
-        cleanModel(object3D);
-
-        // remove the model from the entity
-        entity.object3D.remove(object3D);
-        setModel(null);
-      }
-    }
-    // clear references
-    entity = null;
-    entityRef.current = null;
-
-    // clean up camera
-    cleanCamera();
-
-    //clean refresh flag
-    localStorage.setItem('hasRefreshed', false);
+  const cleanUp = () => {
+    handleCleanup(model, entityRef, document.querySelectorAll('a-scene'));
+    setModel(null);
+    setFullScreen(false);
   };
 
   return (
     <div className="VirtualReality">
       {isLoading &&
-        <TopButtons cleanUp={handleCleanup} backUrl={backUrl} />}
+        <TopButtons cleanUp={cleanUp} backUrl={backUrl} />}
       {isLoading &&
         <LoadingScreen />}
       {!isLoading &&
-        <TopButtons cleanUp={handleCleanup} backUrl={backUrl} label={label} />}
+        <TopButtons cleanUp={cleanUp} backUrl={backUrl} label={label} />}
       {!isLoading &&
         <div className="content">
           <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>

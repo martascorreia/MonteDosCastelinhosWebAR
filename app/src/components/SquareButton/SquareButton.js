@@ -3,10 +3,10 @@ import "./SquareButton.css";
 import "../../index.css"
 import { Link } from 'react-router-dom';
 
-const SquareButton = ({ text, link, icon }) => {
+const SquareButton = ({ text, link, icon, onClick }) => {
 
   return (
-    <Link to={link} className="topBtns-nav-link">
+    <Link to={link} className="topBtns-nav-link" onClick={onClick}>
       <button className="squareButton">
         <div className='squareBtnIcon'>
           {icon}

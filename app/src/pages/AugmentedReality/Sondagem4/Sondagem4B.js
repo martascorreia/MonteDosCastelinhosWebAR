@@ -20,6 +20,13 @@ function Sondagem4B({backUrl}) {
 
   // Cleanup resources
   const handleCleanup = () => {
+    //clean scene
+    const scenes = document.querySelectorAll('a-scene');
+    scenes.forEach(scene => {
+      scene.remove();
+    });
+
+    // clean camera
     cleanCamera();
   };
 
@@ -39,7 +46,7 @@ function Sondagem4B({backUrl}) {
             vr-mode-ui='enabled: false'>
             <a-camera
               position="0 0 0"
-              rotation="-30 -90 0"
+              rotation="-30 -100 0"
               look-controls="touchEnabled: true; mouseEnabled: true;" />
             <a-entity rotation="0 0 0">
               <a-image
@@ -62,9 +69,7 @@ function Sondagem4B({backUrl}) {
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
             vr-mode-ui='enabled: false'>
-            <a-camera
-              rotation-reader
-              look-controls="touchEnabled: false; mouseEnabled: false;" />
+            <a-camera />
           </a-scene>
           <div className="alignElements">
             <img className="alignImage" src={sondagem4Img} />

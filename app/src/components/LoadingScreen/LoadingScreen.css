@@ -3,11 +3,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0px auto;
   background-color: var(--white);
   color: var(--darker-grey);
   font-size: 30px;
   gap: 30px;
+}
+
+.loadingScreenText{
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  font-size: 25px;
 }
