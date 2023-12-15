@@ -3,10 +3,10 @@ import TopButtons from "../../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
 import "../../../index.css"
 import "./../AugmentedReality.css"
-import sondagem4Model from '../../../resources/models/sondagem4.smaller.straight.glb';
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4C.png';
 import { setOrientation, loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
+import sondagem4Model from '../../../resources/models/sondagem4.glb';
 
 function Sondagem4C({ backUrl }) {
   setOrientation("landscape");
