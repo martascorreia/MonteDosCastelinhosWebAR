@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/MonteDosCastelinhosWebAR/static/css/main.4c6602a5.css",
-    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.a86aeb02.js",
+    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.56e1baa1.js",
     "static/js/47.ba21de61.chunk.js": "/MonteDosCastelinhosWebAR/static/js/47.ba21de61.chunk.js",
-    "static/media/sondagem4.smaller.straight.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.smaller.straight.970fed495bee8c371ec8.glb",
+    "static/media/sondagem4.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.970fed495bee8c371ec8.glb",
+    "static/media/sondagem4.withoutRoof.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.withoutRoof.82ae91f73031918f63ef.glb",
     "static/media/mainMapReversed.png": "/MonteDosCastelinhosWebAR/static/media/mainMapReversed.dc3e79eae9f047a8fec0.png",
     "static/media/sondagem8Header.jpg": "/MonteDosCastelinhosWebAR/static/media/sondagem8Header.bb582347e4a79573c1f9.jpg",
     "static/media/sondagem4B.png": "/MonteDosCastelinhosWebAR/static/media/sondagem4B.2da953389caf704d09eb.png",
@@ -37,11 +38,11 @@
     "static/media/lexend-deca-vietnamese-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-vietnamese-400-normal.7aec3fedb83e5c27bb72.woff2",
     "index.html": "/MonteDosCastelinhosWebAR/index.html",
     "main.4c6602a5.css.map": "/MonteDosCastelinhosWebAR/static/css/main.4c6602a5.css.map",
-    "main.a86aeb02.js.map": "/MonteDosCastelinhosWebAR/static/js/main.a86aeb02.js.map",
+    "main.56e1baa1.js.map": "/MonteDosCastelinhosWebAR/static/js/main.56e1baa1.js.map",
     "47.ba21de61.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/47.ba21de61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c6602a5.css",
-    "static/js/main.a86aeb02.js"
+    "static/js/main.56e1baa1.js"
   ]
 }
