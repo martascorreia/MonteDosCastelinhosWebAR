@@ -13,8 +13,9 @@ export const getSondagem = (sondagemID) => {
                 title="Habitação A"
                 headerImage={sondagem4Header}
                 info={getInfo(sondagemID)}
-                ra={getAR(sondagemID)}
-                rv={getVR(sondagemID)}
+                ar={getAR(sondagemID)}
+                vr={getVR(sondagemID)}
+                mv={true}
             />)
     }
 

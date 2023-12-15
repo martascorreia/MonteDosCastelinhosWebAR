@@ -5,11 +5,11 @@ import "./Sondagem.css"
 import { setOrientation, reloadPage, garbageCollect, setFullScreen } from '../../utils/utils.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
-import { faVrCardboard } from "@fortawesome/free-solid-svg-icons";
+import { faVrCardboard, faCube } from "@fortawesome/free-solid-svg-icons";
 import Accordion from '../../components/Accordion/Accordion'
 import SquareButton from '../../components/SquareButton/SquareButton.js';
 
-function Sondagem({ id, sondagemID, title, headerImage, info, ra, rv }) {
+function Sondagem({ id, sondagemID, title, headerImage, info, ar, vr, mv }) {
     setOrientation("portrait");
     const [hasRefreshed, setHasRefreshed] = useState(localStorage.getItem('hasRefreshed') == 'false' ? false : true);
 
@@ -30,10 +30,11 @@ function Sondagem({ id, sondagemID, title, headerImage, info, ra, rv }) {
                     <div className='sondagemTitle'>{title}</div>
                 </div>
                 <div className="sondagemContent">
-                    {(ra || rv) &&
+                    {(ar || vr) &&
                         <div className="sondagemExperiences">
-                            {ra && <SquareButton text={"Realidade Aumentada"} icon={<AugmentedReality width={50} height={45} strokeWidth={1.7} />} link="raMapa" onClick={() => setFullScreen(true)} />}
-                            {rv && <SquareButton text={"Realidade Virtual"} icon={<FontAwesomeIcon icon={faVrCardboard} />} link="rvMapa" onClick={() => setFullScreen(true)}/>}
+                            {ar && <SquareButton text={"Realidade Aumentada"} icon={<AugmentedReality width={50} height={50} strokeWidth={1.7} />} link="raMapa" onClick={() => setFullScreen(true)} />}
+                            {vr && <SquareButton text={"Realidade Virtual"} icon={<FontAwesomeIcon icon={faVrCardboard} />} link="rvMapa" onClick={() => setFullScreen(true)}/>}
+                            {mv && <SquareButton text={"Modelo 3D"} icon={<FontAwesomeIcon icon={faCube} />} link="modelo3D" onClick={() => setFullScreen(false)}/>}
                         </div >}
                     <div className="sondagemInfo">
                         <div className='accordions'>

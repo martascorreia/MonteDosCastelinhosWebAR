@@ -62,14 +62,12 @@
 }
 
 .sondagemExperiences{
-    justify-content: center;
-    align-items: center;
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
 }
 
 .sondagemInfo{
