@@ -4,21 +4,22 @@ import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
 import "../../../index.css"
 import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
-import { setOrientation, loadModel, handleCleanup, cleanCamera, setFullScreen } from '../../../utils/utils.js';
+import { loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 
 function Sondagem4A({ backUrl }) {
-  setOrientation("landscape");
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
   const [isModelSet, setIsModelSet] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const entityRef = useRef();
+  const entityParentRef = useRef();
   const cameraRef = useRef();
   const [label, setLabel] = useState(null);
+  const [cameraOrientation, setCameraOrientation] = useState(null);
 
-  const handleButtonClick = () => {
-    cleanCamera();
+  const handleModelAligned = () => {
+    setCameraOrientation(cameraRef.current.object3D.rotation.clone());
     setModelAligned(true);
     setLabel("Vista Frontal");
   };
@@ -49,11 +50,16 @@ function Sondagem4A({ backUrl }) {
 
   // Set model
   const setModelInScene = () => {
-    if (entityRef.current) {
+    if (entityRef.current && cameraRef.current && entityParentRef.current) {
+      //model
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(-75, -90, -580);
+      entityRef.current.object3D.position.set(-90, -130, -580);
       entityRef.current.object3D.scale.set(1.8, 1.8, 1.8);
       entityRef.current.setAttribute('rotation', '7 -35 -7');
+      entityParentRef.current.object3D.rotation.set(cameraOrientation.x, cameraOrientation.y, cameraOrientation.z);
+
+      //camera
+      cameraRef.current.setAttribute('rotation', '0 0 0');
       setIsModelSet(true)
     }
   };
@@ -64,71 +70,40 @@ function Sondagem4A({ backUrl }) {
     setFullScreen(false);
   };
 
-  const printEntityPosition = () => {
-    if (entityRef.current) {
-      console.log('Model Position:', entityRef.current.object3D.position);
-      console.log('Model Rotation:', entityRef.current.object3D.rotation);
-    }
-    if (cameraRef.current) {
-      console.log('Camera Position:', cameraRef.current.object3D.position);
-      console.log('Camera Rotation:', cameraRef.current.object3D.rotation);
-    }
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(printEntityPosition, 5000);
-    return () => {
-      // Clean up interval on component unmount
-      clearInterval(intervalId);
-    };
-  }, []);
-
-
   return (
     <div className="AugmentedReality">
       <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
-      {!isLoading && modelAligned &&
+      {!isLoading &&
         <div className="content">
           <a-scene
             embedded
             className="scene"
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortTransparentObjects: true;"
             xr-mode-ui='enabled: false'>
-            <a-entity>
+            <a-entity position="0 0 0" rotation="0 0 0">
               <a-camera
-                position="0 0 0"
-                rotation="0 0 0"
-                ref={cameraRef}
-                look-controls="touchEnabled: true; mouseEnabled: true;">
-                <a-entity rotation="0 0 0"/>
-              </a-camera>
-              <a-entity rotation="0 0 0"
-                className="model"
-                ref={entityRef}
-                geometry-merger
-              />
+                ref={cameraRef} look-controls='enabled: true' />
             </a-entity>
-            {true &&
-              <div className="alignElements">
-                <img className="alignImage" src={sondagem4Img} />
-              </div>}
+            {modelAligned &&
+              <a-entity ref={entityParentRef}>
+                <a-entity
+                  className="model"
+                  ref={entityRef}
+                  geometry-merger
+                  anchored="persistent: true" />
+              </a-entity>}
           </a-scene>
-        </div>}
-      {!isLoading && !modelAligned &&
-        <div className="content">
-          <a-scene
-            embedded
-            className="scene"
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
-            xr-mode-ui='enabled: false'>
-            <a-camera />
-          </a-scene>
-          <div className="alignElements">
-            <img className="alignImage" src={sondagem4Img} />
-            <AligmentButton onClick={handleButtonClick}/>
-          </div>
+          {!modelAligned &&
+            <div className="alignElements">
+              <img className="alignImage" src={sondagem4Img} />
+              <AligmentButton onClick={() => handleModelAligned()} />
+            </div>}
+          {modelAligned && false &&
+            <div className="alignElements">
+              <img className="alignImage" src={sondagem4Img} />
+            </div>}
         </div>}
     </div >
   );

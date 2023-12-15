@@ -55,7 +55,6 @@ function Sondagem4C({ backUrl }) {
   // Set model
   const setModelInScene = () => {
     if (entityRef.current && cameraRef.current && entityParentRef.current) {
-
       //model
       entityRef.current.object3D.add(model);
       entityRef.current.object3D.position.set(85, -180, -660);
@@ -72,7 +71,7 @@ function Sondagem4C({ backUrl }) {
   const cleanUp = () => {
     handleCleanup(model, entityRef, document.querySelectorAll('a-scene'));
     setModel(null);
-    setFullScreen(false, true);
+    setFullScreen(false);
   };
 
 
@@ -85,7 +84,7 @@ function Sondagem4C({ backUrl }) {
         <div className="content">
           <a-scene
             className="scene"
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortTransparentObjects: true;"
             xr-mode-ui='enabled: false'>
             <a-entity position="0 0 0" rotation="0 0 0">
               <a-camera
@@ -97,8 +96,7 @@ function Sondagem4C({ backUrl }) {
                   className="model"
                   ref={entityRef}
                   geometry-merger
-                  anchored="persistent: true"
-                />
+                  anchored="persistent: true" />
               </a-entity>}
           </a-scene>
           {!modelAligned &&
