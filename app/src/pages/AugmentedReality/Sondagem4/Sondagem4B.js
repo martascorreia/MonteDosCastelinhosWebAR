@@ -42,7 +42,7 @@ function Sondagem4B({backUrl}) {
         <div className="content">
           <a-scene className="scene"
             embedded
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortTransparentObjects: true;"
             xr-mode-ui='enabled: false'>
             <a-camera
               position="0 0 0"
@@ -67,7 +67,7 @@ function Sondagem4B({backUrl}) {
         <div className="content">
           <a-scene
             className="scene"
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortTransparentObjects: true;"
             xr-mode-ui='enabled: false'>
             <a-camera />
           </a-scene>
