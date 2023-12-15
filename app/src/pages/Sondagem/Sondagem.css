@@ -1,22 +1,28 @@
 .Sondagem{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
 }
 
-.infoTitle{
-    top: 0;
-    height: 24vh;
+.sondagemPageContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.sondagemHeader{
+    height: 25%;
     width: 100%;
     background-color: var(--light-grey);
     display: flex;
     justify-content: center;
     align-items: flex-end;  
-    position: absolute;
     z-index: 2; 
+    border-bottom: 5px solid var(--main-color);
 }
 
 .sondagemImage{
-    width: 100vw;
+    width: 100%;
     position: absolute;
 }
 
@@ -24,14 +30,71 @@
     padding: 1.5vh;
     font-size: 22px;
     border-radius: 35px;
-    width: 80%;
-    height: 10%;
+    width: 300px;
+    height: 15px;
     background-color: var(--white);
     justify-content: center;
     align-items: center;
     display: flex;
     margin-bottom: 5%;
     z-index: 3;
+}
+
+.divider{
+    background-color: var(--main-color);
+    height: 2%;
+}
+
+.sondagemContent{    
+    color: var(--darker-grey);
+    font-family: "Lexend Deca";
+    overflow-y: scroll;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.sondagemPageContent, .sondagemContent{
+    gap: 25px;
+}
+
+.sondagemExperiences{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.sondagemInfo{
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.accordions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.infoTitle{
+    font-style: bold;
+    font-size: 20px;
+    padding: 10px;
 }
 
 .description{
