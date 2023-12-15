@@ -81,7 +81,7 @@ function VirtualReality({ id, label, backUrl }) {
         <TopButtons cleanUp={cleanUp} backUrl={backUrl} label={label} />}
       {!isLoading &&
         <div className="content">
-          <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
+          <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" xr-mode-ui='enabled: false'>
             <a-entity
               className="model"
               ref={entityRef}

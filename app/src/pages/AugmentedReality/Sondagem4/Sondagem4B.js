@@ -43,7 +43,7 @@ function Sondagem4B({backUrl}) {
           <a-scene className="scene"
             embedded
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
-            vr-mode-ui='enabled: false'>
+            xr-mode-ui='enabled: false'>
             <a-camera
               position="0 0 0"
               rotation="-30 -100 0"
@@ -68,7 +68,7 @@ function Sondagem4B({backUrl}) {
           <a-scene
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;"
-            vr-mode-ui='enabled: false'>
+            xr-mode-ui='enabled: false'>
             <a-camera />
           </a-scene>
           <div className="alignElements">

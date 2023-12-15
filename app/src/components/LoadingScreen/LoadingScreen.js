@@ -9,10 +9,8 @@ function LoadingScreen() {
     <div className="loadingScreen">
       <ReactLoading type="spin" color="#6FAFC9" height={100} width={100} />
       <div className='loadingScreenText'>
-        A carregar...
-      </div>
-      <div className='loadingScreenText'>
-        (pode demorar alguns segundos)
+        <a className='loadingText'> A carregar...</a>
+        <a className='supportingText'>(pode demorar alguns segundos)</a>
       </div>
     </div>
   );
