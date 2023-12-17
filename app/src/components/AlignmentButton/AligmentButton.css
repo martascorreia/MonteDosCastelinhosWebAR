@@ -6,7 +6,7 @@
   color: var(--white);
   padding: 15px;
   font-size: 20px;
-  border-radius: 5%;
+  border-radius: 5px;
   z-index: 99;
   font-family:"Lexend Deca";
 }
