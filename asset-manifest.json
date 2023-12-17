@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MonteDosCastelinhosWebAR/static/css/main.58ae545f.css",
-    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.a6d65c35.js",
+    "main.js": "/MonteDosCastelinhosWebAR/static/js/main.8edb0ab8.js",
     "static/js/47.ba21de61.chunk.js": "/MonteDosCastelinhosWebAR/static/js/47.ba21de61.chunk.js",
     "static/media/sondagem4.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.970fed495bee8c371ec8.glb",
     "static/media/sondagem4.withoutRoof.glb": "/MonteDosCastelinhosWebAR/static/media/sondagem4.withoutRoof.82ae91f73031918f63ef.glb",
@@ -34,16 +34,17 @@
     "static/media/vrMapLabels.png": "/MonteDosCastelinhosWebAR/static/media/vrMapLabels.19342b7730ec29d5c343.png",
     "static/media/sondagem4VRMap.jpg": "/MonteDosCastelinhosWebAR/static/media/sondagem4VRMap.ed1e9ffc17420dd2f501.jpg",
     "static/media/lexend-deca-all-400-normal.woff": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-all-400-normal.144b2a63e56dcddd9ca7.woff",
+    "static/media/sondagemBLines.png": "/MonteDosCastelinhosWebAR/static/media/sondagemBLines.4db0fdcdca48776ed3f8.png",
     "static/media/lexend-deca-latin-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-latin-400-normal.c95c30470184160a8a7d.woff2",
     "static/media/lexend-deca-latin-ext-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-latin-ext-400-normal.671c8b05e9f8680aa8f2.woff2",
     "static/media/lexend-deca-vietnamese-400-normal.woff2": "/MonteDosCastelinhosWebAR/static/media/lexend-deca-vietnamese-400-normal.7aec3fedb83e5c27bb72.woff2",
     "index.html": "/MonteDosCastelinhosWebAR/index.html",
     "main.58ae545f.css.map": "/MonteDosCastelinhosWebAR/static/css/main.58ae545f.css.map",
-    "main.a6d65c35.js.map": "/MonteDosCastelinhosWebAR/static/js/main.a6d65c35.js.map",
+    "main.8edb0ab8.js.map": "/MonteDosCastelinhosWebAR/static/js/main.8edb0ab8.js.map",
     "47.ba21de61.chunk.js.map": "/MonteDosCastelinhosWebAR/static/js/47.ba21de61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58ae545f.css",
-    "static/js/main.a6d65c35.js"
+    "static/js/main.8edb0ab8.js"
   ]
 }
