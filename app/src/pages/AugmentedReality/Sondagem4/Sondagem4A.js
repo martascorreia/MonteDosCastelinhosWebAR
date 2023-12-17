@@ -51,21 +51,19 @@ function Sondagem4A({ backUrl }) {
   // Set model
   const setModelInScene = () => {
     if (entityRef.current && cameraRef.current && entityParentRef.current) {
-      //model
       entityRef.current.object3D.add(model);
       entityRef.current.object3D.position.set(-90, -130, -580);
       entityRef.current.object3D.scale.set(1.8, 1.8, 1.8);
       entityRef.current.setAttribute('rotation', '7 -35 -7');
       entityParentRef.current.object3D.rotation.set(cameraOrientation.x, cameraOrientation.y, cameraOrientation.z);
-
-      //camera
-      cameraRef.current.setAttribute('rotation', '0 0 0');
       setIsModelSet(true)
     }
   };
 
   const cleanUp = () => {
     handleCleanup(model, entityRef, document.querySelectorAll('a-scene'));
+    cameraRef = null;
+    entityParentRef = null;
     setModel(null);
     setFullScreen(false);
   };
@@ -84,7 +82,7 @@ function Sondagem4A({ backUrl }) {
             xr-mode-ui='enabled: false'>
             <a-entity position="0 0 0" rotation="0 0 0">
               <a-camera
-                ref={cameraRef} look-controls='enabled: true' />
+                ref={cameraRef} look-controls='enabled: true;' />
             </a-entity>
             {modelAligned &&
               <a-entity ref={entityParentRef}>
@@ -99,6 +97,9 @@ function Sondagem4A({ backUrl }) {
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
               <AligmentButton onClick={() => handleModelAligned()} />
+              <a className='aligmentText'>
+                <b>Dica:</b> Alinhe-se com a estaca de madeira acima.
+              </a>
             </div>}
           {modelAligned && false &&
             <div className="alignElements">

@@ -5,9 +5,9 @@ import "../../../index.css"
 import "./../ModelView.css"
 import { loadModel, setFullScreen } from '../../../utils/utils.js';
 import sondagem4Model from '../../../resources/models/sondagem4.withoutRoof.glb';
-
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei';
+import { HandFinger } from 'tabler-icons-react';
 
 function Sondagem4A({ backUrl }) {
   const [model, setModel] = useState(null);
@@ -35,12 +35,13 @@ function Sondagem4A({ backUrl }) {
     setFullScreen(false);
   };
 
-  function Sondagem4Model({ position }) {
+  function Sondagem4Model() {
     const ref = useRef();
 
     return (
       <mesh
-        position={position}
+        position={[0, 0, 0]}
+        rotation={[0, -90, 0]}
         ref={ref}>
         <primitive object={model} />
       </mesh>
@@ -50,13 +51,13 @@ function Sondagem4A({ backUrl }) {
   return (
     <div className="AugmentedReality">
       <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} />
-      {model == null &&
+      {!model &&
         <LoadingScreen />}
       {model &&
-        <Canvas camera={{ position: [0, 100, 150] }}>
+        <Canvas camera={{ position: [0, 300, 200] }}>
           <ambientLight intensity={0.5} />
           <OrbitControls enableDamping={false} />
-          <Sondagem4Model position={[0, 0, 0]} />
+          <Sondagem4Model />
         </Canvas>}
     </div >
   );
