@@ -3,6 +3,8 @@ import TopButtons from "../../../components/TopButtons/TopButtons.js"
 import "../../../index.css"
 import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagemBCorrect.jpeg';
+import sondagem4ImgLines from '../../../resources/images/alignmentImages/sondagemBLines.png';
+
 import sondagem4B from '../../../resources/models/sondagem4B.png';
 import { setOrientation, cleanCamera } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
@@ -81,7 +83,7 @@ function Sondagem4B({ backUrl }) {
             </a-entity>}
           {!modelAligned &&
             <div className="alignElements">
-              <img className="alignImage" src={sondagem4Img} />
+              <img className="alignImage" src={sondagem4ImgLines} />
               <AligmentButton onClick={() => handleModelAligned()} />
               <a className='aligmentText'>
                 <b>Dica:</b> Alinhe-se entre as duas árvores acima, no centro do espaço vazio.
