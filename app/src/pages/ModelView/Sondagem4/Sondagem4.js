@@ -7,7 +7,6 @@ import { loadModel, setFullScreen } from '../../../utils/utils.js';
 import sondagem4Model from '../../../resources/models/sondagem4.withoutRoof.glb';
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei';
-import { HandFinger } from 'tabler-icons-react';
 
 function Sondagem4A({ backUrl }) {
   const [model, setModel] = useState(null);
@@ -48,9 +47,16 @@ function Sondagem4A({ backUrl }) {
     );
   }
 
+  //unmount
+  useEffect(() => {
+    return () => {
+      cleanUp();
+    };
+  }, []);
+
   return (
     <div className="AugmentedReality">
-      <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} />
+      <TopButtons hideFullScreenButton={true} backUrl={backUrl} />
       {!model &&
         <LoadingScreen />}
       {model &&
