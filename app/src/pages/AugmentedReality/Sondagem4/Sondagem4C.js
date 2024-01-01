@@ -105,7 +105,7 @@ function Sondagem4C({ backUrl }) {
                 <b>Dica:</b> Alinhe-se com o corte da escavação ou a árvore acima.
               </a>
             </div>}
-          {modelAligned && true &&
+          {modelAligned && false &&
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
             </div>}
