@@ -29,7 +29,7 @@ export const setFullScreen = (setFullScreen) => {
     if (isFullScreen() && !setFullScreen) {
         document.exitFullscreen();
 
-    //normal -> full
+        //normal -> full
     } else if (!isFullScreen() && setFullScreen) {
         document.body.requestFullscreen();
     }
