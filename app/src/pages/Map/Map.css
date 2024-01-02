@@ -15,6 +15,11 @@
     justify-content: flex-start;
 }
 
+.mapContainer {
+    height: 100%;
+    width: 100%;
+}
+
 .mainMapMap{
     width: 100%;
     flex-grow: 1;
@@ -106,4 +111,17 @@
 .mainMapPoint9Reversed{
     top: 5%;
     left: 5%;
+}
+
+.locationBtn{
+    display: flex;
+    background-color: var(--main-color);
+    border: none;
+    color: var(--white);
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
 }
