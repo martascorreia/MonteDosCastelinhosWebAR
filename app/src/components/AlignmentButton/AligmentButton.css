@@ -1,0 +1,12 @@
+.aligmentButton {
+  position: absolute;
+  bottom: 12%;
+  background-color: var(--main-color);
+  border: none;
+  color: var(--white);
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  z-index: 99;
+  font-family:"Lexend Deca";
+}

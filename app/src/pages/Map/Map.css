@@ -1,27 +1,32 @@
-.SondagemMap, .mainMapMap{
+.mainMapMap{
     position: relative;
     display: flex;
 }
 
 .Map {
     background-color: var(--white);
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-}
-
-.mapContent{
-    gap: 0 !important;
-}
-
-.mainMapMap{
     height: 100%;
     width: 100%;
 }
 
+.mapContent{
+    gap: 0 !important;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.mapContainer {
+    height: 100%;
+    width: 100%;
+}
+
+.mainMapMap{
+    width: 100%;
+    flex-grow: 1;
+}
+
 .mainMapHeader{
-    height: 25%;
+    height: 85px;
     width: 100%;
     background-color: var(--light-grey);
     display: flex;
@@ -31,7 +36,6 @@
 }
 
 .mainMapFooter{
-    height: 18%;
     width: 100%;
     background-color: var(--light-grey);
     z-index: 2; 
@@ -42,7 +46,7 @@
   
 .mainMapImage{
     height: 100%;
-    width: 100%;
+    min-width: 100%;
 }
 
 .mapLabels{
@@ -74,9 +78,19 @@
     left: 7%;
 }
 
+.mainMapPoint4Reversed{
+    top: 75%;
+    left: 80%;
+}
+
 .mainMapPoint5{
     top: 68%;
     left: 48%;
+}
+
+.mainMapPoint5Reversed{
+    top: 15%;
+    left: 33%;
 }
 
 .mainMapPoint8{
@@ -84,7 +98,30 @@
     left: 20%;
 }
 
+.mainMapPoint8Reversed{
+    top: 30%;
+    left: 60%;
+}
+
 .mainMapPoint9{
     top: 76%;
     left: 75%;
+}
+
+.mainMapPoint9Reversed{
+    top: 5%;
+    left: 5%;
+}
+
+.locationBtn{
+    display: flex;
+    background-color: var(--main-color);
+    border: none;
+    color: var(--white);
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
 }
