@@ -1,4 +1,4 @@
-.AugmentedReality, .Sondagem4ARMap {
+.AugmentedReality {
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -7,6 +7,7 @@
 
 .scene{
     position: absolute !important;
+    z-index: 101;
 }
 
 .alignElements{
@@ -25,35 +26,15 @@
     width: 100%;
 }
 
-.alignedBtn{
+.aligmentText {
     position: absolute;
-    bottom: 12%;
-    background-color: var(--main-color);
+    bottom: 2%;
+    background-color: var(--white);
     border: none;
-    color: var(--white);
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 5%;
-    z-index: 99;
+    color: var(--darker-grey);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    z-index: 98;
     font-family:"Lexend Deca";
-}
-
-.mapPointAAR4{
-    top: 63%;
-    left: 80%;
-}
-
-.mapPointCAR4{
-    top: 14%;
-    left: 5%;
-}
-
-.mapPointBAR4{
-    top: 30%;
-    left: 37%;
-}
-
-.augmentedRealityScene{
-    width: 100%;
-    height: 100%;
-}
+  }

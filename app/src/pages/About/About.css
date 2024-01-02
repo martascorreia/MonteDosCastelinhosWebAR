@@ -1,23 +1,33 @@
+.About{
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+}
+
+.aboutContent{
+    gap: 0 !important;
+    justify-content: flex-start;
+}
+
 .mainHeader{
-    height: 25%;
+    height: 85px;
     width: 100%;
     background-color: var(--light-grey);
     display: flex;
     justify-content: center;
-    align-items: flex-end;  
+    align-items: flex-end; 
     z-index: 2; 
 }
 
 .mainContent{
-    height: 100%;
-    width: 100%;
-    border-top: 5px solid var(--light-grey);
     background-color: var(--white);
     display: flex;
     padding-top: 20px;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    overflow-y: scroll;
+    height: 75vh;
 }
 
 .textContent{
