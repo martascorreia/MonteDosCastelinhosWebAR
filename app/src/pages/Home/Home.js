@@ -25,7 +25,7 @@ function Home() {
         <img src={logo} className="logo" alt="logo" />
         <div className="menu">
           <Link to={'/mapa'} className="nav-link"><TextButton href="/mapa" text="Visita" /></Link>
-          <Link to={'/mais'} className="nav-link"><TextButton href="/mapa" text="Sobre" /></Link>
+          <Link to={'/mais'} className="nav-link"><TextButton href="/mais" text="Sobre" /></Link>
         </div>
       </div >
     </div>

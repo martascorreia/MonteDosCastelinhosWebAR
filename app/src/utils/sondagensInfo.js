@@ -214,7 +214,7 @@ export const getInfo = (sondagemID) => {
                 "primeira vez de forma clara que o sítio de Monte dos Castelinhos foi alvo de um sistema " +
                 "defensivo bem estruturado e planeado. Não é ainda totalmente claro, qual o seu traçado " +
                 "no resto do sítio, visto que as alterações topográficas são muito subtis e deparam-se com " +
-                "o amplo manto vegetal que cobre o sítio e que impede interpretações globais" +
+                "o amplo manto vegetal que cobre o sítio e que impede interpretações globais " +
                 "contundentes."
             },
             {
