@@ -85,7 +85,7 @@ function Sondagem4B({ backUrl }) {
               <img className="alignImage" src={sondagem4ImgLines} />
               <AligmentButton onClick={() => handleModelAligned()} />
               <a className='aligmentText'>
-                <b>Dica:</b> Alinhe-se com a árvores acima
+                <b>Dica:</b> Posicione-se com a árvore acima
               </a>
             </div>}
           {modelAligned && false &&

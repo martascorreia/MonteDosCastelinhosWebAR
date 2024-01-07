@@ -98,7 +98,7 @@ function Sondagem4A({ backUrl }) {
               <img className="alignImage" src={sondagem4Img} />
               <AligmentButton onClick={() => handleModelAligned()} />
               <a className='aligmentText'>
-                <b>Dica:</b> Alinhe-se com a estaca de madeira acima
+                <b>Dica:</b> Posicione-se com a estaca de madeira acima
               </a>
             </div>}
           {modelAligned && false &&
