@@ -1,11 +1,12 @@
 export const setOrientation = (type) => {
-    const isMobile = navigator.userAgentData.mobile;
-    if (!isMobile) return;
-
-    var typeLock = type == "landscape" ? "landscape-primary" : "portrait-primary"
-    screen.orientation.lock(typeLock)
-        .then(function () { })
-        .catch(function (error) { });
+    //const isMobile = navigator.userAgentData.mobile;
+    // if (!isMobile) return;
+    if (screen.orientation !== undefined) {
+        var typeLock = type == "landscape" ? "landscape-primary" : "portrait-primary"
+        screen.orientation.lock(typeLock)
+            .then(function () { })
+            .catch(function (error) { });
+    }
 }
 
 export const reloadPage = () => {
