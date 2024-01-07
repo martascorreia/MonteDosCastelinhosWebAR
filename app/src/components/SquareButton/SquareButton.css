@@ -1,7 +1,7 @@
 .squareButton {
   border: none;
   color: var(--darker-grey);
-  padding: 1.5vh;
+  padding: 15px;
   font-size: 22px;
   border-radius: 35%;
   background-color: var(--light-grey);
