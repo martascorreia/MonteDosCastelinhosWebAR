@@ -52,6 +52,7 @@
 .mapLabels{
     height: 95%;
     width: 90%;
+    max-width: 400px;
 }
 
 .mapImage{
