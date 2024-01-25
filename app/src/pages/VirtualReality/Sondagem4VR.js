@@ -10,6 +10,7 @@ function VirtualReality() {
   const [cameraPosition, setCameraPosition] = useState({ x: 0, y: 0, z: 0 });
   const [modelLoaded, setModelLoaded] = useState(false);
   const entityRef = useRef();
+  const cameraRef = useRef();
 
   useEffect(() => {
     if (!modelLoaded)
@@ -61,12 +62,12 @@ function VirtualReality() {
       <div className="content">
         <a-scene className="scene" embedded renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortObjects: true;" vr-mode-ui='enabled: false'>
           <a-entity
+            obb-collider
             className="model"
             ref={entityRef}
-            geometry-merger
-            material="shader: flat" />
+            geometry-merger/>
           <a-camera position={`${cameraPosition.x} ${cameraPosition.y} ${cameraPosition.z}`}
-            look-controls="touchEnabled: false; mouseEnabled: true;" wasd-controls="acceleration: 100; fly: true" />
+            look-controls="enabled: true" wasd-controls="acceleration: 100; fly: true" />
         </a-scene>
       </div >
     </div>

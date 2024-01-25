@@ -8,22 +8,42 @@ function WASPButtons({ cameraPosition, onCameraMovement }) {
 
   const activateKey = (direction) => {
     // Define movement amounts based on the button clicked
-    const movementAmount = 5.0; // Adjust as needed
+    const movementAmount = 5.0;
+    let camera = document.querySelector('[camera]')
+    
+    // Check if cameraRef is defined
+    if (!camera) {
+      console.error('Camera reference is not available yet.');
+      return;
+    }
+
+    // Get the camera's rotation
+    const cameraRotation = camera.getAttribute('rotation');
+    const { x: pitch, y: yaw, z: roll } = cameraRotation;
+
+    // Convert degrees to radians
+    const pitchRad = (pitch * Math.PI) / 180;
+    const yawRad = (yaw * Math.PI) / 180;
+    const rollRad = (roll * Math.PI) / 180;
 
     // Calculate the new camera position based on the direction
     let newPosition = { x: 0, y: 0, z: 0, ...cameraPosition };
     switch (direction) {
       case 'w':
-        newPosition.z -= movementAmount;
+        newPosition.x -= movementAmount * Math.sin(yawRad);
+        newPosition.z -= movementAmount * Math.cos(yawRad);
         break;
       case 'a':
-        newPosition.x -= movementAmount;
+        newPosition.x -= movementAmount * Math.cos(yawRad);
+        newPosition.z += movementAmount * Math.sin(yawRad);
         break;
       case 's':
-        newPosition.z += movementAmount;
+        newPosition.x += movementAmount * Math.sin(yawRad);
+        newPosition.z += movementAmount * Math.cos(yawRad);
         break;
       case 'd':
-        newPosition.x += movementAmount;
+        newPosition.x += movementAmount * Math.cos(yawRad);
+        newPosition.z -= movementAmount * Math.sin(yawRad);
         break;
       case 'e':
         newPosition.y += movementAmount;
