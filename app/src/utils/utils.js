@@ -29,7 +29,7 @@ export const setFullScreen = (setFullScreen) => {
     if (isFullScreen() && !setFullScreen) {
         document.exitFullscreen();
 
-    //normal -> full
+        //normal -> full
     } else if (!isFullScreen() && setFullScreen) {
         document.body.requestFullscreen();
     }
@@ -143,4 +143,43 @@ export const cleanCamera = () => {
         }
         element.remove();
     });
+};
+
+export const getUserLocation = () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const location = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+            };
+            return location;
+        });
+    }
+    return null;
+    
+   /* {
+        lat: 39.013126,
+        lng: -8.974147
+    };*/
+};
+
+export const isUserWithinBounds = (userLocation) => {
+    if(!userLocation) return false;
+    var mapBounds = getMapBounds();
+
+    return (
+        userLocation.lat >= mapBounds.swLat &&
+        userLocation.lat <= mapBounds.neLat &&
+        userLocation.lng >= mapBounds.swLng &&
+        userLocation.lng <= mapBounds.neLng
+    );
+};
+
+export const getMapBounds = () => {
+    return {
+        swLat: 39.010969,
+        neLat: 39.013578,
+        swLng: -8.979158,
+        neLng: -8.972700
+    }
 };

@@ -11,7 +11,6 @@ import Sondagem4A from "./pages/AugmentedReality/Sondagem4/Sondagem4A"
 import Sondagem4C from "./pages/AugmentedReality/Sondagem4/Sondagem4C"
 import Sondagem4B from "./pages/AugmentedReality/Sondagem4/Sondagem4B"
 import Sondagem4ModelView from './pages/ModelView/Sondagem4/Sondagem4';
-
 import { getVR, getAR, getSondagem } from './utils/sondagensInfo';
 
 function App() {
