@@ -83,39 +83,17 @@ export const getInfo = (sondagemID) => {
         return [
             {
                 id: 1,
-                isOpen: false,
+                isOpen: true,
                 title: 'História',
-                content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
-                    "inclinada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas" +
-                    "concentrações pouco usuais de materiais arqueológicos. Entre estes, sobressaía um" +
-                    "conjunto de fragmentos cerâmicos em conexão pertencentes a um contentor de" +
-                    "armazenamento de época romana republicana, colocado a descoberto pelos agentes" +
-                    "atmosféricos. Com o objetivo, de tentar perceber o que se passava nesta zona do" +
-                    "povoado e se porventura a presença desta peça indicava algum contexto preservado," +
-                    "decidimos abrir uma sondagem de dois metros de lado. O desenvolver da escavação e a" +
-                    "qualidade da sequência estratigráfica identificada, conduziu que esta primeira sondagem" +
-                    "fosse progressivamente alargada ao longo das campanhas subsequentes, para uma"
-            },
-            {
-                id: 2,
-                isOpen: false,
-                title: 'Escavações',
-                content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
-                    "inclinada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas" +
-                    "concentrações pouco usuais de materiais arqueológicos. Entre estes, sobressaía um" +
-                    "conjunto de fragmentos cerâmicos em conexão pertencentes a um contentor de" +
-                    "armazenamento de época romana republicana, colocado a descoberto pelos agentes" +
-                    "atmosféricos. Com o objetivo, de tentar perceber o que se passava nesta zona do" +
-                    "povoado e se porventura a presença desta peça indicava algum contexto preservado," +
-                    "decidimos abrir uma sondagem de dois metros de lado. O desenvolver da escavação e a" +
-                    "qualidade da sequência estratigráfica identificada, conduziu que esta primeira sondagem" +
-                    "fosse progressivamente alargada ao longo das campanhas subsequentes, para uma"
-            },
-            {
-                id: 3,
-                isOpen: false,
-                title: 'Objectos encontrados',
-                content: "Elargada ao longo das campanhas subsequentes, para uma"
+                content: "A Habitação A, ou Sondagem 4, foi explorada pela primeira vez em 2008, " +
+                    "na primeira campanha realizada ao Monte dos Castelinhos após " +
+                    " a descoberta de um grupo específico de fragmentos cerâmicos conectados no solo." +
+                    " Mais tarde, identificou-se que esta escavação continha edifícios residenciais, " +
+                    "sendo que sua construção principal apresentava características de uma Domus, casas " +
+                    "habitadas por famílias romanas mais abastadas. <br/><br/>" +
+                    "&nbsp;É importante referir que o caminho atual " +
+                    "da montanha passa por parte desta escavação, então, embora não esteja totalmente à descoberta, " +
+                    "foram feitas sondagens para revelar as ruínas restantes."
             }]
     }
 
@@ -123,39 +101,11 @@ export const getInfo = (sondagemID) => {
         return [
             {
                 id: 1,
-                isOpen: false,
+                isOpen: true,
                 title: 'História',
-                content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
-                    "inclinada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas" +
-                    "concentrações pouco usuais de materiais arqueológicos. Entre estes, sobressaía um" +
-                    "conjunto de fragmentos cerâmicos em conexão pertencentes a um contentor de" +
-                    "armazenamento de época romana republicana, colocado a descoberto pelos agentes" +
-                    "atmosféricos. Com o objetivo, de tentar perceber o que se passava nesta zona do" +
-                    "povoado e se porventura a presença desta peça indicava algum contexto preservado," +
-                    "decidimos abrir uma sondagem de dois metros de lado. O desenvolver da escavação e a" +
-                    "qualidade da sequência estratigráfica identificada, conduziu que esta primeira sondagem" +
-                    "fosse progressivamente alargada ao longo das campanhas subsequentes, para uma"
-            },
-            {
-                id: 2,
-                isOpen: false,
-                title: 'Escavações',
-                content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
-                    "inclinada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas" +
-                    "concentrações pouco usuais de materiais arqueológicos. Entre estes, sobressaía um" +
-                    "conjunto de fragmentos cerâmicos em conexão pertencentes a um contentor de" +
-                    "armazenamento de época romana republicana, colocado a descoberto pelos agentes" +
-                    "atmosféricos. Com o objetivo, de tentar perceber o que se passava nesta zona do" +
-                    "povoado e se porventura a presença desta peça indicava algum contexto preservado," +
-                    "decidimos abrir uma sondagem de dois metros de lado. O desenvolver da escavação e a" +
-                    "qualidade da sequência estratigráfica identificada, conduziu que esta primeira sondagem" +
-                    "fosse progressivamente alargada ao longo das campanhas subsequentes, para uma"
-            },
-            {
-                id: 3,
-                isOpen: false,
-                title: 'Objectos encontrados',
-                content: "Elargada ao longo das campanhas subsequentes, para uma"
+                content: "A Habitação B, ou Sondagem 5, foi iniciada numa campanha de 2009 devido à 'existência de uma dispersão " +
+                " invulgar de materiais de construção claramente importados da época romana e cerâmicas finas'. " +
+                "Esta área também contém, entre outras particularidades, edifícios residenciais."
             }]
     }
 
@@ -163,39 +113,13 @@ export const getInfo = (sondagemID) => {
         return [
             {
                 id: 1,
-                isOpen: false,
+                isOpen: true,
                 title: 'História',
-                content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
-                    "inclinada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas" +
-                    "concentrações pouco usuais de materiais arqueológicos. Entre estes, sobressaía um" +
-                    "conjunto de fragmentos cerâmicos em conexão pertencentes a um contentor de" +
-                    "armazenamento de época romana republicana, colocado a descoberto pelos agentes" +
-                    "atmosféricos. Com o objetivo, de tentar perceber o que se passava nesta zona do" +
-                    "povoado e se porventura a presença desta peça indicava algum contexto preservado," +
-                    "decidimos abrir uma sondagem de dois metros de lado. O desenvolver da escavação e a" +
-                    "qualidade da sequência estratigráfica identificada, conduziu que esta primeira sondagem" +
-                    "fosse progressivamente alargada ao longo das campanhas subsequentes, para uma"
-            },
-            {
-                id: 2,
-                isOpen: false,
-                title: 'Escavações',
-                content: "Em 2008 durante os trabalhos de prospeção desenvolvidos numa plataforma bastante" +
-                    "inclinada a Norte da estrada que conduz ao topo do monte, deparámo-nos com algumas" +
-                    "concentrações pouco usuais de materiais arqueológicos. Entre estes, sobressaía um" +
-                    "conjunto de fragmentos cerâmicos em conexão pertencentes a um contentor de" +
-                    "armazenamento de época romana republicana, colocado a descoberto pelos agentes" +
-                    "atmosféricos. Com o objetivo, de tentar perceber o que se passava nesta zona do" +
-                    "povoado e se porventura a presença desta peça indicava algum contexto preservado," +
-                    "decidimos abrir uma sondagem de dois metros de lado. O desenvolver da escavação e a" +
-                    "qualidade da sequência estratigráfica identificada, conduziu que esta primeira sondagem" +
-                    "fosse progressivamente alargada ao longo das campanhas subsequentes, para uma"
-            },
-            {
-                id: 3,
-                isOpen: false,
-                title: 'Objectos encontrados',
-                content: "Elargada ao longo das campanhas subsequentes, para uma"
+                content: "A área de Habitações e Oficinas, ou Sondagem 8 apenas começou numa campanha de 2016, " +
+                "após muitos anos de recolha de materiais que indicavam que esta área poderia apresentar resultados " +
+                "promissores. Os arqueólogos descrevem este local de escavação como tendo ultrapassado as suas melhores " +
+                "expetativas, revelando-se bastante frutífero, com contextos e estruturas bem preservados. Em resumo, " +
+                "esta área contém ruínas de edifícios residenciais e comerciais que ladeiam uma rua."
             }]
     }
 
@@ -204,24 +128,13 @@ export const getInfo = (sondagemID) => {
             {
                 id: 1,
                 isOpen: true,
-                title: 'Escavações',
-                content: "&nbsp;Desde o primeiro desenho do projeto de Monte dos Castelinhos, ficou claro que o sítio " +
-                "teria sido alvo de um amplo e complexo sistema defensivo. " +
-                "Foi na última campanha de 2018 que se decidiu proceder a " +
-                "trabalhos de desmatação e de limpeza, assim como à realização de uma Sondagem, a n.º " +
-                "9, numa área que parecia corresponder à zona melhor preservada da hipotética muralha. <br/><br/>" +
-                "&nbsp;As evidências recolhidas na área de Sondagem n.º 9, permitem afirmar pela " +
-                "primeira vez de forma clara que o sítio de Monte dos Castelinhos foi alvo de um sistema " +
-                "defensivo bem estruturado e planeado. Não é ainda totalmente claro, qual o seu traçado " +
-                "no resto do sítio, visto que as alterações topográficas são muito subtis e deparam-se com " +
-                "o amplo manto vegetal que cobre o sítio e que impede interpretações globais " +
-                "contundentes."
-            },
-            {
-                id: 2,
-                isOpen: false,
-                title: 'Galeria',
-                content: "<img src={arrow} id='arrow' alt='arrow' />"
+                title: 'História',
+                content: "&nbsp;A Muralhada, ou Sondagem 9, foi explorada na última campanha, em 2018, " +
+                    "numa área que parecia corresponder à zona melhor preservada da hipotética muralha. " +
+                    "Desde o início do projeto Monte dos Castelinhos, ficou claro que o local teria um sistema " +
+                    "defensivo amplo e complexo. No entanto, apesar dessa percepção, os dados eram bastante escassos. " +
+                    "A Sondagem 9, que agora mostra parte da fortificação do assentamento, foi iniciada como uma forma de " +
+                    "esclarecer essas suspeitas. "
             }]
     }
 }
