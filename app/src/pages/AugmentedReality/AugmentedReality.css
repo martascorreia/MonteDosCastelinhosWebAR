@@ -28,7 +28,7 @@
 
 .aligmentText {
     position: absolute;
-    bottom: 2%;
+    top: 2%;
     background-color: var(--white);
     border: none;
     color: var(--darker-grey);
