@@ -55,21 +55,19 @@ function Sondagem4C({ backUrl }) {
   // Set model
   const setModelInScene = () => {
     if (entityRef.current && cameraRef.current && entityParentRef.current) {
-      //model
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(85, -180, -660);
+      entityRef.current.object3D.position.set(85, -150, -660);
       entityRef.current.object3D.scale.set(3, 3.33, 3);
-      entityRef.current.setAttribute('rotation', '-5 90 10');
+      entityRef.current.setAttribute('rotation', '-2 90 15');
       entityParentRef.current.object3D.rotation.set(cameraOrientation.x, cameraOrientation.y, cameraOrientation.z);
-
-      //camera
-      cameraRef.current.setAttribute('rotation', '0 0 0');
       setIsModelSet(true)
     }
   };
 
   const cleanUp = () => {
     handleCleanup(model, entityRef, document.querySelectorAll('a-scene'));
+    cameraRef = null;
+    entityParentRef = null;
     setModel(null);
     setFullScreen(false);
   };
@@ -103,6 +101,9 @@ function Sondagem4C({ backUrl }) {
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
               <AligmentButton onClick={() => handleModelAligned()} />
+              <a className='aligmentText'>
+                <b>Dica:</b> Alinhe-se com o corte da escavação ou a árvore acima.
+              </a>
             </div>}
           {modelAligned && false &&
             <div className="alignElements">
