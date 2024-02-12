@@ -50,11 +50,6 @@ function Sondagem4B({ backUrl }) {
 
     // clean camera
     cleanCamera();
-
-    //references
-    entityRef = null;
-    cameraRef = null;
-    entityParentRef = null;
   };
 
   return (
@@ -91,7 +86,6 @@ function Sondagem4B({ backUrl }) {
           {modelAligned && false &&
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
-
             </div>}
         </a-scene>
       </div>
