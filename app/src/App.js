@@ -31,7 +31,7 @@ function App() {
           <Route path='/sondagem4/rvB' element={<Sondagem4VR id={'B'} label={"Banhos"} backUrl={"/sondagem4"}/>} />
           <Route path='/sondagem4/rvC' element={<Sondagem4VR id={'C'} label={"Átrio"} backUrl={"/sondagem4"}/>} />
           <Route path='/sondagem4/rvD' element={<Sondagem4VR id={'D'} label={"Quartos"} backUrl={"/sondagem4"}/>} />
-          <Route path='/sondagem4/rvE' element={<Sondagem4VR id={'E'} label={"Anexos"} backUrl={"/sondagem4"}/>} />
+          <Route path='/sondagem4/rvE' element={<Sondagem4VR id={'E'} label={"Arrumos"} backUrl={"/sondagem4"}/>} />
           <Route path='/sondagem4/modelo3D' element={<Sondagem4ModelView backUrl={"/sondagem4"}/>} />
           <Route path='/sondagem5' element={getSondagem(5)} />
           <Route path='/sondagem8' element={getSondagem(8)} />

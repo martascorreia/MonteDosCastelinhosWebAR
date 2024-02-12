@@ -37,20 +37,13 @@ export const setFullScreen = (setFullScreen) => {
 }
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-var modelCache = {};
 
 export const loadModel = async (modelPath) => {
-    //model already loaded
-    if (modelCache[modelPath]) {
-        return modelCache[modelPath];
-    }
-
     //load model
     return new Promise((resolve, reject) => {
         const loader = new GLTFLoader();
         loader.load(modelPath, (glb) => {
             const model = glb.scene;
-            modelCache[modelPath] = model;
             resolve(model);
         }, null, reject);
     });
@@ -147,6 +140,11 @@ export const cleanCamera = () => {
 };
 
 export const getUserLocation = () => {
+   /* return {
+        lat: 39.012603,
+        lng: -8.973466,
+    };*/
+    
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             const location = {
@@ -157,15 +155,10 @@ export const getUserLocation = () => {
         });
     }
     return null;
-    
-   /* {
-        lat: 39.013126,
-        lng: -8.974147
-    };*/
 };
 
 export const isUserWithinBounds = (userLocation) => {
-    if(!userLocation) return false;
+    if (!userLocation) return false;
     var mapBounds = getMapBounds();
 
     return (

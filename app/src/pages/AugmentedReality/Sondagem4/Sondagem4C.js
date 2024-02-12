@@ -66,8 +66,6 @@ function Sondagem4C({ backUrl }) {
 
   const cleanUp = () => {
     handleCleanup(model, entityRef, document.querySelectorAll('a-scene'));
-    cameraRef = null;
-    entityParentRef = null;
     setModel(null);
     setFullScreen(false);
   };
