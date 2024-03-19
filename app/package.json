@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "0.1.0",
-  "homepage": "https://martacorreia29.github.io/MonteDosCastelinhosWebAR/#",
+  "homepage": "https://martascorreia.github.io/MonteDosCastelinhosWebAR/#",
   "private": true,
   "dependencies": {
     "@ar-js-org/ar.js": "3.4.2",
