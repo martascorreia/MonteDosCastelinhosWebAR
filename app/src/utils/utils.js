@@ -9,7 +9,7 @@ export const setOrientation = (type) => {
     }*/
 
     var typeLock = type == "landscape" ? "landscape-primary" : "portrait-primary"
-    o9n.orientation.lock(typeLock)
+    require('o9n').orientation.lock(typeLock)
             .then(function () { })
             .catch(function (error) { });
 }
