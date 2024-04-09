@@ -19,7 +19,6 @@ function PopUp({ onReturn, clue }) {
         <div>
           Alinhe a câmara com a imagem no ecrã e clique em "Alinhado".
           <br />
-          <br />
           {clue}
         </div>
         <TextButton className="permissionsBtn" text="Ok" acceptPermissions={onReturn} />

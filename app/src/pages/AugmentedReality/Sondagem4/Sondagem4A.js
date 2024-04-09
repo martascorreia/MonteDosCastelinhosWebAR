@@ -4,6 +4,7 @@ import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
 import "../../../index.css"
 import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
+import sondagem4ATargets from '../../../resources/images/alignmentImages/sondagem4Atargets.mind';
 import { loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 import PopUp from '../../../components/PopUp/PopUp.js';
@@ -74,7 +75,7 @@ function Sondagem4A({ backUrl }) {
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && !instructionsOk &&
-        <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se com a estaca de madeira acima."/>
+        <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se com a estaca de madeira acima." />
       }
       {!isLoading && instructionsOk &&
         <div className="content">
@@ -100,10 +101,6 @@ function Sondagem4A({ backUrl }) {
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
               <AligmentButton onClick={() => handleModelAligned()} />
-            </div>}
-          {modelAligned && false &&
-            <div className="alignElements">
-              <img className="alignImage" src={sondagem4Img} />
             </div>}
         </div>}
     </div >
