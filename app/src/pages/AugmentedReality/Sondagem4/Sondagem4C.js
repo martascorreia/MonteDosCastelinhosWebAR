@@ -103,10 +103,6 @@ function Sondagem4C({ backUrl }) {
               <img className="alignImage" src={sondagem4Img} />
               <AligmentButton onClick={() => handleModelAligned()} />
             </div>}
-          {modelAligned && false &&
-            <div className="alignElements">
-              <img className="alignImage" src={sondagem4Img} />
-            </div>}
         </div>}
     </div>
   );
