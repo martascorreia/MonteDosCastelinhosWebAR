@@ -47,7 +47,7 @@ function Sondagem4VRMap({ instructions }) {
             </div>
           </div>
           <div className="vrMapContent">
-            <img className='mapImage' src={sondagem4VRMap} />
+            <img className='vrMapImage' src={sondagem4VRMap} />
             <Link to={'/sondagem4/rvA'} className="nav-link">
               <button className='mapPoint mapPointAVR4'>
                 {sondagem4VRAFlag == null

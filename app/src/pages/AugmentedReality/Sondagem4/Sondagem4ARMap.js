@@ -4,7 +4,7 @@ import TopButtons from "../../../components/TopButtons/TopButtons.js"
 import "./Sondagem4AR.css"
 import "../../../index.css"
 import { Link } from 'react-router-dom';
-import { setOrientation, setFullScreen} from '../../../utils/utils.js';
+import { setOrientation, setFullScreen } from '../../../utils/utils.js';
 
 import sondagem4ARMap from '../../../resources/images/maps/sondagem4ARMap.jpg';
 import pointA from '../../../resources/images/mapPoints/pointA.png';
@@ -14,7 +14,7 @@ import pointBdarker from '../../../resources/images/mapPoints/pointBdarker.png';
 import pointC from '../../../resources/images/mapPoints/pointC.png';
 import pointCdarker from '../../../resources/images/mapPoints/pointCdarker.png';
 
-function Sondagem4ARMap({ instructions }) {
+function Sondagem4ARMap() {
   setOrientation("landscape");
   const [sondagem4ARAFlag, setSondagem4ARAFlag] = useState(localStorage.getItem('sondagem4ARAFlag') == 'true' ? true : false);
   const [sondagem4ARBFlag, setSondagem4ARBFlag] = useState(localStorage.getItem('sondagem4ARBFlag') == 'true' ? true : false);
@@ -29,12 +29,6 @@ function Sondagem4ARMap({ instructions }) {
       <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={"/sondagem4"} />
       <div className="content Sondagem4ARMapContent">
         <div className='Sonsagem4ARMapElements'>
-          <div className="arMapInstructions">
-            <div className="arMapInstructionsTitle">
-              Instruções
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: instructions }} />
-          </div>
           <div className="arMapContent">
             <img className='mapImage' src={sondagem4ARMap} />
             <Link to={'/sondagem4/raA'} className="nav-link">
@@ -58,6 +52,9 @@ function Sondagem4ARMap({ instructions }) {
                   : <img className='mapPoints' src={pointC} />}
               </button>
             </Link>
+          </div>
+          <div className="arMapInstructions">
+              Desloque-se fisicamente até um dos pontos do mapa e selecione-o.
           </div>
         </div>
       </div >

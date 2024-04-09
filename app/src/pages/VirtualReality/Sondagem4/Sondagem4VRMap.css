@@ -63,7 +63,7 @@ left: 24%;
     height: 100%;
 }
 
-.mapImage{
+.vrMapImage{
     border-radius: 2%;
     border: 5px solid var(--main-color);
 }

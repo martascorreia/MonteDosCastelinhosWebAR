@@ -6,6 +6,7 @@ import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
 import { loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
+import PopUp from '../../../components/PopUp/PopUp.js';
 
 function Sondagem4A({ backUrl }) {
   const [modelAligned, setModelAligned] = useState(false);
@@ -17,6 +18,7 @@ function Sondagem4A({ backUrl }) {
   const cameraRef = useRef();
   const [label, setLabel] = useState(null);
   const [cameraOrientation, setCameraOrientation] = useState(null);
+  const [instructionsOk, setInstructionsOk] = useState(false);
 
   const handleModelAligned = () => {
     setCameraOrientation(cameraRef.current.object3D.rotation.clone());
@@ -71,7 +73,10 @@ function Sondagem4A({ backUrl }) {
       <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
-      {!isLoading &&
+      {!isLoading && !instructionsOk &&
+        <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se com a estaca de madeira acima."/>
+      }
+      {!isLoading && instructionsOk &&
         <div className="content">
           <a-scene
             embedded
@@ -95,9 +100,6 @@ function Sondagem4A({ backUrl }) {
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
               <AligmentButton onClick={() => handleModelAligned()} />
-              <a className='aligmentText'>
-                <b>Dica:</b> Posicione-se com a estaca de madeira acima
-              </a>
             </div>}
           {modelAligned && false &&
             <div className="alignElements">
