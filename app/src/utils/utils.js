@@ -1,17 +1,17 @@
 export const setOrientation = (type) => {
     //const isMobile = navigator.userAgentData.mobile;
     // if (!isMobile) return;
-   /* if (screen.orientation !== undefined && screen.orientation.lock !== undefined) {
+   if (screen.orientation !== undefined && screen.orientation.lock !== undefined) {
         var typeLock = type == "landscape" ? "landscape-primary" : "portrait-primary"
         screen.orientation.lock(typeLock)
             .then(function () { })
             .catch(function (error) { });
-    }*/
+    }
 
-    var typeLock = type == "landscape" ? "landscape-primary" : "portrait-primary"
+    /*var typeLock = type == "landscape" ? "landscape-primary" : "portrait-primary"
     require('o9n').orientation.lock(typeLock)
             .then(function () { })
-            .catch(function (error) { });
+            .catch(function (error) { });*/
 }
 
 export const reloadPage = () => {
