@@ -13,12 +13,13 @@
 
 .Sonsagem4ARMapElements{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     align-content: stretch;
     width: 90%;
+    gap: 10px;
 }
 
 .arMapContent {
@@ -26,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55%;
+    width: 50%;
     display: block;
     flex-grow: 0;
     flex-shrink: 1;
@@ -45,8 +46,8 @@
 }
 
 .mapPointBAR4{
-    top: 28%;
-    left: 33%;
+    top: 33%;
+    left: 36%;
 }
 
 .augmentedRealityScene{
@@ -57,16 +58,10 @@
 .mapImage{
     border-radius: 2%;
     border: 5px solid var(--main-color);
+    max-width: 100%;
 }
 
 .arMapInstructions{
-    max-width: 45%;
-    padding: 20px;
-    font-size: 18px;
-    padding-top: 7%;
-}
-
-.arMapInstructionsTitle{
-    font-style: bold;
-    font-size: 23px;
+    max-width: 100%;
+    font-size: 20px;
 }
