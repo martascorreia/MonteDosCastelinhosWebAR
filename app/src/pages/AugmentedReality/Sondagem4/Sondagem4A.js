@@ -4,7 +4,7 @@ import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
 import "../../../index.css"
 import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
-import sondagem4ATargets from '../../../resources/images/alignmentImages/sondagem4Atargets.mind';
+//import sondagem4ATargets from '../../../resources/images/alignmentImages/sondagem4Atargets.mind';
 import { loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 import PopUp from '../../../components/PopUp/PopUp.js';
