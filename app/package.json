@@ -4,7 +4,6 @@
   "homepage": "https://martascorreia.github.io/MonteDosCastelinhosWebAR/#",
   "private": true,
   "dependencies": {
-    "@ar-js-org/ar.js": "3.4.2",
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@fontsource/lexend-deca": "^4.5.14",
     "@fortawesome/fontawesome-svg-core": "^6.3.2",
@@ -15,6 +14,7 @@
     "@react-three/fiber": "^8.15.12",
     "aframe": "^1.5.0",
     "browserify": "^17.0.0",
+    "mind-ar": "^1.2.5",
     "o9n": "^2.1.1",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",

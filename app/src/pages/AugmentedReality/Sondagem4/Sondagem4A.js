@@ -3,10 +3,7 @@ import TopButtons from "../../../components/TopButtons/TopButtons.js"
 import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
 import "../../../index.css"
 import "./../AugmentedReality.css"
-import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
-//import sondagem4ATargets from '../../../resources/images/alignmentImages/sondagem4Atargets.mind';
 import { loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
-import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 import PopUp from '../../../components/PopUp/PopUp.js';
 
 function Sondagem4A({ backUrl }) {
@@ -14,6 +11,7 @@ function Sondagem4A({ backUrl }) {
   const [model, setModel] = useState(null);
   const [isModelSet, setIsModelSet] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const sceneRef = useRef();
   const entityRef = useRef();
   const entityParentRef = useRef();
   const cameraRef = useRef();
@@ -28,15 +26,28 @@ function Sondagem4A({ backUrl }) {
   };
 
   useEffect(() => {
+    if (!isLoading && sceneRef.current) {
+      const sceneEl = sceneRef.current;
+      const arSystem = sceneEl.systems["mindar-image-system"];
+      sceneEl.addEventListener('renderstart', () => {
+        arSystem.start(); // start AR 
+      });
+      return () => {
+        arSystem.stop();
+      }
+    }
+  }, [sceneRef.current]);
+
+  useEffect(() => {
     localStorage.setItem('sondagem4ARAFlag', 'true');
     localStorage.setItem('hasRefreshed', 'false');
 
     if (model == null) {
       load3DModel();
     }
-    if (modelAligned && model != null) {
+   /* if (model != null) {
       setModelInScene();
-    }
+    }*/
   }, [model, modelAligned]);
 
   // Load model
@@ -45,6 +56,7 @@ function Sondagem4A({ backUrl }) {
       .then((loadedModel) => {
         setModel(loadedModel);
         setIsLoading(false);
+        entityRef.current.object3D.add(model);
       })
       .catch((error) => {
         console.error('Error loading model:', error);
@@ -55,10 +67,10 @@ function Sondagem4A({ backUrl }) {
   const setModelInScene = () => {
     if (entityRef.current && cameraRef.current && entityParentRef.current) {
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(-90, -130, -580);
-      entityRef.current.object3D.scale.set(1.8, 1.8, 1.8);
-      entityRef.current.setAttribute('rotation', '7 -35 -7');
-      entityParentRef.current.object3D.rotation.set(cameraOrientation.x, cameraOrientation.y, cameraOrientation.z);
+      //entityRef.current.object3D.position.set(-90, -130, -580);
+      //entityRef.current.object3D.scale.set(1.8, 1.8, 1.8);
+      //entityRef.current.setAttribute('rotation', '7 -35 -7');
+      //entityParentRef.current.object3D.rotation.set(cameraOrientation.x, cameraOrientation.y, cameraOrientation.z);
       setIsModelSet(true)
     }
   };
@@ -72,37 +84,30 @@ function Sondagem4A({ backUrl }) {
   return (
     <div className="AugmentedReality">
       <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} label={label} />
-      {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
+      {isLoading &&
         <LoadingScreen />}
-      {!isLoading && !instructionsOk &&
-        <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se com a estaca de madeira acima." />
-      }
-      {!isLoading && instructionsOk &&
-        <div className="content">
+      <div className="content">
+        {!isLoading &&
           <a-scene
+            mindar-image="imageTargetSrc: ./targets.mind; filterMinCF:0.0001; filterBeta: 0.001"
+            vr-mode-ui="enabled: false"
+            device-orientation-permission-ui="enabled: false"
             embedded
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortTransparentObjects: true;"
-            xr-mode-ui='enabled: false'>
-            <a-entity position="0 0 0" rotation="0 0 0">
-              <a-camera
-                ref={cameraRef} look-controls='enabled: true;' />
+            xr-mode-ui='enabled: false'
+            ref={sceneRef}>
+            <a-camera
+              ref={cameraRef} look-controls='enabled: true;' />
+            <a-entity ref={entityParentRef} mindar-image-target="targetIndex: 0">
+              <a-entity
+                className="model"
+                ref={entityRef}
+                geometry-merger
+                anchored="persistent: true" />
             </a-entity>
-            {modelAligned &&
-              <a-entity ref={entityParentRef}>
-                <a-entity
-                  className="model"
-                  ref={entityRef}
-                  geometry-merger
-                  anchored="persistent: true" />
-              </a-entity>}
-          </a-scene>
-          {!modelAligned &&
-            <div className="alignElements">
-              <img className="alignImage" src={sondagem4Img} />
-              <AligmentButton onClick={() => handleModelAligned()} />
-            </div>}
-        </div>}
+          </a-scene>}
+      </div>
     </div >
   );
 }
