@@ -75,7 +75,7 @@ function Sondagem4A({ backUrl }) {
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && !instructionsOk &&
-        <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se com a estaca de madeira acima." />
+        <PopUp onReturn={() => setInstructionsOk(true)} clue="" /*"Dica: Posicione-se com a estaca de madeira acima."*/ />
       }
       {!isLoading && instructionsOk &&
         <div className="content">

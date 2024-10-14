@@ -78,7 +78,7 @@ function Sondagem4B({ backUrl }) {
               />
             </a-entity>}
           {!modelAligned && !instructionsOk &&
-            <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se com a árvore acima"/>
+            <PopUp onReturn={() => setInstructionsOk(true)} clue="" /*"Dica: Posicione-se com a árvore acima"*//>
           }
           {!modelAligned && instructionsOk &&
             <div className="alignElements">
