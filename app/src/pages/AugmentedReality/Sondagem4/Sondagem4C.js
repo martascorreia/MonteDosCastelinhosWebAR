@@ -77,7 +77,7 @@ function Sondagem4C({ backUrl }) {
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && !instructionsOk &&
-        <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se no limite da escavação ou com a árvore acima"/>
+        <PopUp onReturn={() => setInstructionsOk(true)} clue="" /*"Dica: Posicione-se no limite da escavação ou com a árvore acima"*//>
       }
       {!isLoading &&
         <div className="content">
