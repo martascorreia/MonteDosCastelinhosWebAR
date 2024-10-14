@@ -15,7 +15,7 @@ function PermissionsPopUp({onReturn}) {
 
   return (
     <div className="PermissionsPopUp">
-      <div className="popUp">
+      <div id="permissionsPopUp">
         <div className='permissionsIcon'>
           <FontAwesomeIcon icon={faTriangleExclamation} />
         </div>

@@ -7,6 +7,7 @@ import sondagem4ImgLines from '../../../resources/images/alignmentImages/sondage
 import sondagem4B from '../../../resources/models/sondagem4B.png';
 import { setOrientation, cleanCamera } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
+import PopUp from '../../../components/PopUp/PopUp.js';
 
 function Sondagem4B({ backUrl }) {
   setOrientation("landscape");
@@ -16,6 +17,7 @@ function Sondagem4B({ backUrl }) {
   const entityParentRef = useRef();
   const cameraRef = useRef();
   const [cameraOrientation, setCameraOrientation] = useState(null);
+  const [instructionsOk, setInstructionsOk] = useState(false);
 
   const handleModelAligned = () => {
     if (cameraRef.current)
@@ -75,17 +77,13 @@ function Sondagem4B({ backUrl }) {
                 material="transparent: true; blending: normal"
               />
             </a-entity>}
-          {!modelAligned &&
+          {!modelAligned && !instructionsOk &&
+            <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se com a árvore acima"/>
+          }
+          {!modelAligned && instructionsOk &&
             <div className="alignElements">
               <img className="alignImage" src={sondagem4ImgLines} />
               <AligmentButton onClick={() => handleModelAligned()} />
-              <a className='aligmentText'>
-                <b>Dica:</b> Posicione-se com a árvore acima
-              </a>
-            </div>}
-          {modelAligned && false &&
-            <div className="alignElements">
-              <img className="alignImage" src={sondagem4Img} />
             </div>}
         </a-scene>
       </div>

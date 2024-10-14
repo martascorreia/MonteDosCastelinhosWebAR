@@ -1,6 +1,6 @@
-.PermissionsPopUp{
+.PopUp{
   background-color: rgba(0, 0, 0, 0.555);
-  z-index: 92;
+  z-index: 99;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -10,12 +10,12 @@
   flex-wrap: wrap;
 }
 
-#permissionsPopUp{
+.popUp{
   background-color: var(--white);
-  padding: 20px;
   font-size: 20px;
   border-radius: 35px;
-  width: 70%;  
+  width: 45%;  
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,10 +23,20 @@
   gap: 20px;
 }
 
-.permissionsIcon{
+.popUpTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.popUpIcon{
   border: none;
   color: var(--red);
-  font-size: 50px;
+  font-size: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
