@@ -7,6 +7,7 @@ import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4C.p
 import { setOrientation, loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
 import sondagem4Model from '../../../resources/models/sondagem4.glb';
+import PopUp from '../../../components/PopUp/PopUp.js';
 
 function Sondagem4C({ backUrl }) {
   setOrientation("landscape");
@@ -18,9 +19,8 @@ function Sondagem4C({ backUrl }) {
   const entityParentRef = useRef();
   const cameraRef = useRef();
   const [cameraOrientation, setCameraOrientation] = useState(null);
-
+  const [instructionsOk, setInstructionsOk] = useState(false);
   const [label, setLabel] = useState(null);
-
 
   const handleModelAligned = () => {
     setCameraOrientation(cameraRef.current.object3D.rotation.clone());
@@ -76,6 +76,9 @@ function Sondagem4C({ backUrl }) {
       <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
+      {!isLoading && !instructionsOk &&
+        <PopUp onReturn={() => setInstructionsOk(true)} clue="Dica: Posicione-se no limite da escavação ou com a árvore acima"/>
+      }
       {!isLoading &&
         <div className="content">
           <a-scene
@@ -99,13 +102,6 @@ function Sondagem4C({ backUrl }) {
             <div className="alignElements">
               <img className="alignImage" src={sondagem4Img} />
               <AligmentButton onClick={() => handleModelAligned()} />
-              <a className='aligmentText'>
-                <b>Dica:</b> Posicione-se com o corte da escavação ou a árvore acima
-              </a>
-            </div>}
-          {modelAligned && false &&
-            <div className="alignElements">
-              <img className="alignImage" src={sondagem4Img} />
             </div>}
         </div>}
     </div>
