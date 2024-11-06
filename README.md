@@ -17,4 +17,5 @@ To access the website go to: https://martascorreia.github.io/MonteDosCastelinhos
 
 To run the app locally:
 - open a terminal in the app folder;
-- write the command npm start.
+- npm install
+- npm start.
