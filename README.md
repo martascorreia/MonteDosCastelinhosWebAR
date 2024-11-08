@@ -12,7 +12,7 @@ Files:
 
 You can find my thesis at: https://drive.google.com/file/d/1DPjscaFGk9Yb6Kkr3bRKHaIVR85ssg4R/view?usp=drivesdk
 
-The website is in European Portuguese and is advised to be open on a mobile device since the interface was not fully designed for desktops.
+The website is in European Portuguese and it is advised to be open on a mobile device since the interface was not fully designed for desktops.
 To access the website go to: https://martascorreia.github.io/MonteDosCastelinhosWebAR/
 
 To run the app locally:
