@@ -21,8 +21,9 @@ function About() {
         <div className='mainContent'>
           <div className='textContent'>
             <p> &nbsp;Esta aplicação aplicação foi desenvolvida no LASIGE, laboratório de investigação do Departamento de Informática,
-              da Faculdade de Ciências da Universidade de Lisboa, no âmbito do Trabalho de Projeto <b>"Realidade Aumentada na Web aplicada à Herança Cultural"</b>,
-              do Mestrado em Engenharia Informática.
+              da Faculdade de Ciências da Universidade de Lisboa, no âmbito do Trabalho de Projeto <a href="https://repositorio.ulisboa.pt/handle/10400.5/95457">
+              "Realidade Aumentada na Web aplicada à Herança Cultural"</a>,
+              do Mestrado em Engenharia Informática. 
             </p>
           </div>
           <Accordion
@@ -34,7 +35,7 @@ function About() {
           <Accordion
             id={2}
             accordionOpen={true}
-            title={"Fontes"}
+            title={"Monte dos Castelinhos"}
             content={`<p>&nbsp;Toda a informação relativa ao Monte dos Castelinhos foi baseada na publicação 
               <a href="https://repositorio.ul.pt/bitstream/10451/31329/1/MontedosCastelinhos.pdf"> "Monte dos Castelinhos, Vila Franca de Xira e a Conquista Romana do Vale to Tejo"</a>
                e da Tese de Doutoramento do Doutor João Pimenta <a href="https://repositorio.ul.pt/handle/10451/54143">
