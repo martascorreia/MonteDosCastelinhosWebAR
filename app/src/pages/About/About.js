@@ -44,8 +44,8 @@ function About() {
             id={3}
             accordionOpen={true}
             title={"Autores"}
-            content={`<p>&nbsp;Esta aplicação foi realizada por <b>Marta Correia</b>, aluna da Faculdade de Ciências da Universidade de Lisboa, com a orientação da 
-            <b>Professora Doutora Maria Beatriz Duarte Pereira do Carmo</b> e da <b>Professora Doutora Ana Paula Boler Cláudio</b>.</p>`} />
+            content={`<p>&nbsp;Esta aplicação foi realizada por <b>Marta Correia</b>, aluna da Faculdade de Ciências da Universidade de Lisboa, com a orientação das 
+            Professoras Doutoras <b>Maria Beatriz Duarte Pereira do Carmo</b> e <b>Ana Paula Boler Cláudio</b>.</p>`} />
         </div>
       </div >
     </div>
