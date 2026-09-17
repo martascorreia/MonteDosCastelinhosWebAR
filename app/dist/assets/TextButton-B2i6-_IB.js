@@ -1,1 +1,0 @@
-import{j as t}from"./react-vendor-CaIz7OGM.js";import"./index-tAoG4kZ5.js";const s=({text:n,acceptPermissions:o})=>t.jsx("div",{className:"textButton",children:t.jsx("button",{id:"textBtn",onClick:o,children:n})});export{s as T};

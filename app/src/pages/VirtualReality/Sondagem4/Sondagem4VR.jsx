@@ -4,6 +4,7 @@ import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen"
 import "../../../index.css"
 import "./../VirtualReality.css"
 import { setOrientation, loadModel, handleCleanup, setFullScreen } from '../../../utils/utils';
+import sondagem4Model from '../../../resources/models/sondagem4.smaller.glb?url';
 
 function VirtualReality({ id, label, backUrl }) {
   setOrientation("landscape");
@@ -24,7 +25,7 @@ function VirtualReality({ id, label, backUrl }) {
 
   // Load model
   const load3DModel = () => {
-    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb')
+    loadModel(sondagem4Model)
       .then((loadedModel) => {
         setModel(loadedModel);
         setIsLoading(false);

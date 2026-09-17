@@ -6,6 +6,7 @@ import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
 //import sondagem4ATargets from '../../../resources/images/alignmentImages/sondagem4Atargets.mind';
 import { loadModel, handleCleanup, setFullScreen } from '../../../utils/utils';
+import sondagem4Model from '../../../resources/models/sondagem4.smaller.glb?url';
 import AligmentButton from '../../../components/AlignmentButton/AligmnentButton';
 import PopUp from '../../../components/PopUp/PopUp';
 
@@ -41,7 +42,7 @@ function Sondagem4A({ backUrl }) {
 
   // Load model
   const load3DModel = () => {
-    loadModel(process.env.PUBLIC_URL + '/models/sondagem4.smaller.glb')
+    loadModel(sondagem4Model)
       .then((loadedModel) => {
         setModel(loadedModel);
         setIsLoading(false);
