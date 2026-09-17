@@ -1,10 +1,10 @@
 
 import React, { useState } from 'react';
-import TopButtons from "../../../components/TopButtons/TopButtons.js"
+import TopButtons from "../../../components/TopButtons/TopButtons"
 import "./Sondagem4AR.css"
 import "../../../index.css"
 import { Link } from 'react-router-dom';
-import { setOrientation, setFullScreen } from '../../../utils/utils.js';
+import { setOrientation, setFullScreen } from '../../../utils/utils';
 
 import sondagem4ARMap from '../../../resources/images/maps/sondagem4ARMap.jpg';
 import pointA from '../../../resources/images/mapPoints/pointA.png';

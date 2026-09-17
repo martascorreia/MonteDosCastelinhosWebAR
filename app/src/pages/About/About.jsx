@@ -1,8 +1,8 @@
-import TopButtons from "../../components/TopButtons/TopButtons.js"
+import TopButtons from "../../components/TopButtons/TopButtons"
 import "./About.css"
 import "../../index.css"
 import { useEffect } from "react";
-import { cleanSondagemFlags } from '../../utils/utils.js';
+import { cleanSondagemFlags } from '../../utils/utils';
 import Accordion from '../../components/Accordion/Accordion'
 
 function About() {
@@ -22,7 +22,7 @@ function About() {
           <div className='textContent'>
             <p> &nbsp;Esta aplicação aplicação foi desenvolvida no LASIGE, laboratório de investigação do Departamento de Informática,
               da Faculdade de Ciências da Universidade de Lisboa, no âmbito do Trabalho de Projeto <a href="https://repositorio.ulisboa.pt/handle/10400.5/95457">
-              "Realidade Aumentada na Web aplicada à Herança Cultural"</a>,
+              &quot;Realidade Aumentada na Web aplicada à Herança Cultural&quot;</a>,
               do Mestrado em Engenharia Informática. 
             </p>
           </div>

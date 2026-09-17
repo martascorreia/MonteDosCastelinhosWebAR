@@ -1,16 +1,16 @@
-import React, { useState, useRef, useEffect, } from 'react';
-import TopButtons from "../../../components/TopButtons/TopButtons.js"
-import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
+import React, { useState, useRef, useEffect } from 'react';
+import TopButtons from "../../../components/TopButtons/TopButtons"
+import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen"
 import "../../../index.css"
 import "./../AugmentedReality.css"
-import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4C.png';
-import { setOrientation, loadModel, handleCleanup, setFullScreen } from '../../../utils/utils.js';
-import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
-import sondagem4Model from '../../../resources/models/sondagem4.glb';
-import PopUp from '../../../components/PopUp/PopUp.js';
+import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4A.png';
+//import sondagem4ATargets from '../../../resources/images/alignmentImages/sondagem4Atargets.mind';
+import { loadModel, handleCleanup, setFullScreen } from '../../../utils/utils';
+import sondagem4Model from '../../../resources/models/sondagem4.smaller.glb?url';
+import AligmentButton from '../../../components/AlignmentButton/AligmnentButton';
+import PopUp from '../../../components/PopUp/PopUp';
 
-function Sondagem4C({ backUrl }) {
-  setOrientation("landscape");
+function Sondagem4A({ backUrl }) {
   const [modelAligned, setModelAligned] = useState(false);
   const [model, setModel] = useState(null);
   const [isModelSet, setIsModelSet] = useState(false);
@@ -18,18 +18,18 @@ function Sondagem4C({ backUrl }) {
   const entityRef = useRef();
   const entityParentRef = useRef();
   const cameraRef = useRef();
+  const [label, setLabel] = useState(null);
   const [cameraOrientation, setCameraOrientation] = useState(null);
   const [instructionsOk, setInstructionsOk] = useState(false);
-  const [label, setLabel] = useState(null);
 
   const handleModelAligned = () => {
     setCameraOrientation(cameraRef.current.object3D.rotation.clone());
     setModelAligned(true);
-    setLabel("Vista da Retaguarda");
+    setLabel("Vista Frontal");
   };
 
   useEffect(() => {
-    localStorage.setItem('sondagem4ARCFlag', 'true');
+    localStorage.setItem('sondagem4ARAFlag', 'true');
     localStorage.setItem('hasRefreshed', 'false');
 
     if (model == null) {
@@ -56,9 +56,9 @@ function Sondagem4C({ backUrl }) {
   const setModelInScene = () => {
     if (entityRef.current && cameraRef.current && entityParentRef.current) {
       entityRef.current.object3D.add(model);
-      entityRef.current.object3D.position.set(85, -150, -660);
-      entityRef.current.object3D.scale.set(3, 3.33, 3);
-      entityRef.current.setAttribute('rotation', '-2 90 15');
+      entityRef.current.object3D.position.set(-90, -130, -580);
+      entityRef.current.object3D.scale.set(1.8, 1.8, 1.8);
+      entityRef.current.setAttribute('rotation', '7 -35 -7');
       entityParentRef.current.object3D.rotation.set(cameraOrientation.x, cameraOrientation.y, cameraOrientation.z);
       setIsModelSet(true)
     }
@@ -70,24 +70,24 @@ function Sondagem4C({ backUrl }) {
     setFullScreen(false);
   };
 
-
   return (
     <div className="AugmentedReality">
       <TopButtons hideFullScreenButton={true} cleanUp={() => cleanUp()} backUrl={backUrl} label={label} />
       {(isLoading || (!isLoading && modelAligned && !isModelSet)) &&
         <LoadingScreen />}
       {!isLoading && !instructionsOk &&
-        <PopUp onReturn={() => setInstructionsOk(true)} clue="" /*"Dica: Posicione-se no limite da escavação ou com a árvore acima"*//>
+        <PopUp onReturn={() => setInstructionsOk(true)} clue="" /*"Dica: Posicione-se com a estaca de madeira acima."*/ />
       }
-      {!isLoading &&
+      {!isLoading && instructionsOk &&
         <div className="content">
           <a-scene
+            embedded
             className="scene"
             renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortTransparentObjects: true;"
             xr-mode-ui='enabled: false'>
             <a-entity position="0 0 0" rotation="0 0 0">
               <a-camera
-                ref={cameraRef} look-controls='enabled: true' />
+                ref={cameraRef} look-controls='enabled: true;' />
             </a-entity>
             {modelAligned &&
               <a-entity ref={entityParentRef}>
@@ -104,7 +104,7 @@ function Sondagem4C({ backUrl }) {
               <AligmentButton onClick={() => handleModelAligned()} />
             </div>}
         </div>}
-    </div>
+    </div >
   );
 }
-export default Sondagem4C;
+export default Sondagem4A;

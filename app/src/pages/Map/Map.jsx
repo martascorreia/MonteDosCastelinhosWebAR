@@ -1,16 +1,17 @@
-import TopButtons from "../../components/TopButtons/TopButtons.js"
+import TopButtons from "../../components/TopButtons/TopButtons"
 import "./Map.css"
 import "../../index.css"
 import { useEffect, useState } from "react";
-import { cleanSondagemFlags, getMapBounds } from '../../utils/utils.js';
+import { cleanSondagemFlags, getMapBounds } from '../../utils/utils';
 import labels from '../../resources/images/maps/mainMapLabels.png';
-import GoogleMaps from "./GoogleMaps.js";
-import StaticMap from "./StaticMap.js";
+import GoogleMaps from "./GoogleMaps";
+import StaticMap from "./StaticMap";
 import { useLoadScript } from "@react-google-maps/api";
 
 function Map() {
+  const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "REMOVED_GOOGLE_MAPS_KEY",
+    googleMapsApiKey,
   });
 
   const [cleanUp, setCleanUp] = useState(false);

@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
-import TopButtons from "../../../components/TopButtons/TopButtons.js"
+import TopButtons from "../../../components/TopButtons/TopButtons"
 import "../../../index.css"
 import "./../AugmentedReality.css"
 import sondagem4Img from '../../../resources/images/alignmentImages/sondagem4B.jpeg';
 import sondagem4ImgLines from '../../../resources/images/alignmentImages/sondagemBLines.png';
 import sondagem4B from '../../../resources/models/sondagem4B.png';
-import { setOrientation, cleanCamera } from '../../../utils/utils.js';
-import AligmentButton from '../../../components/AlignmentButton/AligmnentButton.js';
-import PopUp from '../../../components/PopUp/PopUp.js';
+import { setOrientation, cleanCamera } from '../../../utils/utils';
+import AligmentButton from '../../../components/AlignmentButton/AligmnentButton';
+import PopUp from '../../../components/PopUp/PopUp';
 
 function Sondagem4B({ backUrl }) {
   setOrientation("landscape");

@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import TopButtons from "../../../components/TopButtons/TopButtons.js"
-import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen.js"
-import "../../../index.css"
-import "./../ModelView.css"
-import { loadModel, setFullScreen } from '../../../utils/utils.js';
-import sondagem4Model from '../../../resources/models/sondagem4.withoutRoof.glb';
+import TopButtons from "../../../components/TopButtons/TopButtons"
+import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen"
+import "../../../index.css";
+import "./../ModelView.css";
+import { loadModel, setFullScreen } from '../../../utils/utils';
+import sondagem4Model from '../../../resources/models/sondagem4.withoutRoof.glb?url';
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei';
 

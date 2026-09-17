@@ -7,7 +7,7 @@ import point1 from '../../resources/images/mapPoints/point1.png';
 import point2 from '../../resources/images/mapPoints/point2.png';
 import point3 from '../../resources/images/mapPoints/point3.png';
 import point4 from '../../resources/images/mapPoints/point4.png';
-import { getUserLocation, isUserWithinBounds } from '../../utils/utils.js';
+import { getUserLocation, isUserWithinBounds } from '../../utils/utils';
 
 function GoogleMaps({ options, cleanUp }) {
   const navigate = useNavigate();

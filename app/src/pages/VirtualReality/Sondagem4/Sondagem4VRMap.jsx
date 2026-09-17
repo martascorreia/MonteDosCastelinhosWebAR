@@ -1,10 +1,10 @@
 
 import React, { useState } from 'react';
-import TopButtons from "../../../components/TopButtons/TopButtons.js"
+import TopButtons from "../../../components/TopButtons/TopButtons"
 import "./Sondagem4VRMap.css"
 import "../../../index.css"
 import { Link } from 'react-router-dom';
-import { setOrientation, setFullScreen } from '../../../utils/utils.js';
+import { setOrientation, setFullScreen } from '../../../utils/utils';
 
 import sondagem4VRMap from '../../../resources/images/maps/sondagem4VRMap.jpg';
 import sondagem4VRMapLabels from '../../../resources/images/maps/vrMapLabels.png';

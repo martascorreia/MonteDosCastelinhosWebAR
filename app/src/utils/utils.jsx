@@ -41,16 +41,12 @@ export const setFullScreen = (setFullScreen) => {
     }
 }
 
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-
 export const loadModel = async (modelPath) => {
-    //load model
+    const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+    const loader = new GLTFLoader();
+
     return new Promise((resolve, reject) => {
-        const loader = new GLTFLoader();
-        loader.load(modelPath, (glb) => {
-            const model = glb.scene;
-            resolve(model);
-        }, null, reject);
+        loader.load(modelPath, (glb) => resolve(glb.scene), null, reject);
     });
 };
 

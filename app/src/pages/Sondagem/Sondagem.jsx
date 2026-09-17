@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import TopButtons from "../../components/TopButtons/TopButtons"
 import "../../index.css"
 import "./Sondagem.css"
-import { setOrientation, reloadPage, garbageCollect, setFullScreen } from '../../utils/utils.js';
+import { setOrientation, reloadPage, garbageCollect, setFullScreen } from '../../utils/utils';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
 import { faVrCardboard, faCube } from "@fortawesome/free-solid-svg-icons";
 import Accordion from '../../components/Accordion/Accordion'
-import SquareButton from '../../components/SquareButton/SquareButton.js';
+import SquareButton from '../../components/SquareButton/SquareButton';
 
 function Sondagem({ id, sondagemID, title, headerImage, info, ar, vr, mv }) {
     setOrientation("portrait");
