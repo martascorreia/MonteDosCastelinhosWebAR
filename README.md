@@ -19,3 +19,13 @@ To run the app locally:
 - open a terminal in the app folder;
 - npm install
 - npm start.
+
+For the interactive Google Map, create `app/.env` with:
+
+```text
+VITE_GOOGLE_MAPS_API_KEY=your-restricted-google-maps-key
+```
+
+The key must be restricted in Google Cloud to this app's allowed origins and only the APIs it needs. Do not commit `.env`.
+
+GitHub Pages deployments run automatically from the `main` branch through GitHub Actions. Add a repository secret named `VITE_GOOGLE_MAPS_API_KEY` before deploying.

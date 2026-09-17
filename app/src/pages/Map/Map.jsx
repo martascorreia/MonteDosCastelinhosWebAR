@@ -9,8 +9,9 @@ import StaticMap from "./StaticMap";
 import { useLoadScript } from "@react-google-maps/api";
 
 function Map() {
+  const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "REMOVED_GOOGLE_MAPS_KEY",
+    googleMapsApiKey,
   });
 
   const [cleanUp, setCleanUp] = useState(false);
