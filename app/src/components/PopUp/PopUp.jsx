@@ -17,7 +17,7 @@ function PopUp({ onReturn, clue }) {
           Instruções de Alinhamento
         </div>
         <div>
-          Alinhe a câmara com a imagem no ecrã e clique em "Alinhado".
+          Alinhe a câmara com a imagem no ecrã e clique em &quot;Alinhado&quot;.
           <br />
           {clue != "" &&
             clue}

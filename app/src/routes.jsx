@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { getVR, getAR, getSondagem } from './utils/sondagensInfo';
+import RouteBoundary, { RouteFallback } from './components/RouteBoundary/RouteBoundary';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const Map = lazy(() => import('./pages/Map/Map'));
@@ -13,9 +14,11 @@ const Sondagem4B = lazy(() => import('./pages/AugmentedReality/Sondagem4/Sondage
 const Sondagem4ModelView = lazy(() => import('./pages/ModelView/Sondagem4/Sondagem4'));
 
 const withSuspense = (Component, props = {}) => (
-  <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
-    <Component {...props} />
-  </Suspense>
+  <RouteBoundary>
+    <Suspense fallback={<RouteFallback />}>
+      <Component {...props} />
+    </Suspense>
+  </RouteBoundary>
 );
 
 export const routes = [
