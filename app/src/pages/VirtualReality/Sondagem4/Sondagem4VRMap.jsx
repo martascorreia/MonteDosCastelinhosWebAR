@@ -48,38 +48,38 @@ function Sondagem4VRMap({ instructions }) {
           </div>
           <div className="vrMapContent">
             <img className='vrMapImage' src={sondagem4VRMap} />
-            <Link to={'/sondagem4/rvA'} className="nav-link">
-              <button className='mapPoint mapPointAVR4'>
-                {sondagem4VRAFlag == null
+            <Link to={'/sondagem4/rvA'} className="nav-link mapPointLink mapPointAVR4">
+              <button className='mapPoint'>
+                {sondagem4VRAFlag
                   ? <img className='mapPoints' src={pointAdarker} />
                   : <img className='mapPoints' src={pointA} />}
               </button>
             </Link>
-            <Link to={'/sondagem4/rvB'} className="nav-link">
-              <button className='mapPoint mapPointBVR4'>
-                {sondagem4VRBFlag == null
+            <Link to={'/sondagem4/rvB'} className="nav-link mapPointLink mapPointBVR4">
+              <button className='mapPoint'>
+                {sondagem4VRBFlag
                   ? <img className='mapPoints' src={pointBdarker} />
                   : <img className='mapPoints' src={pointB} />}
               </button>
             </Link>
-            <Link to={'/sondagem4/rvC'} className="nav-link">
-              <button className='mapPoint mapPointCVR4'>
-                {sondagem4VRCFlag == null
+            <Link to={'/sondagem4/rvC'} className="nav-link mapPointLink mapPointCVR4">
+              <button className='mapPoint'>
+                {sondagem4VRCFlag
                   ? <img className='mapPoints' src={pointCdarker} />
                   : <img className='mapPoints' src={pointC} />}
 
               </button>
             </Link>
-            <Link to={'/sondagem4/rvD'} className="nav-link">
-              <button className='mapPoint mapPointDVR4'>
-                {sondagem4VRDFlag == null
+            <Link to={'/sondagem4/rvD'} className="nav-link mapPointLink mapPointDVR4">
+              <button className='mapPoint'>
+                {sondagem4VRDFlag
                   ? <img className='mapPoints' src={pointDdarker} />
                   : <img className='mapPoints' src={pointD} />}
               </button>
             </Link>
-            <Link to={'/sondagem4/rvE'} className="nav-link">
-              <button className='mapPoint mapPointEVR4'>
-                {sondagem4VREFlag == null
+            <Link to={'/sondagem4/rvE'} className="nav-link mapPointLink mapPointEVR4">
+              <button className='mapPoint'>
+                {sondagem4VREFlag
                   ? <img className='mapPoints' src={pointEdarker} />
                   : <img className='mapPoints' src={pointE} />}
               </button>

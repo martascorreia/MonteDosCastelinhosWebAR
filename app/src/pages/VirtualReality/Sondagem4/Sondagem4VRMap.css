@@ -66,6 +66,10 @@ left: 24%;
 .vrMapImage{
     border-radius: 2%;
     border: 5px solid var(--main-color);
+    display: block;
+    height: auto;
+    max-width: 100%;
+    width: 100%;
 }
 
 .vrMapInstructions{

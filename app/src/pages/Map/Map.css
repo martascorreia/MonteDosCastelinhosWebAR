@@ -57,11 +57,19 @@
     z-index: 3;
 }
 
+.mapPointLink{
+    position: absolute;
+    width: auto;
+    z-index: 3;
+}
+
 .mapPoint{
     background-color: rgba(240, 248, 255, 0);
     border: none;
     border-radius: 50%;
-    position: absolute;
+    cursor: pointer;
+    display: block;
+    padding: 0;
 }
 
 .mainMapPoint4{

@@ -31,22 +31,22 @@ function Sondagem4ARMap() {
         <div className='Sonsagem4ARMapElements'>
           <div className="arMapContent">
             <img className='mapImage' src={sondagem4ARMap} />
-            <Link to={'/sondagem4/raA'} className="nav-link">
-              <button className='mapPoint mapPointAAR4'>
+            <Link to={'/sondagem4/raA'} className="nav-link mapPointLink mapPointAAR4">
+              <button className='mapPoint'>
                 {sondagem4ARAFlag
                   ? <img className='mapPoints' src={pointAdarker} />
                   : <img className='mapPoints' src={pointA} />}
               </button>
             </Link>
-            <Link to={'/sondagem4/raB'} className="nav-link">
-              <button className='mapPoint mapPointBAR4'>
+            <Link to={'/sondagem4/raB'} className="nav-link mapPointLink mapPointBAR4">
+              <button className='mapPoint'>
                 {sondagem4ARBFlag
                   ? <img className='mapPoints' src={pointBdarker} />
                   : <img className='mapPoints' src={pointB} />}
               </button>
             </Link>
-            <Link to={'/sondagem4/raC'} className="nav-link">
-              <button className='mapPoint mapPointCAR4'>
+            <Link to={'/sondagem4/raC'} className="nav-link mapPointLink mapPointCAR4">
+              <button className='mapPoint'>
                 {sondagem4ARCFlag
                   ? <img className='mapPoints' src={pointCdarker} />
                   : <img className='mapPoints' src={pointC} />}

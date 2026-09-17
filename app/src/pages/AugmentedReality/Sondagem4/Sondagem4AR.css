@@ -58,6 +58,9 @@
 .mapImage{
     border-radius: 2%;
     border: 5px solid var(--main-color);
+    display: block;
+    height: auto;
+    width: 100%;
     max-width: 100%;
 }
 

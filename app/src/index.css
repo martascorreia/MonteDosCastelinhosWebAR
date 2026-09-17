@@ -33,6 +33,27 @@ code {
   width: 100%;
 }
 
+.mapPointLink{
+  position: absolute;
+  width: auto;
+  z-index: 3;
+}
+
+.mapPoint{
+  background-color: rgba(240, 248, 255, 0);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+}
+
+.mapPoints{
+  display: block;
+  height: 60px;
+  max-width: 60px;
+}
+
 .topBtns-nav-link{
   text-decoration: none;
 }
