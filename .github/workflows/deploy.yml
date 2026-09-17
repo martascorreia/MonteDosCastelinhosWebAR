@@ -47,6 +47,6 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy
-        run: pnpm exec gh-pages -d dist
+        run: pnpm exec gh-pages -d dist -r "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
