@@ -5,7 +5,6 @@ import TextButton from "../../components/TextButton/TextButton"
 import { Link } from 'react-router-dom';
 import "./Home.css"
 import "../../index.css"
-import "@fontsource/lexend-deca";
 import { setOrientation} from '../../utils/utils';
 import PermissionsPopUp from '../../components/PermissionsPopUp/PermissionsPopUp';
 
