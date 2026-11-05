@@ -29,4 +29,4 @@ VITE_GOOGLE_MAPS_API_KEY=your-restricted-google-maps-key
 
 The key must be restricted in Google Cloud to this app's allowed origins and only the APIs it needs. Do not commit `.env`.
 
-GitHub Pages deploys automatically from the `testing` branch through GitHub Actions. Set the repository's Pages source to **GitHub Actions** and add a repository secret named `VITE_GOOGLE_MAPS_API_KEY` before deploying. The testing deployment uses the repository's normal Pages URL, so it replaces the currently published site.
+GitHub Pages deploys automatically from the `testing` branch through GitHub Actions using the `github-pages-testing` environment. Set the repository's Pages source to **GitHub Actions** and add a repository secret named `VITE_GOOGLE_MAPS_API_KEY` before deploying. The testing deployment uses the repository's normal Pages URL, so it replaces the currently published site.
