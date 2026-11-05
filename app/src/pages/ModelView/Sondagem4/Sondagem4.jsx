@@ -3,7 +3,7 @@ import TopButtons from "../../../components/TopButtons/TopButtons"
 import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen"
 import "../../../index.css";
 import "./../ModelView.css";
-import { loadModel, setFullScreen } from '../../../utils/utils';
+import { cleanModel, loadModel, setFullScreen } from '../../../utils/utils';
 import sondagem4Model from '../../../resources/models/sondagem4.withoutRoof.glb?url';
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei';
@@ -50,9 +50,10 @@ function Sondagem4A({ backUrl }) {
   //unmount
   useEffect(() => {
     return () => {
+      if (model) cleanModel(model);
       cleanUp();
     };
-  }, []);
+  }, [model]);
 
   return (
     <div className="AugmentedReality">

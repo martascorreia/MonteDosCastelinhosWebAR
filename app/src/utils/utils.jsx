@@ -124,7 +124,14 @@ export const cleanModel = (object3D) => {
         object3D.traverse((node) => {
             if (node.isMesh) {
                 node.geometry.dispose();
-                node.material.dispose();
+                const materials = Array.isArray(node.material) ? node.material : [node.material];
+                materials.forEach((material) => {
+                    if (!material) return;
+                    Object.values(material).forEach((value) => {
+                        if (value?.isTexture) value.dispose();
+                    });
+                    material.dispose();
+                });
             }
         });
     }

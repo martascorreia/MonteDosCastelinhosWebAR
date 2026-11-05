@@ -60,7 +60,7 @@ function Sondagem4B({ backUrl }) {
       <div className="content">
         <a-scene className="scene"
           embedded
-          renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: false; sortTransparentObjects: true;"
+          renderer="antialias: false; logarithmicDepthBuffer: true; colorManagement: false; sortTransparentObjects: true;"
           xr-mode-ui='enabled: false'>
           <a-entity position="0 0 0" rotation="0 0 0">
             <a-camera
