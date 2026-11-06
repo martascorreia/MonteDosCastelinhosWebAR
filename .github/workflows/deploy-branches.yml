@@ -1,0 +1,183 @@
+name: Deploy Pages and branch previews
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  delete:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: (github.event_name != 'delete' || github.event.ref_type == 'branch') && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: app
+
+    outputs:
+      preview_branch: ${{ steps.branch.outputs.safe }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ (github.event_name == 'delete' || (github.event_name == 'pull_request' && github.event.action == 'closed')) && 'main' || github.ref }}
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.22.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: app/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Resolve branch name
+        id: branch
+        env:
+          DELETE_BRANCH: ${{ github.event.ref }}
+        run: |
+          branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          if [[ "$GITHUB_EVENT_NAME" == "delete" ]]; then
+            branch_name="$DELETE_BRANCH"
+          fi
+          safe_branch="$(printf '%s' "$branch_name" | sed -E 's#[^A-Za-z0-9._-]+#_#g')"
+          echo "safe=$safe_branch" >> "$GITHUB_OUTPUT"
+
+      - name: Build branch preview
+        if: steps.branch.outputs.safe != 'main' && github.event_name != 'delete' && (github.event_name != 'pull_request' || github.event.action != 'closed') && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        env:
+          SAFE_BRANCH: ${{ steps.branch.outputs.safe }}
+          VITE_BASE_PATH: /MonteDosCastelinhosWebAR/previews/${{ steps.branch.outputs.safe }}/
+          VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
+        run: |
+          pnpm run build
+          mkdir -p "$RUNNER_TEMP/deployment/previews/$SAFE_BRANCH" "$RUNNER_TEMP/deployment/archives"
+          cp -R dist/. "$RUNNER_TEMP/deployment/previews/$SAFE_BRANCH/"
+          tar -czf "$RUNNER_TEMP/deployment/archives/$SAFE_BRANCH.tar" -C "$RUNNER_TEMP/deployment/previews/$SAFE_BRANCH" .
+
+      - name: Build main site
+        env:
+          SAFE_BRANCH: ${{ steps.branch.outputs.safe }}
+          VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
+        run: |
+          if [[ "$SAFE_BRANCH" != "main" ]]; then
+            git fetch origin main
+            git checkout --detach origin/main
+            pnpm install --frozen-lockfile
+          fi
+          VITE_BASE_PATH=/MonteDosCastelinhosWebAR/ pnpm run build
+          mkdir -p "$RUNNER_TEMP/deployment/archives"
+          cp -R dist/. "$RUNNER_TEMP/deployment/"
+
+      - name: Upload built sites
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-input
+          path: ${{ runner.temp }}/deployment
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    if: always() && needs.build.result == 'success' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      pull-requests: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout branch refs
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Download built sites
+        uses: actions/download-artifact@v4
+        with:
+          name: pages-input
+          path: deployment
+
+      - name: Restore active branch previews
+        env:
+          CURRENT_BRANCH: ${{ needs.build.outputs.preview_branch }}
+          PAGES_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: |
+          mkdir -p deployment/archives deployment/previews
+          for branch in $(git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin); do
+            safe_branch="$(printf '%s' "$branch" | sed -E 's#[^A-Za-z0-9._-]+#_#g')"
+            if [[ "$safe_branch" == "main" || "$safe_branch" == "$CURRENT_BRANCH" ]]; then
+              continue
+            fi
+            archive="deployment/archives/$safe_branch.tar"
+            if curl --fail --silent --show-error --location "$PAGES_BASE_URL/archives/$safe_branch.tar" --output "$archive"; then
+              mkdir -p "deployment/previews/$safe_branch"
+              tar -xzf "$archive" -C "deployment/previews/$safe_branch"
+            else
+              rm -f "$archive"
+            fi
+          done
+
+          {
+            printf '%s\n' '<!doctype html><html lang="en"><meta charset="utf-8"><title>Branch previews</title><h1>Branch previews</h1><ul>'
+            for preview in deployment/previews/*/; do
+              [[ -f "${preview}index.html" ]] || continue
+              safe_branch="${preview%/}"
+              safe_branch="${safe_branch##*/}"
+              printf '<li><a href="./%s/">%s</a></li>\n' "$safe_branch" "$safe_branch"
+            done
+            printf '%s\n' '</ul></html>'
+          } > deployment/previews/index.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: deployment
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Find existing preview comment
+        if: github.event_name == 'pull_request' && github.event.action != 'closed'
+        uses: peter-evans/find-comment@v3
+        id: find-comment
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: github-actions[bot]
+          body-includes: "Preview deployed for branch"
+
+      - name: Create or update preview comment
+        if: github.event_name == 'pull_request' && github.event.action != 'closed'
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-id: ${{ steps.find-comment.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            Preview deployed for branch `${{ needs.build.outputs.preview_branch }}`:
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/previews/${{ needs.build.outputs.preview_branch }}/
