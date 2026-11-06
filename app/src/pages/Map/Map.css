@@ -5,6 +5,129 @@
     flex-grow: 1;
 }
 
+.navigationPanel {
+    position: absolute;
+    z-index: 4;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: min(340px, calc(100% - 24px));
+    max-height: calc(100% - 24px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 14px;
+    border: 1px solid rgba(18, 18, 18, 0.12);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navigationPanel h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navigationHint {
+    margin: 0;
+    color: var(--dark-grey);
+    font-size: 12px;
+}
+
+.navigationPointList {
+    display: grid;
+    gap: 6px;
+}
+
+.navigationPointButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    background: var(--white);
+    color: var(--darker-grey);
+    font: inherit;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.navigationPointButton.isSelected {
+    border-color: var(--main-color);
+    box-shadow: inset 3px 0 var(--main-color);
+}
+
+.navigationPointButton strong {
+    flex: none;
+    color: var(--dark-grey);
+    font-size: 12px;
+}
+
+.navigationActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 2px;
+}
+
+.walkingDirectionsLink,
+.siteDetailsButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    background: var(--main-color);
+    color: var(--white);
+    font: inherit;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.siteDetailsButton {
+    background: var(--white);
+    color: var(--dark-grey);
+}
+
+.locationStatus {
+    position: absolute;
+    z-index: 4;
+    right: 12px;
+    bottom: 12px;
+    max-width: min(360px, calc(100% - 24px));
+    box-sizing: border-box;
+    padding: 9px 12px;
+    border-radius: 4px;
+    background: rgba(18, 18, 18, 0.82);
+    color: var(--white);
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .navigationPanel {
+        top: 8px;
+        right: 8px;
+        width: min(300px, calc(100% - 16px));
+        max-height: min(48%, 360px);
+        padding: 10px;
+    }
+
+    .navigationPointButton {
+        padding: 8px;
+        font-size: 11px;
+    }
+}
+
 .Map {
     background-color: var(--white);
     height: 100%;
