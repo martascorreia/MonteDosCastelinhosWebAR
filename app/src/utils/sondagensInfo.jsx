@@ -1,8 +1,18 @@
 import Sondagem from './../pages/Sondagem/Sondagem';
-import sondagem4Header from './../resources/images/headers/sondagem4Header.jpg'
-import sondagem5Header from './../resources/images/headers/sondagem5Header.jpg'
-import sondagem8Header from './../resources/images/headers/sondagem8Header.jpg'
-import sondagem9Header from './../resources/images/headers/sondagem9Header.jpg'
+import sondagem4Photo from './../resources/images/gallery/sondagem4-01.jpg'
+import sondagem4Photo2 from './../resources/images/gallery/sondagem4-02.jpg'
+import sondagem4Photo3 from './../resources/images/gallery/sondagem4-03.jpg'
+import sondagem4Photo4 from './../resources/images/gallery/sondagem4-04.jpg'
+import sondagem4Photo5 from './../resources/images/gallery/sondagem4-05.jpg'
+import sondagem5Photo from './../resources/images/gallery/sondagem5-01.jpg'
+import sondagem5Photo2 from './../resources/images/gallery/sondagem5-02.png'
+import sondagem5Photo3 from './../resources/images/gallery/sondagem5-03.png'
+import sondagem8Photo from './../resources/images/gallery/sondagem8-01.jpg'
+import sondagem8Photo2 from './../resources/images/gallery/sondagem8-02.png'
+import sondagem8Photo3 from './../resources/images/gallery/sondagem8-03.png'
+import sondagem8Photo4 from './../resources/images/gallery/sondagem8-04.png'
+import sondagem9Photo from './../resources/images/gallery/sondagem9-01.jpg'
+import sondagem9Photo2 from './../resources/images/gallery/sondagem9-02.png'
 
 export const getSondagem = (sondagemID) => {
     if (sondagemID == 4) {
@@ -11,7 +21,8 @@ export const getSondagem = (sondagemID) => {
                 id={sondagemID}
                 sondagemID={sondagemID}
                 title="Habitação A"
-                headerImage={sondagem4Header}
+                headerImage={sondagem4Photo}
+                galleryImages={[sondagem4Photo, sondagem4Photo2, sondagem4Photo3, sondagem4Photo4, sondagem4Photo5]}
                 info={getInfo(sondagemID)}
                 ar={getAR(sondagemID)}
                 vr={getVR(sondagemID)}
@@ -25,7 +36,8 @@ export const getSondagem = (sondagemID) => {
                 id={sondagemID}
                 sondagemID={sondagemID}
                 title="Habitação B"
-                headerImage={sondagem5Header}
+                headerImage={sondagem5Photo}
+                galleryImages={[sondagem5Photo, sondagem5Photo2, sondagem5Photo3]}
                 info={getInfo(sondagemID)}
             />)
     }
@@ -35,7 +47,8 @@ export const getSondagem = (sondagemID) => {
                 id={sondagemID}
                 sondagemID={sondagemID}
                 title="Habitações e Oficinas"
-                headerImage={sondagem8Header}
+                headerImage={sondagem8Photo}
+                galleryImages={[sondagem8Photo, sondagem8Photo2, sondagem8Photo3, sondagem8Photo4]}
                 info={getInfo(sondagemID)}
             />)
     }
@@ -45,7 +58,8 @@ export const getSondagem = (sondagemID) => {
                 id={sondagemID}
                 sondagemID={sondagemID}
                 title="Muralha"
-                headerImage={sondagem9Header}
+                headerImage={sondagem9Photo}
+                galleryImages={[sondagem9Photo, sondagem9Photo2]}
                 info={getInfo(sondagemID)} s
             />)
     }

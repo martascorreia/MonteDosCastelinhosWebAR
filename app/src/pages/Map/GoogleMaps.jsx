@@ -7,31 +7,35 @@ import point1 from '../../resources/images/mapPoints/point1.png';
 import point2 from '../../resources/images/mapPoints/point2.png';
 import point3 from '../../resources/images/mapPoints/point3.png';
 import point4 from '../../resources/images/mapPoints/point4.png';
-import { getUserLocation, isUserWithinBounds } from '../../utils/utils';
+import { isUserWithinBounds } from '../../utils/utils';
 
 function GoogleMaps({ options, cleanUp }) {
   const navigate = useNavigate();
   const center = useMemo(() => ({ lat: 39.012299, lng: -8.973784 }), []);
-  const [userInterval, setUserInterval] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
   const [isUserPresent, setIsUserPresent] = useState(false);
 
   useEffect(() => {
-    const updateLocation = () => {
-      var userLocation = getUserLocation();
-      setUserLocation(userLocation);
-      setIsUserPresent(isUserWithinBounds(userLocation));
-    };
+    if (cleanUp || !navigator.geolocation?.watchPosition) return undefined;
 
-    updateLocation();
-    setUserInterval(setInterval(updateLocation, 5000));
-  }, []);
+    const watchId = navigator.geolocation.watchPosition(
+      ({ coords }) => {
+        const location = {
+          lat: coords.latitude,
+          lng: coords.longitude,
+        };
+        setUserLocation(location);
+        setIsUserPresent(isUserWithinBounds(location));
+      },
+      () => {
+        setUserLocation(null);
+        setIsUserPresent(false);
+      },
+      { enableHighAccuracy: true, maximumAge: 5000, timeout: 15000 }
+    );
 
-  useEffect(() => {
-    if (cleanUp) {
-      clearInterval(userInterval);
-    }
-  }, []);
+    return () => navigator.geolocation.clearWatch(watchId);
+  }, [cleanUp]);
 
   return (
     <div className='mainMapMap'>
@@ -75,6 +79,15 @@ function GoogleMaps({ options, cleanUp }) {
         {isUserPresent && userLocation &&
           <MarkerF
             position={{ lat: userLocation.lat, lng: userLocation.lng }}
+            title="A sua localização"
+            icon={{
+              path: window.google.maps.SymbolPath.CIRCLE,
+              scale: 9,
+              fillColor: '#1676d2',
+              fillOpacity: 1,
+              strokeColor: '#ffffff',
+              strokeWeight: 3,
+            }}
           />}
       </GoogleMap>     
     </div>

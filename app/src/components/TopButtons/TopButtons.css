@@ -10,6 +10,11 @@
   z-index: 90;
 }
 
+.backBtn.roundBtn {
+  align-items: center;
+  justify-content: center;
+}
+
 .fullScreenBtn{
   margin-left: auto;
   z-index: 91;
@@ -76,4 +81,38 @@
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+@media (min-width: 900px) {
+  .topButtons {
+    position: fixed;
+    z-index: 120;
+    top: 14px;
+    left: max(24px, calc((100vw - 1280px) / 2));
+    box-sizing: border-box;
+    width: auto;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .topButtons .backBtn {
+    width: 48px;
+    height: 48px;
+    pointer-events: auto;
+  }
+
+  .topButtons button.backBtn {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .topLabel {
+    top: 24px;
+    width: auto;
+    height: auto;
+    padding: 10px 24px;
+    border: 1px solid var(--light-grey);
+    border-radius: 24px;
+    font-size: 18px;
+  }
 }

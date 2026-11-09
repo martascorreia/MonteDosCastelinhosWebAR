@@ -10,13 +10,28 @@ import { useLoadScript } from "@react-google-maps/api";
 
 function Map() {
   const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
-  const { isLoaded } = useLoadScript({
+  const hasGoogleMapsApiKey = googleMapsApiKey.trim().length > 0;
+  const [mapsAuthFailed, setMapsAuthFailed] = useState(false);
+  const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey,
   });
 
   const [cleanUp, setCleanUp] = useState(false);
   const [optionsSet, setOptionsSet] = useState(false);
   const [options, setOptions] = useState(null);
+
+  useEffect(() => {
+    const handleAuthFailure = () => setMapsAuthFailed(true);
+    window.gm_authFailure = handleAuthFailure;
+
+    return () => {
+      if (window.gm_authFailure === handleAuthFailure) {
+        delete window.gm_authFailure;
+      }
+    };
+  }, []);
+
+  const useStaticMap = !hasGoogleMapsApiKey || !isLoaded || !optionsSet || Boolean(loadError) || mapsAuthFailed;
 
   useEffect(() => {
     if (isLoaded) {
@@ -47,9 +62,9 @@ function Map() {
         <div className='mainMapHeader'>
           <div className='sondagemTitle'>Mapa</div>
         </div>
-        {isLoaded && optionsSet
-          ? <GoogleMaps options={options} cleanUp={cleanUp}/>
-          : <StaticMap />
+        {useStaticMap
+          ? <StaticMap />
+          : <GoogleMaps options={options} cleanUp={cleanUp}/>
         }
         <div className='mainMapFooter'>
           <img className='mapLabels' src={labels} />

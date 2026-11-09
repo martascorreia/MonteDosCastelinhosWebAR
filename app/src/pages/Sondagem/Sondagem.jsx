@@ -1,17 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { isMobile, isTablet } from 'react-device-detect';
 import TopButtons from "../../components/TopButtons/TopButtons"
 import "../../index.css"
 import "./Sondagem.css"
 import { setOrientation, reloadPage, garbageCollect, setFullScreen } from '../../utils/utils';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
-import { faVrCardboard, faCube } from "@fortawesome/free-solid-svg-icons";
+import { faVrCardboard, faCube, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Accordion from '../../components/Accordion/Accordion'
 import SquareButton from '../../components/SquareButton/SquareButton';
 
-function Sondagem({ id, sondagemID, title, headerImage, info, ar, vr, mv }) {
+function Sondagem({ id, sondagemID, title, headerImage, galleryImages, info, ar, vr, mv }) {
+    const supportsAR = isMobile || isTablet;
+    const images = galleryImages?.length ? galleryImages : [headerImage];
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
+    const touchStartX = useRef(null);
     setOrientation("portrait");
     const [hasRefreshed, setHasRefreshed] = useState(localStorage.getItem('hasRefreshed') == 'false' ? false : true);
+
+    const showPreviousImage = () => {
+        setActiveImageIndex((currentIndex) => (currentIndex - 1 + images.length) % images.length);
+    };
+
+    const showNextImage = () => {
+        setActiveImageIndex((currentIndex) => (currentIndex + 1) % images.length);
+    };
+
+    const handleTouchStart = (event) => {
+        touchStartX.current = event.changedTouches[0].clientX;
+    };
+
+    const handleTouchEnd = (event) => {
+        if (touchStartX.current === null || images.length < 2) return;
+
+        const swipeDistance = event.changedTouches[0].clientX - touchStartX.current;
+        touchStartX.current = null;
+
+        if (Math.abs(swipeDistance) < 40) return;
+        if (swipeDistance < 0) showNextImage();
+        else showPreviousImage();
+    };
 
     useEffect(() => {
         if (!hasRefreshed) {
@@ -26,28 +54,49 @@ function Sondagem({ id, sondagemID, title, headerImage, info, ar, vr, mv }) {
             <TopButtons backUrl={"/mapa"} />
             <div className="content sondagemPageContent">
                 <div className='sondagemHeader'>
-                    <img className='sondagemImage' src={headerImage} />
-                    <div className='sondagemTitle'>{title}</div>
+                    <div className="sondagemGallery" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchCancel={() => { touchStartX.current = null; }}>
+                        <img className='sondagemImage' src={images[activeImageIndex]} alt={title} />
+                        <div className='sondagemTitle'>{title}</div>
+                        <div className="sondagemGalleryCount" aria-live="polite" aria-atomic="true">
+                            {activeImageIndex + 1} / {images.length}
+                        </div>
+                        {images.length > 1 && <div className="sondagemGalleryControls">
+                            <button className="sondagemGalleryControl sondagemGalleryPrevious" type="button" aria-label="Imagem anterior" onClick={showPreviousImage}>
+                                <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
+                            </button>
+                            <button className="sondagemGalleryControl sondagemGalleryNext" type="button" aria-label="Imagem seguinte" onClick={showNextImage}>
+                                <FontAwesomeIcon icon={faChevronRight} aria-hidden="true" />
+                            </button>
+                        </div>}
+                    </div>
                 </div>
                 <div className="sondagemContent">
                     {(ar || vr) &&
-                        <div className="sondagemExperiences">
-                            {ar && <SquareButton text={"Realidade Aumentada"} icon={<AugmentedReality width={50} height={50} strokeWidth={1.7} />} link="raMapa" onClick={() => setFullScreen(true)} />}
+                        <div className={`sondagemExperiences ${supportsAR ? 'sondagemExperiencesWithAR' : ''}`}>
+                            {ar && supportsAR
+                                ? <SquareButton text={"Realidade Aumentada"} icon={<AugmentedReality width={32} height={32} strokeWidth={1.7} />} link="raMapa" onClick={() => setFullScreen(true)} />
+                                : ar && <p className="arDesktopNotice">Realidade aumentada disponível apenas em dispositivos móveis.</p>}
                             {vr && <SquareButton text={"Realidade Virtual"} icon={<FontAwesomeIcon icon={faVrCardboard} />} link="rvMapa" onClick={() => setFullScreen(true)}/>}
                             {mv && <SquareButton text={"Modelo 3D"} icon={<FontAwesomeIcon icon={faCube} />} link="modelo3D" onClick={() => setFullScreen(false)}/>}
                         </div >}
                     <div className="sondagemInfo">
-                        <div className='accordions'>
-                            {info &&
-                                info.map((item, index) => (
-                                    <Accordion
-                                        key={index}
-                                        id={item.id}
-                                        accordionOpen={item.isOpen}
-                                        title={item.title}
-                                        content={item.content} />
-                                ))}
-                        </div>
+                            {info?.length === 1 ? (
+                                <section className="sondagemStory" aria-labelledby={`sondagem-story-${sondagemID}`}>
+                                    <h2 className="sondagemStoryTitle" id={`sondagem-story-${sondagemID}`}>{info[0].title}</h2>
+                                    <div className="sondagemStoryContent" dangerouslySetInnerHTML={{ __html: info[0].content }} />
+                                </section>
+                            ) : (
+                                <div className='accordions'>
+                                    {info?.map((item, index) => (
+                                        <Accordion
+                                            key={index}
+                                            id={item.id}
+                                            accordionOpen={item.isOpen}
+                                            title={item.title}
+                                            content={item.content} />
+                                    ))}
+                                </div>
+                            )}
                     </div >
                 </div >
             </div >
