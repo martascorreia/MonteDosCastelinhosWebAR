@@ -9,28 +9,30 @@ import point4 from '../../resources/images/mapPoints/point4.png';
 
 function StaticMap() {
   return (
-    <div className='mainMapMap'>
-      <img className='mainMapImage' src={mainMapReversed} />
-      <Link to={'/sondagem4/'} className="nav-link mapPointLink mainMapPoint4Reversed">
-        <button className='mapPoint'>
-          <img className='mapPoints' src={point4} />
-        </button>
-      </Link>
-      <Link to={'/sondagem5/'} className="nav-link mapPointLink mainMapPoint5Reversed">
-        <button className='mapPoint'>
-          <img className='mapPoints' src={point2} />
-        </button>
-      </Link>
-      <Link to={'/sondagem8/'} className="nav-link mapPointLink mainMapPoint8Reversed">
-        <button className='mapPoint'>
-          <img className='mapPoints' src={point3} />
-        </button>
-      </Link>
-      <Link to={'/sondagem9/'} className="nav-link mapPointLink mainMapPoint9Reversed">
-        <button className='mapPoint'>
-          <img className='mapPoints' src={point1} />
-        </button>
-      </Link>
+    <div className='mainMapMap staticMapViewport'>
+      <div className="staticMapVisual">
+        <img className='mainMapImage' src={mainMapReversed} />
+        <Link to={'/sondagem4/'} className="nav-link mapPointLink mainMapPoint4Reversed">
+          <button className='mapPoint'>
+            <img className='mapPoints' src={point4} />
+          </button>
+        </Link>
+        <Link to={'/sondagem5/'} className="nav-link mapPointLink mainMapPoint5Reversed">
+          <button className='mapPoint'>
+            <img className='mapPoints' src={point2} />
+          </button>
+        </Link>
+        <Link to={'/sondagem8/'} className="nav-link mapPointLink mainMapPoint8Reversed">
+          <button className='mapPoint'>
+            <img className='mapPoints' src={point3} />
+          </button>
+        </Link>
+        <Link to={'/sondagem9/'} className="nav-link mapPointLink mainMapPoint9Reversed">
+          <button className='mapPoint'>
+            <img className='mapPoints' src={point1} />
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
