@@ -32,6 +32,7 @@
     position: absolute;
     inset: 0;
     touch-action: pan-y;
+    overflow: hidden;
 }
 
 .sondagemGallery .sondagemImage {
@@ -39,6 +40,23 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.sondagemGalleryCount {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 4;
+    padding: 6px 9px;
+    border-radius: 4px;
+    color: var(--white);
+    background-color: rgba(25, 30, 29, 0.68);
+    font-size: 13px;
+    line-height: 1;
+}
+
+.sondagemGalleryControls {
+    display: contents;
 }
 
 .sondagemGalleryControl {
@@ -58,6 +76,10 @@
     cursor: pointer;
 }
 
+.sondagemGalleryControl:hover {
+    background-color: rgba(25, 30, 29, 0.88);
+}
+
 .sondagemGalleryControl:focus-visible {
     outline: 3px solid var(--white);
     outline-offset: 3px;
@@ -69,19 +91,6 @@
 
 .sondagemGalleryNext {
     right: 16px;
-}
-
-.sondagemGalleryCount {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 4;
-    padding: 6px 9px;
-    border-radius: 4px;
-    color: var(--white);
-    background-color: rgba(25, 30, 29, 0.68);
-    font-size: 13px;
-    line-height: 1;
 }
 
 .sondagemTitle{
@@ -129,6 +138,18 @@
     flex-wrap: wrap;
 }
 
+.sondagemExperiences > .arDesktopNotice {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
+    margin: 0;
+    color: var(--dark-grey);
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}
+
 .sondagemInfo{
     justify-content: center;
     align-items: flex-start;
@@ -144,12 +165,15 @@
 .sondagemStoryTitle {
     margin: 0 0 12px;
     font-size: 20px;
+    font-weight: 600;
 }
 
 .sondagemStoryParagraph {
     margin: 0 0 16px;
-    line-height: 1.6;
-    text-align: justify;
+    color: var(--darker-grey);
+    font-size: 15px;
+    line-height: 1.65;
+    text-align: left;
 }
 
 .accordions{
@@ -193,4 +217,353 @@
     max-width: 100%;
     max-height: 250px;
     justify-content: center;
+}
+
+@media (min-width: 900px) {
+    .Sondagem,
+    .sondagemPageContent {
+        height: 100vh;
+        min-height: 680px;
+        overflow: hidden;
+    }
+
+    .sondagemPageContent {
+        display: grid;
+        grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+        gap: 0;
+    }
+
+    .sondagemHeader {
+        position: relative;
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .sondagemImage {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .sondagemGallery .sondagemTitle {
+        position: absolute;
+        left: 32px;
+        bottom: 32px;
+        box-sizing: border-box;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 14px 24px;
+        font-size: 24px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
+    }
+
+    .sondagemContent {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        padding: 32px 40px;
+        align-items: stretch;
+    }
+
+    .sondagemExperiences {
+        justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .sondagemExperiences .squareButton {
+        width: 128px;
+        height: 112px;
+        padding: 12px;
+        border-radius: 8px;
+        background-color: var(--very-light-grey);
+    }
+
+    .sondagemExperiences .squareBtnIcon {
+        height: 56%;
+        font-size: 34px;
+    }
+
+    .sondagemExperiences .squareBtnText {
+        height: 44%;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .sondagemInfo,
+    .accordions {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .accordions {
+        text-align: left;
+        gap: 12px;
+    }
+
+    .sondagemContent .Accordion {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .sondagemContent .accordionHeader {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sondagemContent .accordionContent {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        align-items: flex-start;
+        text-align: left;
+        line-height: 1.6;
+    }
+
+}
+
+@media (max-width: 899px) {
+    .Sondagem > .top .topButtons {
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .Sondagem {
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior-y: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sondagemPageContent {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        align-items: stretch;
+        gap: 0;
+        overflow: visible;
+    }
+
+    .sondagemHeader {
+        flex: 0 0 auto;
+        height: auto;
+        min-height: 0;
+        display: block;
+        border-bottom: 0;
+    }
+
+    .sondagemGallery {
+        position: relative;
+        inset: auto;
+        display: block;
+        width: 100%;
+        height: clamp(280px, 42vh, 360px);
+        height: clamp(280px, 42dvh, 360px);
+        overflow: hidden;
+    }
+
+    .sondagemGallery::after {
+        position: absolute;
+        inset: 45% 0 0;
+        z-index: 1;
+        background: linear-gradient(180deg, transparent, rgba(14, 19, 17, 0.62));
+        content: "";
+        pointer-events: none;
+    }
+
+    .sondagemGallery .sondagemImage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        object-fit: cover;
+    }
+
+    .sondagemGallery .sondagemTitle {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        z-index: 3;
+        width: auto;
+        height: auto;
+        max-width: calc(100% - 40px);
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        color: var(--white);
+        background: transparent;
+        font-size: 24px;
+        box-shadow: none;
+    }
+
+    .sondagemGalleryCount {
+        top: 16px;
+        right: 16px;
+        padding: 7px 9px;
+        color: var(--white);
+        background-color: rgba(25, 30, 29, 0.68);
+        font-size: 14px;
+    }
+
+    .sondagemGalleryControl {
+        top: 50%;
+        width: 48px;
+        height: 48px;
+        transform: translateY(-50%);
+        border: 0;
+        color: var(--white);
+        background-color: rgba(25, 30, 29, 0.6);
+        box-shadow: none;
+    }
+
+    .sondagemGalleryControl:hover {
+        background-color: rgba(25, 30, 29, 0.82);
+    }
+
+    .sondagemGalleryPrevious {
+        left: 14px;
+    }
+
+    .sondagemGalleryNext {
+        right: 14px;
+    }
+
+    .sondagemContent {
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        min-height: 50vh;
+        box-sizing: border-box;
+        padding: 20px 20px calc(64px + env(safe-area-inset-bottom));
+        gap: 22px;
+        align-items: stretch;
+        overflow: visible;
+    }
+
+    .sondagemExperiences {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: center;
+        align-items: start;
+        gap: 8px;
+        width: 100%;
+        padding: 0 0 18px;
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .sondagemExperiencesWithAR {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .sondagemExperiences > .arDesktopNotice {
+        grid-column: 1 / -1;
+        margin: 0 0 4px;
+        text-align: center;
+    }
+
+    .sondagemExperiences > .topBtns-nav-link {
+        justify-self: center;
+        width: 100%;
+        min-width: 0;
+        max-width: 110px;
+    }
+
+    .sondagemExperiences .squareButton {
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        padding: 8px;
+        border-radius: 35%;
+        background-color: var(--light-grey);
+    }
+
+    .sondagemExperiences .squareBtnIcon {
+        height: 50%;
+        font-size: 32px;
+        justify-content: center;
+    }
+
+    .sondagemExperiences .squareBtnText {
+        height: 50%;
+        font-size: 12px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    @media (max-width: 360px) {
+        .sondagemExperiences .squareButton {
+            padding: 6px;
+        }
+
+        .sondagemExperiences .squareBtnIcon {
+            font-size: 28px;
+        }
+
+        .sondagemExperiences .squareBtnIcon svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    .sondagemInfo,
+    .accordions {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .accordions {
+        gap: 10px;
+        padding-bottom: 0;
+        text-align: left;
+    }
+
+    .sondagemContent .Accordion {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .sondagemContent .accordionHeader {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 50px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .sondagemContent .accordionTitle {
+        padding-left: 16px;
+        font-size: 16px;
+    }
+
+    .sondagemContent .accordionIcon {
+        padding-right: 16px;
+        font-size: 18px;
+    }
+
+    .sondagemContent .accordionContent {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        padding: 12px 4px;
+        align-items: flex-start;
+        text-align: left;
+        line-height: 1.55;
+    }
 }

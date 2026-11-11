@@ -5,3 +5,15 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (min-width: 900px) {
+  #root {
+    min-height: 100vh;
+  }
+
+  .App {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+  }
+}

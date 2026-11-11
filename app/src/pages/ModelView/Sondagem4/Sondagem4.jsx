@@ -6,10 +6,11 @@ import "./../ModelView.css";
 import { cleanModel, loadModel, setFullScreen } from '../../../utils/utils';
 import sondagem4Model from '../../../resources/models/sondagem4.withoutRoof.glb?url';
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei';
+import { Bounds, OrbitControls } from '@react-three/drei';
 
 function Sondagem4A({ backUrl }) {
   const [model, setModel] = useState(null);
+  const isDesktop = window.matchMedia('(min-width: 900px)').matches;
 
   useEffect(() => {
     localStorage.setItem('hasRefreshed', 'false');
@@ -62,9 +63,13 @@ function Sondagem4A({ backUrl }) {
         <LoadingScreen />}
       {model &&
         <Canvas camera={{ position: [0, 300, 200] }}>
-          <ambientLight intensity={0.5} />
-          <OrbitControls enableDamping={false} />
-          <Sondagem4Model />
+          <hemisphereLight args={["#fffdf7", "#8d7864", 1.25]} />
+          <directionalLight position={[120, 160, 100]} intensity={2.2} />
+          <directionalLight position={[-120, 80, -100]} intensity={0.8} />
+          <OrbitControls enableDamping={false} target={isDesktop ? [18, 38, 10] : [0, 0, 0]} />
+          {isDesktop
+            ? <Bounds fit clip margin={1.2}><Sondagem4Model /></Bounds>
+            : <Sondagem4Model />}
         </Canvas>}
     </div >
   );

@@ -147,24 +147,6 @@ export const cleanCamera = () => {
     });
 };
 
-export const getUserLocation = () => {
-   /* return {
-        lat: 39.012603,
-        lng: -8.973466,
-    };*/
-    
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            const location = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-            };
-            return location;
-        });
-    }
-    return null;
-};
-
 export const isUserWithinBounds = (userLocation) => {
     if (!userLocation) return false;
     var mapBounds = getMapBounds();

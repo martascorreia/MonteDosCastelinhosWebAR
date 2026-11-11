@@ -8,6 +8,22 @@
         {
           "image": "/images/gallery/sondagem4Header.jpg",
           "alt": "Habitação A, Sondagem 4"
+        },
+        {
+          "image": "/images/gallery/sondagem4-02.jpg",
+          "alt": "Habitação A, Sondagem 4"
+        },
+        {
+          "image": "/images/gallery/sondagem4-03.jpg",
+          "alt": "Habitação A, Sondagem 4"
+        },
+        {
+          "image": "/images/gallery/sondagem4-04.jpg",
+          "alt": "Habitação A, Sondagem 4"
+        },
+        {
+          "image": "/images/gallery/sondagem4-05.jpg",
+          "alt": "Habitação A, Sondagem 4"
         }
       ]
     },
@@ -18,6 +34,14 @@
       "galleryImages": [
         {
           "image": "/images/gallery/sondagem5Header.jpg",
+          "alt": "Habitação B, Sondagem 5"
+        },
+        {
+          "image": "/images/gallery/sondagem5-02.png",
+          "alt": "Habitação B, Sondagem 5"
+        },
+        {
+          "image": "/images/gallery/sondagem5-03.png",
           "alt": "Habitação B, Sondagem 5"
         }
       ]
@@ -30,6 +54,18 @@
         {
           "image": "/images/gallery/sondagem8Header.jpg",
           "alt": "Habitações e Oficinas, Sondagem 8"
+        },
+        {
+          "image": "/images/gallery/sondagem8-02.png",
+          "alt": "Habitações e Oficinas, Sondagem 8"
+        },
+        {
+          "image": "/images/gallery/sondagem8-03.png",
+          "alt": "Habitações e Oficinas, Sondagem 8"
+        },
+        {
+          "image": "/images/gallery/sondagem8-04.png",
+          "alt": "Habitações e Oficinas, Sondagem 8"
         }
       ]
     },
@@ -40,6 +76,10 @@
       "galleryImages": [
         {
           "image": "/images/gallery/sondagem9Header.jpg",
+          "alt": "Muralha, Sondagem 9"
+        },
+        {
+          "image": "/images/gallery/sondagem9-02.png",
           "alt": "Muralha, Sondagem 9"
         }
       ]

@@ -42,3 +42,75 @@
     font-size: 16px;
     text-align: justify;
 }
+
+@media (min-width: 900px) {
+    .About {
+        height: 100vh;
+        min-height: 680px;
+        overflow: hidden;
+    }
+
+    .content.aboutContent {
+        height: 100vh;
+        min-height: 680px;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: 76px minmax(0, 1fr);
+        align-items: stretch;
+        align-content: stretch;
+        justify-content: stretch;
+    }
+
+    .mainHeader {
+        height: auto;
+        align-items: center;
+    }
+
+    .mainHeader .sondagemTitle {
+        box-sizing: border-box;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 14px 24px;
+        font-size: 24px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
+    }
+
+    .mainContent {
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 32px 48px 48px;
+        align-items: center;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+    }
+
+    .textContent {
+        width: min(880px, 100%);
+        font-size: 17px;
+        text-align: left;
+    }
+
+    .mainContent > .Accordion {
+        width: min(880px, 100%);
+    }
+
+    .mainContent .accordionHeader {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 54px;
+        height: auto;
+        border-radius: 35px;
+    }
+
+    .mainContent .accordionContent {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        align-items: flex-start;
+        text-align: left;
+    }
+}

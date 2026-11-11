@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { isMobile, isTablet } from 'react-device-detect';
 import logo from '../../resources/images/logo.png';
 import TopButtons from '../../components/TopButtons/TopButtons'
 import TextButton from "../../components/TextButton/TextButton"
@@ -10,7 +11,10 @@ import PermissionsPopUp from '../../components/PermissionsPopUp/PermissionsPopUp
 
 function Home() {
   setOrientation("portrait");
-  const [permissionsAccepted, setPermissionsAccepted] = useState(localStorage.getItem('permissionsAccepted') == 'true');
+  const needsCameraPermissions = isMobile || isTablet;
+  const [permissionsAccepted, setPermissionsAccepted] = useState(
+    !needsCameraPermissions || localStorage.getItem('permissionsAccepted') == 'true'
+  );
   
   function handleAcceptedPermissions(){
     setPermissionsAccepted(true);
@@ -18,7 +22,7 @@ function Home() {
 
   return (
     <div className="Home" id="home">
-      {!permissionsAccepted && <PermissionsPopUp onReturn={handleAcceptedPermissions}/>}
+      {needsCameraPermissions && !permissionsAccepted && <PermissionsPopUp onReturn={handleAcceptedPermissions}/>}
       <TopButtons isHome={true}/>
       <div className="content">
         <img src={logo} className="logo" alt="logo" />

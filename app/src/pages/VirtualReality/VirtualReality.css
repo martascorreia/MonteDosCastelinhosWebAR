@@ -30,3 +30,25 @@
   top: 58%;
   left: 24%;
 }
+
+@media (min-width: 900px) {
+  .VirtualReality {
+    position: relative;
+    height: 100vh;
+    min-height: 680px;
+    overflow: hidden;
+  }
+
+  .VirtualReality > .content {
+    position: absolute;
+    inset: 0;
+    height: 100vh;
+    min-height: 680px;
+  }
+
+  .VirtualReality a-scene,
+  .VirtualReality a-scene canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+}
