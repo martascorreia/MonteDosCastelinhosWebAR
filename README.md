@@ -21,6 +21,14 @@ To run the app locally:
 - npm install
 - npm start.
 
+## Backoffice
+
+The Decap CMS editor is served from `/admin/`. Survey titles, history text, and ordered gallery images are stored in `app/src/content/sondagens.json`; uploaded images are saved under `app/public/images/gallery/`.
+
+The production CMS at `/admin/` reads and submits content against `main`. Each branch preview's `/admin/` is configured during its build to read and submit against that preview's source branch. Editors need write access to the target branch. The GitHub OAuth service is deployed from `oauth-worker/` to Cloudflare Workers and allows login from the GitHub Pages origin. GitHub access tokens expire, so editors may need to sign in again.
+
+To update the OAuth Worker, run `npx --yes wrangler@4.160.0 deploy --config oauth-worker/wrangler.jsonc`. Store the GitHub OAuth app's client secret as the Worker secret `GITHUB_OAUTH_SECRET`, never in the repository or CMS configuration. Run its focused checks with `node --test oauth-worker/index.test.mjs`.
+
 For the interactive Google Map, create `app/.env` with:
 
 ```text

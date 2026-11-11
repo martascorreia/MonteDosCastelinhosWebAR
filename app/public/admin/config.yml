@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: martascorreia/MonteDosCastelinhosWebAR
+  branch: main
+  base_url: https://monte-backoffice-auth.correiamarta2-95c.workers.dev
+  auth_endpoint: auth
+
+publish_mode: editorial_workflow
+media_folder: app/public/images/gallery
+public_folder: /images/gallery
+site_url: https://martascorreia.github.io/MonteDosCastelinhosWebAR
+display_url: https://martascorreia.github.io/MonteDosCastelinhosWebAR
+locale: pt
+
+collections:
+  - name: site
+    label: Conteúdo
+    files:
+      - name: sondagens
+        label: Sondagens
+        file: app/src/content/sondagens.json
+        fields:
+          - label: Áreas arqueológicas
+            name: sondagens
+            widget: list
+            fields:
+              - label: ID
+                name: id
+                widget: number
+              - label: Título
+                name: title
+                widget: string
+              - label: História
+                name: history
+                widget: text
+              - label: Galeria
+                name: galleryImages
+                widget: list
+                fields:
+                  - label: Imagem
+                    name: image
+                    widget: image
+                  - label: Texto alternativo
+                    name: alt
+                    widget: string
+                    required: false

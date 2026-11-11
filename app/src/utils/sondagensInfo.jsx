@@ -1,54 +1,31 @@
 import Sondagem from './../pages/Sondagem/Sondagem';
-import sondagem4Header from './../resources/images/headers/sondagem4Header.jpg'
-import sondagem5Header from './../resources/images/headers/sondagem5Header.jpg'
-import sondagem8Header from './../resources/images/headers/sondagem8Header.jpg'
-import sondagem9Header from './../resources/images/headers/sondagem9Header.jpg'
+import sondagensContent from './../content/sondagens.json';
+
+const resolveImagePath = (imagePath) => `${import.meta.env.BASE_URL}${imagePath.replace(/^\/+/, '')}`;
 
 export const getSondagem = (sondagemID) => {
-    if (sondagemID == 4) {
-        return (
-            <Sondagem
-                id={sondagemID}
-                sondagemID={sondagemID}
-                title="Habitação A"
-                headerImage={sondagem4Header}
-                info={getInfo(sondagemID)}
-                ar={getAR(sondagemID)}
-                vr={getVR(sondagemID)}
-                mv={true}
-            />)
-    }
+    const id = Number(sondagemID);
+    const survey = sondagensContent.sondagens.find((item) => item.id === id);
+    if (!survey) return null;
 
-    if (sondagemID == 5) {
-        return (
-            <Sondagem
-                id={sondagemID}
-                sondagemID={sondagemID}
-                title="Habitação B"
-                headerImage={sondagem5Header}
-                info={getInfo(sondagemID)}
-            />)
-    }
-    if (sondagemID == 8) {
-        return (
-            <Sondagem
-                id={sondagemID}
-                sondagemID={sondagemID}
-                title="Habitações e Oficinas"
-                headerImage={sondagem8Header}
-                info={getInfo(sondagemID)}
-            />)
-    }
-    if (sondagemID == 9) {
-        return (
-            <Sondagem
-                id={sondagemID}
-                sondagemID={sondagemID}
-                title="Muralha"
-                headerImage={sondagem9Header}
-                info={getInfo(sondagemID)} s
-            />)
-    }
+    const galleryImages = survey.galleryImages.map((item) => ({
+        ...item,
+        image: resolveImagePath(item.image),
+    }));
+
+    return (
+        <Sondagem
+            id={id}
+            sondagemID={id}
+            title={survey.title}
+            headerImage={galleryImages[0]?.image}
+            galleryImages={galleryImages}
+            history={survey.history}
+            ar={id === 4 ? getAR(id) : undefined}
+            vr={id === 4 ? getVR(id) : undefined}
+            mv={id === 4}
+        />
+    );
 }
 
 export const getAR = (sondagemID) => {
@@ -65,7 +42,6 @@ export const getAR = (sondagemID) => {
         }
     }
 }
-
 export const getVR = (sondagemID) => {
     if (sondagemID == 4) {
         return {
@@ -75,66 +51,5 @@ export const getVR = (sondagemID) => {
             instructions: `1. Pressione um dos pontos de visualização do modelo virtual; <br>
                                 2. Gire a câmara para observar a vista 360º daquele ponto.`
         }
-    }
-}
-
-export const getInfo = (sondagemID) => {
-    if (sondagemID == 4) {
-        return [
-            {
-                id: 1,
-                isOpen: true,
-                title: 'História',
-                content: "A Habitação A, ou Sondagem 4, foi explorada pela primeira vez em 2008, " +
-                    "na primeira campanha realizada ao Monte dos Castelinhos após " +
-                    " a descoberta de um grupo específico de fragmentos cerâmicos conectados no solo." +
-                    " Mais tarde, identificou-se que esta escavação continha edifícios residenciais, " +
-                    "sendo que sua construção principal apresentava características de uma Domus, casas " +
-                    "habitadas por famílias romanas mais abastadas. <br/><br/>" +
-                    "&nbsp;É importante referir que o caminho atual " +
-                    "da montanha passa por parte desta escavação, então, embora não esteja totalmente à descoberta, " +
-                    "foram feitas sondagens para revelar as ruínas restantes."
-            }]
-    }
-
-    if (sondagemID == 5) {
-        return [
-            {
-                id: 1,
-                isOpen: true,
-                title: 'História',
-                content: "A Habitação B, ou Sondagem 5, foi iniciada numa campanha de 2009 devido à 'existência de uma dispersão " +
-                " invulgar de materiais de construção claramente importados da época romana e cerâmicas finas'. " +
-                "Esta área também contém, entre outras particularidades, edifícios residenciais."
-            }]
-    }
-
-    if (sondagemID == 8) {
-        return [
-            {
-                id: 1,
-                isOpen: true,
-                title: 'História',
-                content: "A área de Habitações e Oficinas, ou Sondagem 8 apenas começou numa campanha de 2016, " +
-                "após muitos anos de recolha de materiais que indicavam que esta área poderia apresentar resultados " +
-                "promissores. Os arqueólogos descrevem este local de escavação como tendo ultrapassado as suas melhores " +
-                "expetativas, revelando-se bastante frutífero, com contextos e estruturas bem preservados. Em resumo, " +
-                "esta área contém ruínas de edifícios residenciais e comerciais que ladeiam uma rua."
-            }]
-    }
-
-    if (sondagemID == 9) {
-        return [
-            {
-                id: 1,
-                isOpen: true,
-                title: 'História',
-                content: "&nbsp;A Muralhada, ou Sondagem 9, foi explorada na última campanha, em 2018, " +
-                    "numa área que parecia corresponder à zona melhor preservada da hipotética muralha. " +
-                    "Desde o início do projeto Monte dos Castelinhos, ficou claro que o local teria um sistema " +
-                    "defensivo amplo e complexo. No entanto, apesar dessa percepção, os dados eram bastante escassos. " +
-                    "A Sondagem 9, que agora mostra parte da fortificação do assentamento, foi iniciada como uma forma de " +
-                    "esclarecer essas suspeitas. "
-            }]
     }
 }
