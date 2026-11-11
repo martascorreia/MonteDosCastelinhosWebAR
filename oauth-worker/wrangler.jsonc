@@ -1,0 +1,16 @@
+{
+  "name": "monte-backoffice-auth",
+  "main": "index.mjs",
+  "compatibility_date": "2026-11-11",
+  "account_id": "95cce498ce81771776e541a3aa6e5e09",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "GITHUB_OAUTH_ID": "Ov23liH9geQnfQnj8t6r"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "invocation_logs": false },
+    "traces": { "enabled": false }
+  }
+}
