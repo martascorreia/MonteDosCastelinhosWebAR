@@ -66,9 +66,21 @@ jobs:
         if: steps.branch.outputs.safe != 'main' && github.event_name != 'delete' && (github.event_name != 'pull_request' || github.event.action != 'closed') && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
         env:
           SAFE_BRANCH: ${{ steps.branch.outputs.safe }}
+          CMS_CONTENT_BRANCH: ${{ github.head_ref || github.ref_name }}
           VITE_BASE_PATH: /MonteDosCastelinhosWebAR/previews/${{ steps.branch.outputs.safe }}/
           VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
         run: |
+          cp public/admin/config.yml "$RUNNER_TEMP/cms-config-original.yml"
+          trap 'cp "$RUNNER_TEMP/cms-config-original.yml" public/admin/config.yml' EXIT
+          CMS_CONTENT_BRANCH="$CMS_CONTENT_BRANCH" node --input-type=module -e '
+            import fs from "node:fs";
+            const configPath = "public/admin/config.yml";
+            const config = fs.readFileSync(configPath, "utf8");
+            const branch = process.env.CMS_CONTENT_BRANCH.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"");
+            const updated = config.replace(/^  branch: main$/m, `  branch: "${branch}"`);
+            if (updated === config) throw new Error("Could not find the CMS branch setting");
+            fs.writeFileSync(configPath, updated);
+          '
           pnpm run build
           mkdir -p "$RUNNER_TEMP/deployment/previews/$SAFE_BRANCH" "$RUNNER_TEMP/deployment/archives"
           cp -R dist/. "$RUNNER_TEMP/deployment/previews/$SAFE_BRANCH/"

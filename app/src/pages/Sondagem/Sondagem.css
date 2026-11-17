@@ -168,7 +168,8 @@
     font-weight: 600;
 }
 
-.sondagemStoryContent {
+.sondagemStoryParagraph {
+    margin: 0 0 16px;
     color: var(--darker-grey);
     font-size: 15px;
     line-height: 1.65;

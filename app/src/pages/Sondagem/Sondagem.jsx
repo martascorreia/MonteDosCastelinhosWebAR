@@ -7,12 +7,11 @@ import { setOrientation, reloadPage, garbageCollect, setFullScreen } from '../..
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AugmentedReality } from 'tabler-icons-react';
 import { faVrCardboard, faCube, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import Accordion from '../../components/Accordion/Accordion'
 import SquareButton from '../../components/SquareButton/SquareButton';
 
-function Sondagem({ id, sondagemID, title, headerImage, galleryImages, info, ar, vr, mv }) {
+function Sondagem({ id, sondagemID, title, headerImage, galleryImages = [], history, ar, vr, mv }) {
     const supportsAR = isMobile || isTablet;
-    const images = galleryImages?.length ? galleryImages : [headerImage];
+    const images = galleryImages.length ? galleryImages : [{ image: headerImage, alt: title }];
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const touchStartX = useRef(null);
     setOrientation("portrait");
@@ -55,7 +54,7 @@ function Sondagem({ id, sondagemID, title, headerImage, galleryImages, info, ar,
             <div className="content sondagemPageContent">
                 <div className='sondagemHeader'>
                     <div className="sondagemGallery" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchCancel={() => { touchStartX.current = null; }}>
-                        <img className='sondagemImage' src={images[activeImageIndex]} alt={title} />
+                        <img className='sondagemImage' src={images[activeImageIndex].image} alt={images[activeImageIndex].alt || title} />
                         <div className='sondagemTitle'>{title}</div>
                         <div className="sondagemGalleryCount" aria-live="polite" aria-atomic="true">
                             {activeImageIndex + 1} / {images.length}
@@ -80,23 +79,12 @@ function Sondagem({ id, sondagemID, title, headerImage, galleryImages, info, ar,
                             {mv && <SquareButton text={"Modelo 3D"} icon={<FontAwesomeIcon icon={faCube} />} link="modelo3D" onClick={() => setFullScreen(false)}/>}
                         </div >}
                     <div className="sondagemInfo">
-                            {info?.length === 1 ? (
-                                <section className="sondagemStory" aria-labelledby={`sondagem-story-${sondagemID}`}>
-                                    <h2 className="sondagemStoryTitle" id={`sondagem-story-${sondagemID}`}>{info[0].title}</h2>
-                                    <div className="sondagemStoryContent" dangerouslySetInnerHTML={{ __html: info[0].content }} />
-                                </section>
-                            ) : (
-                                <div className='accordions'>
-                                    {info?.map((item, index) => (
-                                        <Accordion
-                                            key={index}
-                                            id={item.id}
-                                            accordionOpen={item.isOpen}
-                                            title={item.title}
-                                            content={item.content} />
-                                    ))}
-                                </div>
-                            )}
+                        <section className="sondagemStory" aria-labelledby={`sondagem-story-${sondagemID}`}>
+                            <h2 className="sondagemStoryTitle" id={`sondagem-story-${sondagemID}`}>História</h2>
+                            {history.split(/\n\s*\n/).map((paragraph, index) => (
+                                <p key={index} className="sondagemStoryParagraph">{paragraph}</p>
+                            ))}
+                        </section>
                     </div >
                 </div >
             </div >
